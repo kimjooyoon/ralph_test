@@ -13,18 +13,4 @@
 - How should surrogate pairs be treated when splitting UTF-8 bytes?
 
 ## Additional Tasks
-- [ ] Update `domain/split.go` to properly implement UTF-8 byte splitting logic (currently only has a comment)
-- [ ] Remove unused "strings" import from `domain/split.go`
-
-## specs
---- specs/dsl.md ---
-# Spec — minimal DSL helpers (domain)
-
-## Goal
-
-Provide tiny, testable string helpers in `domain` for experiments.
-
-## Acceptance
-
-- `Echo` returns its input unchanged (baseline behavior).
-- Helpers remain **pure** (no I/O,
+- [ ] Update `domain/split
