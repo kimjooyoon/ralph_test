@@ -9,3 +9,10 @@
 - `StringTrimEvent`: Triggered when whitespace is removed from a string
 
 ## Aggregate Boundaries
+- `Split` aggregate: Enforces UTF-8 byte splitting for multi-byte characters (Chinese, emoji) via `Split(s, sep)` function
+- `Reverse` aggregate: Ensures proper handling of surrogate pairs and combining marks
+- `Trim` aggregate: Maintains whitespace normalization rules
+
+## Open questions
+- Should `Split` with empty separator be a separate bounded context for byte-level operations?
+- How to handle surrogate pairs in
