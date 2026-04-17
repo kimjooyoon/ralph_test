@@ -21,3 +21,6 @@
 ## Resolved
 - **`Split` empty `sep`**: one element per UTF-8 byte; differs from `strings.Split` (rune grouping). Implementation uses byte slices `s[i:i+1]`.
 - **`Reverse`**: supplementary plane and `été` covered in `domain/reverse_test.go`.
+
+## Open questions
+- **UTF-8 byte splitting**: Current `Split` implementation slices by byte index, but this breaks multi-byte sequences (e.g., "ÀÁ" → [� � � �]). Should we instead split by **runes** (Unicode code points) when `sep == ""`? This would
