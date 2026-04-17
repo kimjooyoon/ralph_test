@@ -9,4 +9,4 @@
 - [x] Add `Trim(s string) string` that returns s without leading/trailing whitespace with tests
 - [x] Add `Split(s, sep string) []string` that splits strings with tests
 - [x] Improve `Split` to handle multi-character separators
-- [ ] Add `Repeat(s string, n int) string` that returns s repeated n times with tests
+- [x] Add `Repeat(s string, n int) string` that returns s repeated n times with tests
