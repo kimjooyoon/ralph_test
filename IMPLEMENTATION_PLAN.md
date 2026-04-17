@@ -9,4 +9,6 @@
 
 ## Questions
 - Should `Split` handle empty input differently? (Spec says empty `s` yields empty slice)
-- Are surrogate pairs considered single code points in UTF-8 byte splitting? (Need clarification on Unicode
+- Are surrogate pairs considered single code points in UTF-8 byte splitting? (Need clarification on Unicode handling)
+
+## Tasks
