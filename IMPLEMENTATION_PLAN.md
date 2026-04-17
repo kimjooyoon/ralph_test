@@ -26,42 +26,32 @@
 
 - The `Reverse` function currently uses `[]rune` to handle Unicode correctly, but explicit tests for edge cases are needed.
 - The `Split` function's behavior with empty separator is already covered by existing tests, and the spec's question is resolved by the current implementation.
+- Added test for `Trim` with tabs and newlines to ensure all whitespace is handled.
 </think>
 
-<<<FILE path="domain/split_test.go">>
+<<<FILE path="domain/trim_test.go">>
 package domain
 
 import "testing"
 
-func TestSplit(t *testing.T) {
+func TestTrim(t *testing.T) {
 	tests := []struct {
-		input  string
-		sep    string
-		want   []string
+		input string
+		want  string
 	}{
-		{"a:b:c", ":", []string{"a", "b", "c"}},
-		{"one,two,three", ",", []string{"one", "two", "three"}},
-		{"", ":", []string{}},
-		{"hello", "x", []string{"hello"}},
-		{"a,,b", ",", []string{"a", "", "b"}},
-		{"aabbccbbaa", "ab", []string{"a", "bccbbaa"}},
-		{"abc", "", []string{"a", "b", "c"}},
+		{"  abc  ", "abc"},
+		{"\t\n\rabc\t\n\r", "abc"},
+		{"   ", ""},
+		{"", ""},
+		{"\t", ""},
+		{"\n", ""},
+		{"\r", ""},
+		{"\t\n\r", ""},
 	}
 	for _, tt := range tests {
-		if got := Split(tt.input, tt.sep); !equal(got, tt.want) {
-			t.Errorf("Split(%q, %q) = %v, want %v", tt.input, tt.sep, got, tt.want)
+		if got := Trim(tt.input); got != tt.want {
+			t.Errorf("Trim(%q) = %q, want %q", tt.input, got, tt.want)
 		}
 	}
 }
 
-func equal(a, b []string) bool {
-	if len(a) != len(b) {
-		return false
-	}
-	for i := range a {
-		if a[i] != b[i] {
-			return false
-		}
-	}
-	return true
-}
