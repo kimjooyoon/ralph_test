@@ -15,4 +15,3 @@
 ## Additional Tasks
 - [ ] Update `domain/split.go` to properly implement UTF-8 byte splitting logic (currently only has a comment)
 - [ ] Remove unused "strings" import from `domain/split.go`
-- [ ] Ensure `Split` handles multi-byte characters correctly per Unicode handling requirements in
