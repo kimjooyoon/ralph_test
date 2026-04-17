@@ -12,6 +12,8 @@ func TestReverse(t *testing.T) {
 		{"a", "a"},
 		{"hello world", "dlrow olleh"},
 		{"12345", "54321"},
+		{"été", "ét e"}, // Unicode character test
+		{"\ud834\udf06", "\udf06\ud834"}, // Surrogate pair test
 	}
 	for _, tt := range tests {
 		if got := Reverse(tt.input); got != tt.want {
