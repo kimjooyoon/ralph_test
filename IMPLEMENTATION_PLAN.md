@@ -12,4 +12,7 @@
 - Are the UTF-8 byte splitting requirements for Chinese characters sufficient for all edge cases?
 - How should surrogate pairs be treated when splitting UTF-8 bytes?
 
-##
+## Additional Tasks
+- [ ] Update `domain/split.go` to properly implement UTF-8 byte splitting logic (currently only has a comment)
+- [ ] Remove unused "strings" import from `domain/split.go`
+- [ ] Ensure `Split` handles multi-byte characters correctly per Unicode handling requirements in
