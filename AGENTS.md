@@ -5,6 +5,12 @@
 - Run domain unit tests: `go test ./domain/... -count=1 -short`
 - Module root: this directory (`go.mod` lives here).
 
+## TDD Ralph expectations
+
+- This project is driven by a **perpetual TDD Ralph loop** (no automatic stop when the plan is complete).
+- Prefer **one behavioral change per iteration**, anchored by a domain test.
+- If you are “done” with the plan, pull the next increment from `specs/*.md` into `IMPLEMENTATION_PLAN.md` and continue with RED tests.
+
 ## Repo rules
 
 - **No e2e / integration test packages** in this loop; only `domain` tests drive the harness.

@@ -1,13 +1,16 @@
-# Ralph BUILDING — dsl-maker
+# TDD Ralph BUILDING — dsl-maker
 
-You are running inside a **Ralph loop** (spec → plan → one iteration of work → tests → git → fresh context).
+You are running inside a **non-terminating TDD Ralph loop**: spec → plan → one iteration of work → `go test ./domain/...` → git → fresh context, **forever until the human stops the process**.
 
 ## What you do this iteration
 
-1. Read `specs/*.md` and `IMPLEMENTATION_PLAN.md`. Pick **at most one** concrete task that is still unchecked (`- [ ]`).
-2. Use **TDD**: prefer updating/adding a **failing domain test** first, then implementation, until `go test ./domain/...` is green.
-3. Keep **all production Go code** under `domain/` only. Domain unit tests are the only automated backpressure.
-4. When you finish a task, mark it **`[x]`** in `IMPLEMENTATION_PLAN.md` in the same iteration if possible.
+1. Read `specs/*.md` and `IMPLEMENTATION_PLAN.md`.
+2. Follow **strict TDD**:
+   - If there is an unchecked (`- [ ]`) plan item, drive it with a **failing domain test first** when you still need clarity, then implement to green.
+   - If the plan is all green (`[x]`) but specs still imply more work, **extend the plan** with the next small unchecked items and start with a **new failing domain test**.
+   - If you truly believe specs are fully satisfied, add a **tiny hardening test** (still pure domain) or improve naming/docs-in-comments — but keep it meaningful; never add empty busywork tests.
+3. Keep **all Go** under `domain/` only. Only `go test ./domain/...` is automated backpressure.
+4. Update `IMPLEMENTATION_PLAN.md` whenever you complete or add tasks.
 
 ## Output contract
 
