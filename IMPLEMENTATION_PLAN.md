@@ -14,9 +14,42 @@
 - [x] Add test for `Split` with empty separator and handle it
 - [x] Add `Reverse(s string) string` that returns s reversed with tests
 - [x] Add `IsPalindrome(s string) bool` that returns true if s is a palindrome with tests
+- [ ] Add test for `Reverse` with Unicode characters and surrogate pairs
 
 
 ## Questions
 
 - Should `Split` with empty separator return each character as a separate element (current behavior) or follow `strings.Split` semantics (which returns empty slice for empty separator)?
 - Are there additional edge cases for `Reverse` that should be covered (e.g., Unicode characters, surrogate pairs)?
+
+
+## Notes
+
+- The `Reverse` function currently uses `[]rune` to handle Unicode correctly, but explicit tests for edge cases are needed.
+- The `Split` function's behavior with empty separator is already covered by existing tests, but the spec's question remains unresolved.
+</think>
+
+<<<FILE path="domain/reverse_test.go">>
+package domain
+
+import "testing"
+
+func TestReverse(t *testing.T) {
+	tests := []struct {
+		input string
+		want  string
+	}{
+		{"abc", "cba"},
+		{"", ""},
+		{"a", "a"},
+		{"hello world", "dlrow olleh"},
+		{"12345", "54321"},
+		{"été", "ét e"}, // Unicode character test
+		{"\ud834\udf06", "\udf06\ud834"}, // Surrogate pair test
+	}
+	for _, tt := range tests {
+		if got := Reverse(tt.input); got != tt.want {
+			t.Errorf("Reverse(%q) = %q, want %q", tt.input, got, tt.want)
+		}
+	}
+}
