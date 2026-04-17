@@ -2,4 +2,4 @@
 
 ## specs
 - [ ] Implement `Split` to split on UTF-8 bytes for empty separator (per spec)
-- [
+- [ ] Add test for `Split("中文",
