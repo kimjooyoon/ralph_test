@@ -15,13 +15,12 @@
 - [x] Add `Reverse(s string) string` that returns s reversed with tests
 - [x] Add `IsPalindrome(s string) bool` that returns true if s is a palindrome with tests
 - [x] Add test for `Reverse` with Unicode characters and surrogate pairs
-
+- [ ] Clarify `Split` behavior with empty separator (should it return empty slice or character-by-character split?)
 
 ## Questions
 
 - Should `Split` with empty separator return each character as a separate element (current behavior) or follow `strings.Split` semantics (which returns empty slice for empty separator)?
 - Are there additional edge cases for `Reverse` that should be covered (e.g., Unicode characters, surrogate pairs)?
-
 
 ## Notes
 
