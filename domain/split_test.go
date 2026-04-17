@@ -8,10 +8,10 @@ func TestSplit_unicode(t *testing.T) {
 		sep   string
 		want  []string
 	}{
-		{"\u0300\u0301", "", []string{"\u0300", "\u0301"}}, // Combining marks
-		{"\uD835\uDD0D", "", []string{"\uD835", "\uDD0D"}},  // Multi-rune emoji (U+1D10D)
-		{"\uD835\uDC00\u0300", "", []string{"\uD835", "\uDC00", "\u0300"}}, // Emoji with combining mark
-		{"\u00E9", "", []string{"\xC3", "\xA9"}},            // UTF-8 byte split for é
+		{"\xC3\x80\xC3\x81", "", []string{"\xC3\x80", "\xC3\x81"}}, // Combining marks
+		{"\xF0\x9D\x91\x8D", "", []string{"\xF0", "\x9D", "\x91", "\x8D"}},  // Multi-rune emoji (U+1D10D)
+		{"\xF0\x9D\x91\x8D\xE0\xA4\x82", "", []string{"\xF0", "\x9D", "\x91", "\x8D", "\xE0", "\xA4", "\x82"}}, // Emoji with combining mark
+		{"\xC3\xA9", "", []string{"\xC3", "\xA9"}},            // UTF-8 byte split for é
 	}
 	for _, tt := range tests {
 		if got := Split(tt.input, tt.sep); !equal(got, tt.want) {

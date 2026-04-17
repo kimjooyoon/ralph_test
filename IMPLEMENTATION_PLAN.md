@@ -25,5 +25,4 @@
 
 ## Notes
 
-- **`Split` with `sep == ""`**: non-empty `s` is split into **UTF-8 bytes** via `s[i:i+1]` (see `domain/split.go` and `split_test.go`). Older `string(s[i])` was wrong for bytes ≥ 0x80 (treated as a Unicode code point). Behavior still differs from `strings.Split`, which groups by decoded rune when `sep` is empty.
-- **`Reverse` / `IsPalindrome`**: implemented in **Unicode code points** (`[]rune`); `Reverse` tests already cover `été` and a supplementary-plane code point.
+- **`Split` with `
