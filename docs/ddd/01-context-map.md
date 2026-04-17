@@ -23,4 +23,4 @@
 - **`Reverse`**: supplementary plane and `été` covered in `domain/reverse_test.go`.
 
 ## Open questions
-- **UTF-8 byte splitting**: Current `Split` implementation slices by byte index, but this breaks multi-byte sequences (e.g., "ÀÁ" → [� � � �]). Should we instead split by **runes** (Unicode code points) when `sep == ""`? This would
+- **UTF-8 byte splitting**: Current `Split` implementation slices by byte index, but this breaks multi-byte sequences (e.g., "ÀÁ" → [� � � �]). Should we instead split by **runes** (Unicode code points) when `sep == ""`? This would align with `strings.Split` behavior and avoid invalid UTF-8 sequences. The test failure `Split("ÀÁ", "") = [� � � �], want [À Á]` demonstrates this issue.

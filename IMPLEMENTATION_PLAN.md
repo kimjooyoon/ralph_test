@@ -25,25 +25,4 @@
 
 ## Notes
 
-- **`Split` with `
-
-## specs
---- specs/dsl.md ---
-# Spec — minimal DSL helpers (domain)
-
-## Goal
-
-Provide tiny, testable string helpers in `domain` for experiments.
-
-## Acceptance
-
-- `Echo` returns its input unchanged (baseline behavior).
-- Helpers remain **pure** (no I/O, no clocks, no network) so they stay fast unit tests.
-
-## Ideation + extension (within unit scope)
-
-Exploration should happen **inside `domain/`** as new tests + small functions.
-
-- Durable intent belongs in this `specs/` directory.
-- Short-horizon tasks belong in `IMPLEMENTATION_PLAN.md`.
-- “Maybe someday” ideas and brainstorming belong in `docs/ralph/**/*.md` (
+- **`Split` with `sep == ""`**: Current implementation slices by byte index, but this breaks multi-byte sequences (e.g., "ÀÁ" → [� � � �]). The test failure `Split("ÀÁ", "") = [� � � �], want [À Á]` demonstrates this issue. Consider splitting by **runes** (Unicode code points) instead of bytes for empty separators to avoid invalid UTF-8 sequences.
