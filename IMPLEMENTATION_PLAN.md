@@ -13,4 +13,7 @@
 - How should surrogate pairs be treated when splitting UTF-8 bytes?
 
 ## Additional Tasks
-- [ ] Update `domain/split
+- [ ] Update `domain/split.go` to remove unused "strings" import
+- [ ] Add test for `Split("a", "a")` returning [""] (specs/dsl.md)
+- [ ] Add test for `Split("a", "b")` returning ["a"] (specs/dsl.md)
+- [ ] Add test for `Split("a:b:c", ":")`
