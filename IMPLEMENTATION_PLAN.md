@@ -11,3 +11,4 @@
 - [x] Improve `Split` to handle multi-character separators
 - [x] Add `Repeat(s string, n int) string` that returns s repeated n times with tests
 - [x] Add `Replace(s, old, new string) string` that returns s with all occurrences of old replaced by new with tests
+- [ ] Add test for `Split` with empty separator and handle it
