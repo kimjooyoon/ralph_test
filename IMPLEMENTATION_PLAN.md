@@ -22,36 +22,16 @@
 - Should `Split` with empty separator return each character as a separate element (current behavior) or follow `strings.Split` semantics (which returns empty slice for empty separator)?
 - Are there additional edge cases for `Reverse` that should be covered (e.g., Unicode characters, surrogate pairs)?
 
+## Next Tasks
+
+- [ ] Add test for `Split` with empty separator that verifies current behavior (returns character-by-character split)
+- [ ] Add test for `Split` with empty separator that verifies `strings.Split` semantics (returns empty slice)
+- [ ] Add test for `Reverse` with mixed Unicode characters and surrogate pairs
+- [ ] Add test for `IsPalindrome` with non-ASCII characters and surrogate pairs
+
 ## Notes
 
-- The `Reverse` function currently uses `[]rune` to handle Unicode correctly, but explicit tests for edge cases are needed.
 - The `Split` function's behavior with empty separator is already covered by existing tests, and the spec's question is resolved by the current implementation.
+- The `Reverse` function currently uses `[]rune` to handle Unicode correctly, but explicit tests for edge cases are needed.
 - Added test for `Trim` with tabs and newlines to ensure all whitespace is handled.
-</think>
-
-<<<FILE path="domain/trim_test.go">>
-package domain
-
-import "testing"
-
-func TestTrim(t *testing.T) {
-	tests := []struct {
-		input string
-		want  string
-	}{
-		{"  abc  ", "abc"},
-		{"\t\n\rabc\t\n\r", "abc"},
-		{"   ", ""},
-		{"", ""},
-		{"\t", ""},
-		{"\n", ""},
-		{"\r", ""},
-		{"\t\n\r", ""},
-	}
-	for _, tt := range tests {
-		if got := Trim(tt.input); got != tt.want {
-			t.Errorf("Trim(%q) = %q, want %q", tt.input, got, tt.want)
-		}
-	}
-}
-
+- The `Split` function's behavior with empty separator is already covered by existing tests, and the spec's question is resolved by the current implementation.
