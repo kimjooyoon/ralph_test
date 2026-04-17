@@ -10,3 +10,4 @@
 - [x] Add `Split(s, sep string) []string` that splits strings with tests
 - [x] Improve `Split` to handle multi-character separators
 - [x] Add `Repeat(s string, n int) string` that returns s repeated n times with tests
+- [ ] Add `Replace(s, old, new string) string` that returns s with all occurrences of old replaced by new with tests
