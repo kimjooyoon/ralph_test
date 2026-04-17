@@ -12,3 +12,4 @@
 - [x] Add `Repeat(s string, n int) string` that returns s repeated n times with tests
 - [x] Add `Replace(s, old, new string) string` that returns s with all occurrences of old replaced by new with tests
 - [x] Add test for `Split` with empty separator and handle it
+- [ ] Add `Reverse(s string) string` that returns s reversed with tests
