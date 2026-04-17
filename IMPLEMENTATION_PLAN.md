@@ -1,5 +1,4 @@
 # IMPLEMENTATION_PLAN — dsl
 
 ## specs
-- [ ] Implement `Split` to split on UTF-8 bytes for empty separator (per spec)
-- [ ] Add test for `Split("中文",
+- [ ] Implement `Split` to split on UTF-
