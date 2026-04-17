@@ -22,3 +22,11 @@ If an idea cannot be expressed without integration/e2e, it is **out of scope** f
 ## `Split` empty separator
 
 For `sep == ""` and non-empty `s`, `domain.Split` returns one string per **UTF-8 byte** of `s` (ASCII is one byte per character). This differs from `strings.Split(s, "")`, which yields one segment per **decoded Unicode code point**. Empty `s` yields an empty slice.
+
+## Unicode handling
+
+- `Split` must correctly split UTF-8 bytes for multi-byte characters (e.g., Chinese, emoji).
+- `Reverse` must handle surrogate pairs and combining marks correctly.
+- Tests must use valid UTF-8 input to avoid invalid sequence errors.
+
+## Extension notes (docs/ralph/)
