@@ -17,3 +17,7 @@
 - [ ] Add test for `Split("a", "a")` returning [""] (specs/dsl.md)
 - [ ] Add test for `Split("a", "b")` returning ["a"] (specs/dsl.md)
 - [ ] Add test for `Split("a:b:c", ":")`
+
+## specs
+- [ ] Implement `Split` function in `domain/split.go` to split strings by UTF-8 bytes when `sep == ""` (as per specs/dsl.md)
+- [ ] Add test for `Split("中文", "")` returning ["中", "文"] (docs/ral
