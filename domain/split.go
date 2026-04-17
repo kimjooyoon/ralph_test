@@ -2,21 +2,10 @@ package domain
 
 import "strings"
 
+// Split splits s by sep (mostly strings.Split semantics, except Split("", sep) returns an empty slice).
 func Split(s, sep string) []string {
-	var result []string
-	current := ""
-	for i := 0; i < len(s); {
-		idx := strings.Index(s[i:], sep)
-		if idx == -1 {
-			current += s[i:]
-			break
-		}
-		result = append(result, current)
-		current = ""
-		i += idx + len(sep)
+	if s == "" {
+		return []string{}
 	}
-	if current != "" {
-		result = append(result, current)
-	}
-	return result
+	return strings.Split(s, sep)
 }

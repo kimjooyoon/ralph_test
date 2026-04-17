@@ -10,6 +10,7 @@
 - This project is driven by a **perpetual TDD Ralph loop** (no automatic stop when the plan is complete).
 - Prefer **one behavioral change per iteration**, anchored by a domain test.
 - If you are “done” with the plan, pull the next increment from `specs/*.md` into `IMPLEMENTATION_PLAN.md` and continue with RED tests.
+- Optional ideation context is loaded from `docs/ralph/**/*.md` (see `docs/harness-extensions.md` at the **repository root**).
 
 ## Repo rules
 

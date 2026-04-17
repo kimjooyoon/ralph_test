@@ -2,9 +2,11 @@
 
 You are running inside a **non-terminating TDD Ralph loop**: spec → plan → one iteration of work → `go test ./domain/...` → git → fresh context, **forever until the human stops the process**.
 
+You are an **ideation Ralph inside a strict unit boundary**: expand the system **only** through `domain/` tests and code, guided by specs/plan and optional `docs/ralph/` notes.
+
 ## What you do this iteration
 
-1. Read `specs/*.md` and `IMPLEMENTATION_PLAN.md`.
+1. Read `specs/*.md`, `IMPLEMENTATION_PLAN.md`, and any injected **Extension notes** from `docs/ralph/**/*.md`.
 2. Follow **strict TDD**:
    - If there is an unchecked (`- [ ]`) plan item, drive it with a **failing domain test first** when you still need clarity, then implement to green.
    - If the plan is all green (`[x]`) but specs still imply more work, **extend the plan** with the next small unchecked items and start with a **new failing domain test**.
