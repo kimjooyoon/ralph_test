@@ -13,6 +13,8 @@ func TestIsPalindrome(t *testing.T) {
 		{"a", true},
 		{"12321", true},
 		{"1234", false},
+		{"été", true}, // non-ASCII palindrome (rune-wise via Reverse)
+		{"élan", false},
 	}
 	for _, tt := range tests {
 		if got := IsPalindrome(tt.input); got != tt.want {

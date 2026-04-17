@@ -15,23 +15,14 @@
 - [x] Add `Reverse(s string) string` that returns s reversed with tests
 - [x] Add `IsPalindrome(s string) bool` that returns true if s is a palindrome with tests
 - [x] Add test for `Reverse` with Unicode characters and surrogate pairs
-- [x] Clarify `Split` behavior with empty separator (should it return empty slice or character-by-character split?)
+- [x] Clarify `Split` behavior with empty separator (document + tests vs `strings.Split`)
+- [x] Extend `IsPalindrome` tests for non-ASCII
 
-## Questions
+## Next tasks
 
-- Should `Split` with empty separator return each character as a separate element (current behavior) or follow `strings.Split` semantics (which returns empty slice for empty separator)?
-- Are there additional edge cases for `Reverse` that should be covered (e.g., Unicode characters, surrogate pairs)?
-
-## Next Tasks
-
-- [ ] Add test for `Split` with empty separator that verifies current behavior (returns character-by-character split)
-- [ ] Add test for `Split` with empty separator that verifies `strings.Split` semantics (returns empty slice)
-- [ ] Add test for `Reverse` with mixed Unicode characters and surrogate pairs
-- [ ] Add test for `IsPalindrome` with non-ASCII characters and surrogate pairs
+- [ ] Optional: add `Split` / `Reverse` cases for tricky Unicode (e.g. combining marks, multi-rune emoji) if product needs stricter semantics than today’s rune/byte models
 
 ## Notes
 
-- The `Split` function's behavior with empty separator is already covered by existing tests, and the spec's question is resolved by the current implementation.
-- The `Reverse` function currently uses `[]rune` to handle Unicode correctly, but explicit tests for edge cases are needed.
-- Added test for `Trim` with tabs and newlines to ensure all whitespace is handled.
-- The `Split` function's behavior with empty separator is already covered by existing tests, and the spec's question is resolved by the current implementation.
+- **`Split` with `sep == ""`**: non-empty `s` is split into **UTF-8 bytes** (see `domain/split.go` and `split_test.go`). This intentionally differs from `strings.Split` for non-ASCII text, where an empty separator keeps each decoded rune as one segment.
+- **`Reverse` / `IsPalindrome`**: implemented in **Unicode code points** (`[]rune`); `Reverse` tests already cover `été` and a supplementary-plane code point.

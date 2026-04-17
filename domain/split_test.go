@@ -15,6 +15,8 @@ func TestSplit(t *testing.T) {
 		{"a,,b", ",", []string{"a", "", "b"}},
 		{"aabbccbbaa", "ab", []string{"a", "bccbbaa"}},
 		{"abc", "", []string{"a", "b", "c"}},
+		// UTF-8 "é" is two bytes: documents byte-wise split when sep is empty (differs from strings.Split).
+		{"é", "", []string{"\xc3", "\xa9"}},
 	}
 	for _, tt := range tests {
 		if got := Split(tt.input, tt.sep); !equal(got, tt.want) {

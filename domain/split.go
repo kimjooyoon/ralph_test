@@ -2,7 +2,13 @@ package domain
 
 import "strings"
 
-// Split splits s by sep (mostly strings.Split semantics, except Split("", sep) returns an empty slice).
+// Split splits s by sep.
+//
+// When sep is non-empty, behavior matches [strings.Split].
+//
+// When sep is empty: if s is empty, returns an empty slice. If s is non-empty, each UTF-8 byte
+// of s becomes one element (not [strings.Split], which places each whole UTF-8 code sequence
+// in a single element when sep is empty).
 func Split(s, sep string) []string {
 	if s == "" {
 		return []string{}
