@@ -1,4 +1,1 @@
-# IMPLEMENTATION_PLAN — dsl
-
-## specs
-- [ ] Implement `Split` to split on UTF-
+# IMPLEMENTATION_PLAN — d
