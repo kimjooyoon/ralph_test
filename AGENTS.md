@@ -13,6 +13,7 @@
 - Optional ideation context is loaded from `docs/ralph/**/*.md` (see `docs/harness-extensions.md` at the **repository root**).
 - When BUILDING stagnates (no effective FILE updates), the next iteration runs **PLANNING Ralph** using `PROMPT_PLANNING.md` (markdown-only writes: plan/specs/docs/ralph).
 - The harness **reads files for you** each iteration and prepends a **Harness-loaded files** index (also saved to `.ralph/logs/last_file_index.txt`). The model does not get silent repo-wide file access.
+- **PROPOSER Ralph** runs after **PLANNING** makes no disk changes: it pulls a small public “hot tech” snapshot (default: Hacker News titles/links) and writes proposals **only** under `docs/ralph/*.md`.
 
 ## Repo rules
 
