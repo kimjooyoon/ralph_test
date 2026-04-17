@@ -12,7 +12,7 @@ func TestReverse(t *testing.T) {
 		{"a", "a"},
 		{"hello world", "dlrow olleh"},
 		{"12345", "54321"},
-		{"été", "ét e"}, // Unicode character test
+		{"été", "été"}, // Unicode character test
 		{"\U0001D106", "\U0001D106"}, // Surrogate pair test
 	}
 	for _, tt := range tests {
