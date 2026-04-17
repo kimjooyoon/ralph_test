@@ -14,6 +14,7 @@ func TestSplit(t *testing.T) {
 		{"hello", "x", []string{"hello"}},
 		{"a,,b", ",", []string{"a", "", "b"}},
 		{"aabbccbbaa", "ab", []string{"a", "bccbbaa"}},
+		{"abc", "", []string{"a", "b", "c"}},
 	}
 	for _, tt := range tests {
 		if got := Split(tt.input, tt.sep); !equal(got, tt.want) {

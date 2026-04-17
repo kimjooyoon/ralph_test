@@ -7,5 +7,12 @@ func Split(s, sep string) []string {
 	if s == "" {
 		return []string{}
 	}
+	if sep == "" {
+		result := make([]string, len(s))
+		for i := 0; i < len(s); i++ {
+			result[i] = string(s[i])
+		}
+		return result
+	}
 	return strings.Split(s, sep)
 }
