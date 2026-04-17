@@ -7,3 +7,4 @@
 - [x] Bootstrap `Echo` with a domain unit test
 - [x] Add `Join(a, b string) string` that returns `a + ":" + b` with tests
 - [x] Add `Trim(s string) string` that returns s without leading/trailing whitespace with tests
+- [x] Add `Split(s, sep string) []string` that splits strings with tests
