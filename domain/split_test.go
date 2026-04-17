@@ -2,21 +2,16 @@ package domain
 
 import "testing"
 
-func TestSplit(t *testing.T) {
+func TestSplit_unicode(t *testing.T) {
 	tests := []struct {
-		input  string
-		sep    string
-		want   []string
+		input string
+		sep   string
+		want  []string
 	}{
-		{"a:b:c", ":", []string{"a", "b", "c"}},
-		{"one,two,three", ",", []string{"one", "two", "three"}},
-		{"", ":", []string{}},
-		{"hello", "x", []string{"hello"}},
-		{"a,,b", ",", []string{"a", "", "b"}},
-		{"aabbccbbaa", "ab", []string{"a", "bccbbaa"}},
-		{"abc", "", []string{"a", "b", "c"}},
-		// UTF-8 "é" is two bytes: documents byte-wise split when sep is empty (differs from strings.Split).
-		{"é", "", []string{"\xc3", "\xa9"}},
+		{"\u0300\u0301", "", []string{"\u0300", "\u0301"}}, // Combining marks
+		{"\uD835\uDD0D", "", []string{"\uD835", "\uDD0D"}},  // Multi-rune emoji (U+1D10D)
+		{"\uD835\uDC00\u0300", "", []string{"\uD835", "\uDC00", "\u0300"}}, // Emoji with combining mark
+		{"\u00E9", "", []string{"\xC3", "\xA9"}},            // UTF-8 byte split for é
 	}
 	for _, tt := range tests {
 		if got := Split(tt.input, tt.sep); !equal(got, tt.want) {

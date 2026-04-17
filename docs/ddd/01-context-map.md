@@ -13,14 +13,11 @@
 | Term         | Definition                                                                 | Example                     |
 |--------------|----------------------------------------------------------------------------|-----------------------------|
 | `Join`       | Concatenate two strings with `:`                                          | `Join("a", "b") = "a:b"`   |
-| `Split`      | Split string by separator; if separator is empty, returns each character as a separate element | `Split("abc", "") = ["a","b","c"]` |
+| `Split`      | Split by `sep`; empty `sep` → one segment per **UTF-8 byte** (see `specs/dsl.md`) | `Split("abc", "") = ["a","b","c"]` |
 | `Trim`       | Remove leading/trailing whitespace                                        | `Trim("  abc  ") = "abc"` |
 | `Reverse`    | Reverse string with Unicode-aware handling (surrogate pairs, Unicode characters) | `Reverse("été") = "été"`   |
-| `IsPalindrome` | Check if string reads same backward (Unicode-aware)                       | `IsPalindrome("abcba") = true` |
+| `IsPalindrome` | Same forward/backward in **runes** (via `Reverse`) | `IsPalindrome("abcba")`, `IsPalindrome("été")` |
 
-## Open Questions
-- Should `Split` with empty separator return character-by-character split (current behavior) or follow `strings.Split` semantics (which returns empty slice for empty separator)?
-- Are there additional edge cases for `Reverse` (e.g., mixed Unicode/surrogate pairs) that need explicit tests?
-
-## go test ./domain/... output
-ok  	github.com/kimjooyoon/ralph-tdd/projects/dsl-maker/domain	0.175s
+## Resolved
+- **`Split` empty `sep`**: one element per UTF-8 byte; differs from `strings.Split` (rune grouping). Implementation uses byte slices `s[i:i+1]`.
+- **`Reverse`**: supplementary plane and `été` covered in `domain/reverse_test.go`.

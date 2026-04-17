@@ -17,6 +17,7 @@
 - [x] Add test for `Reverse` with Unicode characters and surrogate pairs
 - [x] Clarify `Split` behavior with empty separator (document + tests vs `strings.Split`)
 - [x] Extend `IsPalindrome` tests for non-ASCII
+- [x] Fix `Split` empty-sep path: use `s[i:i+1]` (avoid `string(byte)` Unicode code-point conversion bug on non-ASCII)
 
 ## Next tasks
 
@@ -24,5 +25,5 @@
 
 ## Notes
 
-- **`Split` with `sep == ""`**: non-empty `s` is split into **UTF-8 bytes** (see `domain/split.go` and `split_test.go`). This intentionally differs from `strings.Split` for non-ASCII text, where an empty separator keeps each decoded rune as one segment.
+- **`Split` with `sep == ""`**: non-empty `s` is split into **UTF-8 bytes** via `s[i:i+1]` (see `domain/split.go` and `split_test.go`). Older `string(s[i])` was wrong for bytes ≥ 0x80 (treated as a Unicode code point). Behavior still differs from `strings.Split`, which groups by decoded rune when `sep` is empty.
 - **`Reverse` / `IsPalindrome`**: implemented in **Unicode code points** (`[]rune`); `Reverse` tests already cover `été` and a supplementary-plane code point.

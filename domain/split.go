@@ -16,7 +16,9 @@ func Split(s, sep string) []string {
 	if sep == "" {
 		result := make([]string, len(s))
 		for i := 0; i < len(s); i++ {
-			result[i] = string(s[i])
+			// Must slice by byte index — string(s[i]) would convert the byte to a Unicode
+			// code point (e.g. 0xC3 → U+00C3 "Ã"), which breaks non-ASCII UTF-8.
+			result[i] = s[i : i+1]
 		}
 		return result
 	}
