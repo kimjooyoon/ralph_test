@@ -1,3 +1,2 @@
 # 
-- [ ] Implement `Split` with UTF-8 byte splitting (fix `domain/split.go`)
-- [ ] Add `Average
+- [ ] Implement `Split` with UTF-8 byte splitting (
