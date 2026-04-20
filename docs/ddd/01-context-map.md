@@ -1,18 +1,12 @@
-# Context Map — dsl-maker
+# Context Map
 
 ## Bounded Contexts
-- **String Manipulation**: Handles UTF-8 byte splitting, Unicode normalization, and basic string transformations (includes `Split`, `Reverse`, `Trim`, `Join`, `Replace`, `Repeat`)
-
-## Domain Events
-- `StringSplitEvent`: Triggered when a string is split by UTF-8 bytes
-- `StringReverseEvent`: Triggered when a string is reversed (with proper Unicode handling)
-- `StringTrimEvent`: Triggered when whitespace is removed from a string
-
-## Aggregate Boundaries
-- `Split` aggregate: Enforces UTF-8 byte splitting for multi-byte characters (Chinese, emoji) via `Split(s, sep)` function
-- `Reverse` aggregate: Ensures proper handling of surrogate pairs and combining marks
-- `Trim` aggregate: Maintains whitespace normalization rules
-
-## Open questions
-- Should `Split` with empty separator be a separate bounded context for byte-level operations?
-- How to handle surrogate pairs in
+- **String Manipulation**: Handles core string operations (Split, Reverse, Join, Trim, etc.)
+  - Aggregate boundaries:
+    - `Split` operates on string segments at UTF-8 byte level
+    - `Reverse` handles Unicode code points with surrogate pair awareness
+    - `Join` manages string concatenation with separator injection
+  - Domain Events:
+    - `StringSplitEvent` (when Split completes)
+    - `StringReverseEvent` (when Reverse completes)
+    - `StringJoinEvent` (when Join completes
