@@ -1,8 +1,2 @@
 - [ ] Add failing test for `Split("中文", "")` to return byte-split Chinese characters (`["中", "文"]`) (current test passes but needs explicit validation)
-- [ ] Implement `Split(s string, sep string) []string` with UTF-8 byte splitting for multi-byte characters
-- [ ] Add failing test for `GenerateCode("for i in range(5): print(i)")` to return AI-style code snippet
-- [ ] Add failing test for `Average([]int{1,2,3,4,5})` to return floor mean (3)
-- [ ] Implement `Average(nums []int) int` that calculates floor of mean
-- [ ] Add failing test for `Range(1, 5)` to return inclusive range `[1,2,3,4,5]`
-- [ ] Implement `Range(start, end int) []int` that generates inclusive range
-- [ ] Add failing
+- [ ] Implement `
