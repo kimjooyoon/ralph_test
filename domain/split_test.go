@@ -14,20 +14,10 @@ func TestSplit(t *testing.T) {
 		{"", "x", []string{}},
 		{"中文", "", []string{"中", "文"}},
 		{"hello", " ", []string{"hello"}},
-		{"abc123", "1", []string{"abc", "23"}),
+		{"abc123", "1", []string{"abc", "23"}},
 	}
 
 	for _, tt := range tests {
 		result := Split(tt.input, tt.sep)
 		if len(result) != len(tt.expected) {
-			t.Errorf("Split(%q, %q) = %v, want %v", tt.input, tt.sep, result, tt.expected)
-			continue
-		}
-		for i := range result {
-			if result[i] != tt.expected[i] {
-				t.Errorf("Split(%q, %q) = %v, want %v", tt.input, tt.sep, result, tt.expected)
-				break
-			}
-		}
-	}
-}
+			t.Errorf("Split(%q, %
