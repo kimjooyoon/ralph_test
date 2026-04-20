@@ -1,11 +1,9 @@
 - [ ] Add failing test for `EncodeBase64` function (base64 encoding)
-- [ ] Implement `EncodeBase664` to handle UTF-8 to base64 conversion
+- [ ] Implement `EncodeBase64` to handle UTF-8 to base64 conversion
 - [ ] Add failing test for `EncodeHex` function (hexadecimal encoding)
 - [ ] Implement `EncodeHex` to convert bytes to hex string
 - [ ] Add failing test for `Log` function (mock logging)
 - [ ] Implement `Log` to return input string as is
 - [ ] Add failing test for `Timestamp` function (RFC3339 format)
 - [ ] Implement `Timestamp` to generate current time string
-- [ ] Add failing test for `SerializeJSON` function (JSON encoding)
-- [ ] Implement `SerializeJSON` to marshal map to JSON string
-- [ ] Add failing test for
+- [ ] Add failing test for `SerializeJSON` function (JSON encoding
