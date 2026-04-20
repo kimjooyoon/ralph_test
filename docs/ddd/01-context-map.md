@@ -1,11 +1,14 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**
-  - Aggregates: `Split`, `Join`, `Trim`, `Reverse`
-  - Invariants: 
-    - `Split("", "")` returns empty slice
-    - `Split(s, "")` splits by UTF-8 byte (not Unicode code point)
-    - `Split("中文", "")` returns ["中", "文"]
-    - `Split("\U0001D10D", "")` returns ["\U0001D10D"]
-  - Domain Events: `StringSplitEvent`, `String
+- **String Manipulation**: Handles UTF-8 aware splitting, reversing, and encoding.  
+  - **Aggregates**:  
+    - `Split` (UTF-8 byte splitting, surrogate pair handling)  
+    - `Reverse` (Unicode-compliant reversal)  
+    - `Join` (UTF-8 aware concatenation)  
+  - **Domain Events**:  
+    - `StringSplitEvent` (triggered on successful UTF-8 splitting)  
+    - `StringReverseEvent` (triggered on successful Unicode reversal)  
+
+## Ubiquitous Language
+- **Split**: UTF-8 byte splitting for multi-byte characters (
