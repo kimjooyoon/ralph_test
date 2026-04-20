@@ -1,24 +1,19 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**: Handles UTF-8 byte splitting, reverse, and surrogate pair handling
-- **Unicode Handling**: Specializes in multi-byte character operations (Chinese, emoji)
-- **Encoding/Decoding**: Base64, hex, and other data transformations
+- **String Manipulation**: Handles UTF-8 byte splitting, reversing, and pattern matching (Split, Reverse, Match, ContainsWildcard)
+- **Encoding/Decoding**: Base64, hexadecimal, and JSON/YAML serialization (EncodeBase64, EncodeHex, SerializeJSON, SerializeYAML)
+- **Numeric Operations**: Range generation, averaging, and integer parsing (Range, Average, ParseInt)
+- **AI Code Generation**: Generates code snippets and evaluates expressions (GenerateCode, Eval)
+- **Image Processing**: Simulates image decoding from string data (DecodeImage)
 
 ## Aggregate Boundaries
-- `Split` aggregates: UTF-8 byte splitting with empty separator
-- `Reverse` aggregates: Surrogate pair preservation
-- `GenerateCode` aggregates: AI-style code snippet generation
+- **String Manipulation Aggregate**: 
+  - `Split(s string, sep string) []string` - Splits strings by UTF-8 bytes (when sep is empty)
+  - `Reverse(s string) string` - Reverses UTF-8 byte sequences
+  - `Match(pattern, s string) bool` - Basic regex-like pattern matching
+  - `ContainsWildcard(s, pattern string) bool` - Wildcard substring search
 
-## Domain Events
-- `CharacterSplitEvent`: Triggered when UTF-8 bytes are split
-- `SurrogatePreservedEvent`: Triggered when surrogate pairs are maintained
-- `CodeGeneratedEvent`: Triggered when AI-style code is produced
-
-## Invariants
-- `SplitInvariant`: Must split by UTF-8 bytes, not code points
-- `ReverseInvariant`: Must preserve surrogate pairs as single code points
-- `CodeGenInvariant`: Must produce valid code snippets without I/O
-
-## Open Questions
-- How to handle invalid UTF-8 sequences
+- **Encoding Aggregate**:
+  - `EncodeBase64(data []byte) string` - Base64 encoding
+  - `EncodeHex(data []byte) string`
