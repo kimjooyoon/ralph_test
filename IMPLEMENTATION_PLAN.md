@@ -1,3 +1,5 @@
-- [ ] Add failing test for `Split("中文", "")` to return byte-split Chinese characters (`["中", "文"]`) with explicit validation (current test passes but lacks explicit check)
-- [ ] Implement `Split` byte-splitting logic for multi-byte Unicode (Chinese, surrogate pairs) in `domain/split.go`
-- [ ] Add test for surrogate pair splitting: `Split("\U0001D10D", "")` should return `["\U0001D10D"]` (ensure not split into surrogate components)
+- [ ] Add failing test for `GenerateCode("for i in range(5): print(i)")` to return AI-style code snippet (current no test)
+- [ ] Implement `GenerateCode` function in `domain/` to return mock AI code snippets (pure function, no I/O)
+- [ ] Add failing test for `Average([]int{1,2,3,4,5})` to return 3 (current no test)
+- [ ] Implement `Average` function in `domain/` to calculate floor of mean
+- [ ] Add failing test for `EncodeBase64([]byte("hello"))` to return "aGVsbG8=" (current test lacks
