@@ -1,9 +1,7 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation DSL**: Pure string operations with UTF-8/Unicode awareness
-
-## Aggregates & Invariants
-- **Split**:
-  - `sep == ""` → split by UTF-8 byte (not Unicode code point)
-  - Must handle
+- **StringHelpers**: Core string manipulation functions (Split, Reverse, Join, Trim, Replace, etc.)
+  - Aggregate: `StringOperation` (immutable, pure functions)
+  - Invariants: 
+    - `Split(s string, sep string) []string` must split by UTF-8 bytes for empty separator
