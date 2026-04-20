@@ -1,5 +1,8 @@
-- [ ] Add failing test for `GenerateCode("for i in range(5): print(i)")` to return AI-style code snippet (current no test)
-- [ ] Implement `GenerateCode` function in `domain/` to return mock AI code snippets (pure function, no I/O)
-- [ ] Add failing test for `Average([]int{1,2,3,4,5})` to return 3 (current no test)
-- [ ] Implement `Average` function in `domain/` to calculate floor of mean
-- [ ] Add failing test for `EncodeBase64([]byte("hello"))` to return "aGVsbG8=" (current test lacks
+- [ ] Add failing test for `Split("中文", "")` to return ["中", "文"] (current test passes but needs explicit validation)
+- [ ] Implement `Split` function in `domain/` to handle UTF-8 byte splitting for multi-byte characters (including Chinese)
+- [ ] Add failing test for `Split("\U0001D10D", "")` to return ["\U0001D10D"] (surrogate pair handling)
+- [ ] Implement `GenerateCode` function in `domain/` to return mock AI code snippets with basic pattern matching
+- [ ] Add failing test for `EncodeBase64([]byte("hello"))` to return "aGVsbG8=" (complete test case)
+
+## Questions
+- What specific patterns should `GenerateCode` recognize as "AI-style" (
