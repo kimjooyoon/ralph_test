@@ -1,15 +1,10 @@
 # Context Map
 
 ## Bounded Contexts
-
-### 1. String Manipulation
-- **Aggregate Boundaries**: 
-  - `Split(s, sep)` splits strings by UTF-8 bytes (for `sep == ""`)
-  - `Reverse(s)` reverses string bytes
-  - `Trim(s)` removes whitespace from start/end
-- **Domain Events**:
-  - `StringSplitEvent` (when split by byte)
-  - `StringReverseEvent` (when reversed)
-  - `StringTrimEvent` (when whitespace removed)
-- **Invariants**:
-  - `Split("中文", "")` → `["中", "文"]` (byte-split Chinese)
+- **String Manipulation** (Split, Reverse, Trim, Join, Replace, Repeat)
+  - Aggregate roots: `Split`, `Reverse`
+  - Invariants: 
+    - `Split("中文", "")` returns `["中", "文"]` (UTF-8 byte splitting)
+    - `Reverse("\U0001D10D")` returns same emoji (surrogate pair handling)
+- **Data Encoding** (Base64, Hex, Encode/Decode)
+  - Aggregate roots: `EncodeBase64`, `EncodeHex`
