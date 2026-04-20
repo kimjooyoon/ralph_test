@@ -9,6 +9,8 @@
 
 - This project is driven by a **perpetual TDD Ralph loop** (no automatic stop when the plan is complete).
 - Prefer **one behavioral change per iteration**, anchored by a domain test.
+- **TDD order (always):** (1) add or change a failing **`domain/*_test.go`** that states the next acceptance criterion, (2) minimal production code in **`domain/*.go`** to go green, (3) refactor only after green. Do not add production behavior without a test that would fail without it.
+- When editing tests and implementation together, touch **`*_test.go` first**, then non-test files.
 - If you are “done” with the plan, pull the next increment from `specs/*.md` into `IMPLEMENTATION_PLAN.md` and continue with RED tests.
 - Optional ideation context is loaded from `docs/ralph/**/*.md` (see `docs/harness-extensions.md` at the **repository root**).
 - When BUILDING stagnates (no effective FILE updates), the next iteration runs **DDD Ralph** first (`PROMPT_DDD.md`; markdown-only: plan/specs/docs/ralph/**and** `docs/ddd/**/*.md`), then **PLANNING Ralph** (`PROMPT_PLANNING.md`; plan/specs/docs/ralph only — no `domain/*.go`). Disable DDD with `RALPH_DISABLE_DDD=1` at the repo harness.

@@ -7,12 +7,13 @@ You are an **ideation Ralph inside a strict unit boundary**: expand the system *
 ## What you do this iteration
 
 1. Read `specs/*.md`, `IMPLEMENTATION_PLAN.md`, and any injected **Extension notes** from `docs/ralph/**/*.md`.
-2. Follow **strict TDD**:
-   - If there is an unchecked (`- [ ]`) plan item, drive it with a **failing domain test first** when you still need clarity, then implement to green.
-   - If the plan is all green (`[x]`) but specs still imply more work, **extend the plan** with the next small unchecked items and start with a **new failing domain test**.
-   - If you truly believe specs are fully satisfied, add a **tiny hardening test** (still pure domain) or improve naming/docs-in-comments — but keep it meaningful; never add empty busywork tests.
-3. Keep **all Go** under `domain/` only. Only `go test ./domain/...` is automated backpressure.
-4. Update `IMPLEMENTATION_PLAN.md` whenever you complete or add tasks.
+2. Follow **strict TDD (RED → GREEN → REFACTOR)** in each slice of work:
+   - **RED**: Write or adjust **`domain/*_test.go`** so the desired behavior is asserted and tests **fail** with a meaningful mismatch (prefer this before expanding production logic). If the suite is already green, the next unchecked plan item should begin here with a **new** failing test—not with production code.
+   - **GREEN**: Implement the **smallest** change in **`domain/*.go`** (non-test) to pass that test.
+   - **REFACTOR** (optional): Improve structure or names with tests still green; do not add new behavior in the same step.
+3. **Output order**: When you change both tests and production code, emit **`<<<FILE ...>>>` blocks for all `*_test.go` files before any non-test `domain/*.go` files.**
+4. Keep **all Go** under `domain/` only. Only `go test ./domain/...` is automated backpressure.
+5. Update `IMPLEMENTATION_PLAN.md` whenever you complete or add tasks.
 
 ## Output contract
 
