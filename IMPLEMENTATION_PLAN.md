@@ -1,5 +1,5 @@
-- [ ] Add failing test for `GenerateCode("for i in range(5): print(i)")` in `domain/generate_code_test.go` (validate AI-style code snippet generation)
-- [ ] Add failing test for `Average([]int{1,2,3,4,5})` in `domain/average_test.go` (ensure mean calculation with floor)
-- [ ] Add failing test for `DecodeImage("PNG")` in `domain/decode_image_test.go` (verify image decoding simulation)
-- [ ] Add failing test for `ParseInt("123")` in `domain/parse_int_test.go` (validate string-to-integer conversion)
-- [ ] Add failing test for `Match("^[a-z]+$", "abc
+- [ ] Add failing test for `Split("中文", "")` in `domain/split_test.go` (validate UTF-8 byte splitting for Chinese characters)
+- [ ] Add failing test for `Split("\U0001D10D", "")` in `domain/split_test.go` (ensure surrogate pairs are treated as single code points)
+- [ ] Add failing test for `ParseInt("abc")` in `domain/parse_int_test.go` (validate error handling for invalid input)
+- [ ] Add failing test for `Match("^[0-9]+$", "123abc")` in `domain/match_test.go` (test regex-like pattern matching)
+- [ ]
