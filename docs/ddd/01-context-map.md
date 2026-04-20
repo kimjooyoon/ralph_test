@@ -1,14 +1,11 @@
-# Context Map
+# Context Map — String Manipulation & Unicode
 
 ## Bounded Contexts
-- **String Manipulation**: Handles UTF-8 byte splitting, surrogate pairs, and Unicode normalization
-- **Code Generation**: Produces AI-style code snippets with syntax formatting
-- **Data Analysis**: Provides numeric operations (average, range) and basic data conversion
-- **Encoding/Decoding**: Implements base64, hex, and mock image decoding
-- **Logging/Serialization**: Offers mock logging and JSON/YAML serialization
-
-## Aggregates
-- **StringSplitter**: Manages UTF-8 byte splitting with validation
-- **CodeGenerator**: Produces formatted code patterns
-- **NumericProcessor**: Handles mathematical operations and range generation
-- **
+- **String Manipulation** (primary)
+  - Aggregate Roots: `Split`, `Reverse`, `Join`, `Trim`, `Repeat`, `Replace`
+  - Invariants:
+    - `Split(s, "")` returns byte-split strings (UTF-8 bytes, not code points)
+    - `Reverse` handles surrogate pairs as single code points
+    - `Join` preserves byte boundaries during concatenation
+    - `Trim` removes whitespace bytes (ASCII 32, 9-13)
+    - `Repeat` ensures byte-level duplication (not
