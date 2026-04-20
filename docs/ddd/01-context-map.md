@@ -1,6 +1,8 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation** (primary context)
-  - Handles UTF-8 string operations: splitting, reversing, encoding
-  - Key functions: `Split`, `Reverse`, `EncodeBase64`, `ParseInt
+- **String Processing**: Handles string manipulation functions (Split, Reverse, EncodeBase64, etc.)
+- **Data Transformation**: Focuses on encoding/decoding, serialization, and numeric operations
+- **AI Code Generation**: Implements AI-style code snippet generation (GenerateCode)
+
+## Aggregate Boundaries
