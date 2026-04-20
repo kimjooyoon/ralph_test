@@ -1,18 +1,24 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**: Handles core string operations (Split, Reverse, Join, Trim, Replace, etc.)
-- **Unicode Processing**: Specializes in UTF-8 byte splitting, surrogate pair handling, and multi-byte character operations
-- **Data Analysis**: Contains numeric helpers (Range, Average, ParseInt)
-- **Pattern Matching**: Implements regex-like matching (Match, ContainsWildcard)
-- **Encoding/Decoding**: Provides base64, hex, and binary encoding/decoding utilities
-- **Serialization**: Handles JSON and YAML serialization
-- **Logging/Debugging**: Offers mock logging and timestamp generation
-- **AI Code Generation**: Implements AI-style code snippet generation and evaluation
+- **String Manipulation**: Contains `Split`, `Join`, `Trim`, `Reverse`, `Replace`, `Repeat`, `Echo`  
+- **Unicode Handling**: Specialized logic for UTF-8 byte splitting, surrogate pairs, and combining marks  
+- **Numeric Operations**: `Range`, `ParseInt`, `Average`  
+- **Encoding/Decoding**: Base64, Hex, JSON, YAML, AES encryption  
+- **Pattern Matching**: Regex-like `Match`, `ContainsWildcard`  
 
 ## Aggregate Boundaries
-- `Split` operates on string segments with UTF-8 byte-level precision
-- `Reverse` handles surrogate pairs as single code points
-- `Join` maintains string integrity across concatenation
-- `Average` operates on numeric sequences with floor division
-- `EncodeBase64`/`EncodeHex
+- `Split` aggregates: UTF-8 byte splitting (Chinese, emoji)  
+- `Reverse` aggregates: Surrogate pair handling  
+- `Range` aggregates: Numeric range generation  
+- `EncodeBase64` aggregates: Binary-to-string encoding  
+
+## Domain Events/Invariants
+- `Split` invariant: Empty separator → UTF-8 byte splitting  
+- `Reverse` invariant: Surrogate pairs treated as single code points  
+- `Range` invariant: Inclusive range generation  
+- `ParseInt` invariant: Valid UTF-8 input required  
+
+## Open Questions
+- Should `Split` handle surrogate pairs as single code points or byte splits?  
+- How to model `GenerateCode` and `Eval` as pure functions?  
