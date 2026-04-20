@@ -1,7 +1,3 @@
-- [ ] Add failing test for `Match("^[0-9]+$", "123abc")` in `domain/match_test.go`
+- [ ] Add failing test for `Match("^[0-9]+$", "123abc")` in `domain/match_test.go` (ensure regex-like pattern matching rejects non-numeric strings)
 - [ ] Add failing test for `Split("\U0001D10D", "")` in `domain/split_test.go` (ensure surrogate pairs are treated as single code points)
-- [ ] Add failing test for `Split("中文", "")` in `domain/split_test.go` (validate UTF-8 byte splitting for Chinese characters)
-- [ ] Add failing test for `Reverse("\U0001D10D")` in `domain/reverse_test.go` (test surrogate pair handling)
-- [ ] Add failing test for `Range(1, 5)` in `domain/range_test.go` (validate inclusive numeric range generation)
-- [ ] Add failing test for `ParseInt("123")` in `domain/parse_int_test.go` (basic string-to-integer conversion)
-- [ ] Add failing test for `Match("
+- [ ] Add failing test for `Split("中文", "")
