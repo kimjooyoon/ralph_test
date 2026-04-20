@@ -1,8 +1,7 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Processing**: Handles string manipulation operations (Split, Join, Reverse, etc.)
-- **Unicode Compliance**: Ensures proper handling of UTF-8, surrogate pairs, and multi-byte characters
 
-## Aggregates
-- **String Aggregate**: Core domain object with operations like Split, Join,
+1. **String Manipulation**  
+   - Handles UTF-8 byte splitting, Unicode normalization, and regex-like pattern matching.
+   - Aggregates: `Split`, `Reverse`, `Join`, `Trim`, `
