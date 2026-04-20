@@ -1,5 +1,2 @@
 - [ ] Add failing test for `Split("中文", "")` to return byte-split Chinese characters (`["中", "文"]`) (current test passes but needs explicit validation)
-- [ ] Implement `GenerateCode(pattern string) string` with test for AI-style code snippet generation (e.g., `GenerateCode("for i in range(5): print(i)")` should return the same input)
-- [ ] Add test for `Average([]int{1,2,3,4,5})` to verify floor-averaging behavior
-- [ ] Create test for `DecodeImage("PNG")` to validate byte-array output of simulated image decoding
-- [ ] Implement `Eval(code string) string
+- [ ] Implement
