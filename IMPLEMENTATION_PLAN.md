@@ -1,9 +1,2 @@
 - [ ] Add failing test for `Match` function (basic regex-like check)
-- [ ] Add failing test for `ContainsWildcard` function (wildcard matching)
-- [ ] Add failing test for `Log` function (mock logging)
-- [ ] Add failing test for `Timestamp` function (RFC3339 format)
-- [ ] Add failing test for `SerializeJSON` with map input
-- [ ] Add failing test for `SerializeYAML` with map input
-- [ ] Add failing test for `EncryptAES` with sample input
-- [ ] Add failing test for `GenerateCode` with Python pattern
-- [ ] Add
+-
