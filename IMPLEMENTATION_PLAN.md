@@ -8,3 +8,8 @@
 - [ ] Implement `Range` function for integer range generation
 - [ ] Add failing test for `Match("^[a-z]+$", "abc123")` to return `false`
 - [ ] Implement `Match` function for basic regex-like pattern matching
+- [ ] Add failing test for `DecodeImage("PNG")` to return byte slice of PNG header
+- [ ] Implement `DecodeImage` function that returns mock byte slice for given input
+- [ ] Add failing test for `ParseInt("123")` to return integer 123
+- [ ] Implement `ParseInt` function with basic string-to-integer conversion
+- [ ] Add failing test for `Timestamp()` to return
