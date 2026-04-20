@@ -1,8 +1,7 @@
-# Context Map — String Manipulation Utilities
+# Context Map
 
-## Bounded Context: String Manipulation
-- **Responsibility**: Provide pure, testable string helpers for UTF-8 byte/character operations
-- **Aggregates**:
-  - `Split`: Splits strings into UTF-8 bytes (when separator is empty)
-  - `Reverse`: Handles surrogate pairs and combining marks
-  - `EncodeBase64`: Converts
+## Bounded Contexts
+- **String Manipulation**: Handles UTF-8 byte splitting, reversing, and encoding (Split, Reverse, EncodeBase64)
+- **Code Generation**: Produces AI-style code snippets (GenerateCode)
+- **Numeric Operations**: Range generation, parsing, and averaging (Range, ParseInt, Average)
+- **Pattern
