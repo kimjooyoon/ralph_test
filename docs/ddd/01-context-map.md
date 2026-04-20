@@ -1,6 +1,7 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**
-  - Aggregates: `Split`, `Reverse`, `Trim`, `Join`, `Replace`, `Repeat`, `Echo`
-  - Invariants
+1. **String Manipulation**
+   - Aggregates: `Split`, `Join`, `Trim`, `Reverse`, `Replace`, `Repeat`, `Echo`
+   - Invariants: 
+     - `Split` must split UTF-8 bytes for multi-byte characters (e.g
