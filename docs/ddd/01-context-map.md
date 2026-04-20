@@ -1,16 +1,7 @@
-# Context Map
+# Context Map — dsl-maker
 
 ## Bounded Contexts
-
-### String Manipulation
-- **Responsibility**: Core string operations (split, join, reverse, replace, trim)
-- **Aggregates**:
-  - `String` (immutable value object)
-  - `Splitter` (handles UTF-8 byte/character splitting)
-  - `Reverser` (handles surrogate pairs, combining marks)
-- **Domain Events**:
-  - `StringSplitEvent` (when split operation completes)
-  - `StringReversedEvent` (when reversal completes)
-- **Invariants**:
-  - `SplitMustNotModifyInput` (split returns new strings)
-  -
+- **String Manipulation**: Core domain for `Split`, `Join`, `Trim`, `Reverse`, `Replace`, `Repeat`, `Match`, `ContainsWildcard`
+- **Unicode Handling**: Specialized context for surrogate pairs, multi-byte characters (e.g., Chinese), and code point splitting
+- **Pattern Matching**: Focused on regex-like syntax with `Match` and wildcard support via `ContainsWildcard`
+- **Numeric Operations**: Includes range generation (`Range`) and parsing
