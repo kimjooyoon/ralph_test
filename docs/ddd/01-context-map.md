@@ -1,7 +1,4 @@
-# Context Map — String Manipulation
+# Context Map
 
-## Bounded Context: String DSL
-- **Primary responsibility**: UTF-8 aware string splitting, reversing, and transformation
-- **Key domain terms**:
-  - `Split(s string, sep string)` → UTF-8 byte splitting (for `sep == ""`)
-  - `Reverse(s string)` →
+## Bounded Contexts
+- **String Manipulation** (primary context): Handles UTF-8 aware string operations (split, reverse,
