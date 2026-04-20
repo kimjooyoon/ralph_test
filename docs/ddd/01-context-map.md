@@ -1,16 +1,14 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**: Handles UTF-8 byte splitting, reverse, and surrogate pairs (Split, Reverse, TestSplitSurrogatePairs)
-- **Code Generation**: Produces AI-style code snippets (GenerateCode)
-- **Numeric Processing**: Includes range generation and average calculation (Range, Average)
-- **Data Encoding**: Base64 and hexadecimal encoding (EncodeBase64, EncodeHex)
-- **Domain Events**:
-  - `SplitByteSplit` (when Split is called with empty separator)
-  - `CodeGenerated` (when GenerateCode produces a snippet)
-  - `RangeGenerated` (when Range creates a numeric sequence)
-  - `AverageCalculated` (when Average computes a mean)
+- **String Manipulation**: Handles UTF-8 byte splitting, surrogate pairs, and Unicode normalization
+- **Code Generation**: Produces AI-style code snippets with syntax formatting
+- **Data Analysis**: Provides numeric operations (average, range) and basic data conversion
+- **Encoding/Decoding**: Implements base64, hex, and mock image decoding
+- **Logging/Serialization**: Offers mock logging and JSON/YAML serialization
 
-## Aggregate Boundaries
-- `Split` operates on string input as a sequence of UTF-8 bytes
-- `GenerateCode` produces code patterns
+## Aggregates
+- **StringSplitter**: Manages UTF-8 byte splitting with validation
+- **CodeGenerator**: Produces formatted code patterns
+- **NumericProcessor**: Handles mathematical operations and range generation
+- **
