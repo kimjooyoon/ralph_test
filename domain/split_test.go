@@ -2,14 +2,24 @@ package domain
 
 import "testing"
 
+func TestSplit_spec_edges(t *testing.T) {
+	if got := Split("", ""); len(got) != 0 {
+		t.Errorf("Split(%q, %q) = %v, want empty slice", "", "", got)
+	}
+	if got := Split("a,b", ","); !equal(got, []string{"a", "b"}) {
+		t.Errorf("Split(%q, %q) = %v, want [a b]", "a,b", ",", got)
+	}
+}
+
 func TestSplit_unicode(t *testing.T) {
 	tests := []struct {
 		input string
 		sep   string
 		want  []string
 	}{
-		{"\xC3\x80\xC3\x81", "", []string{"\xC3\x80", "\xC3\x81"}}, // Combining marks
-		{"\xF0\x9D\x91\x8D", "", []string{"\xF0", "\x9D", "\x91", "\x8D"}},  // Multi-rune emoji (U+1D10D)
+		// UTF-8 byte split (spec): four bytes for two Latin-1 letters (À, Á).
+		{"\xC3\x80\xC3\x81", "", []string{"\xC3", "\x80", "\xC3", "\x81"}},
+		{"\xF0\x9D\x91\x8D", "", []string{"\xF0", "\x9D", "\x91", "\x8D"}}, // U+1D10D as four UTF-8 bytes
 		{"\xF0\x9D\x91\x8D\xE0\xA4\x82", "", []string{"\xF0", "\x9D", "\x91", "\x8D", "\xE0", "\xA4", "\x82"}}, // Emoji with combining mark
 		{"\xC3\xA9", "", []string{"\xC3", "\xA9"}},            // UTF-8 byte split for é
 	}

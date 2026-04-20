@@ -1,1 +1,2 @@
-- [ ] Implement `
+- [x] Implement `Split` for `sep == ""` as UTF-8 **byte** segments per `specs/dsl.md`
+- [x] Cover `Split("", "")` and non-empty `sep` in `domain/split_test.go`
