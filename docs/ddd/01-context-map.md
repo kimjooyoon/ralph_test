@@ -1,12 +1,21 @@
-# Context Map — String DSL
+# Context Map
 
 ## Bounded Contexts
-- **String DSL**: Core domain for string manipulation helpers (Split, Reverse, Join, etc.)
-  - **Subcontexts**:
-    - **Byte Splitting**: Handles UTF-8 byte splitting (e.g., Chinese characters)
-    - **Unicode Handling**: Surrogate pairs, combining marks, and code point validation
-    - **Pure Functions**: All helpers are stateless and side-effect-free
+- **String Manipulation**: Handles core string operations (split, reverse, trim, etc.)
+- **Numeric Processing**: Focuses on number-based operations (average, range, parsing)
+- **Unicode Handling**: Specializes in multi-byte character and surrogate pair processing
+- **Code Generation**: Implements AI-style code snippet generation (GenerateCode)
+- **Image Simulation**: Provides mock image decoding (DecodeImage)
 
 ## Aggregate Boundaries
-- Each string helper (Split, Reverse, Join, etc.) is a separate aggregate due to:
-  - Pure function
+- **String Manipulation**:
+  - `Split(s, sep)` splits strings by UTF-8 bytes (not code points)
+  - `Reverse(s)` handles surrogate pairs and combining marks
+  - `Trim(s)` removes whitespace from both ends
+- **Numeric Processing**:
+  - `Average(nums)` computes mean with floor division
+  - `Range(start, end)` generates inclusive integer ranges
+  - `ParseInt(s)` converts strings to integers with validation
+- **Unicode Handling**:
+  - `Split` must correctly process UTF-8 byte sequences for Chinese, emoji, etc.
+  - `Reverse` must treat surrogate
