@@ -1,27 +1,20 @@
-# Context Map (v2)
+# Context Map
 
 ## Bounded Contexts
-- **String Manipulation** (primary context)
-  - `Split`, `Join`, `Trim`, `Reverse`, `EncodeBase64`, `EncodeHex`
-  - `Match`, `ContainsWildcard`, `Range`, `ParseInt`
-- **Data Analysis** (secondary context)
-  - `Average`, `GenerateCode`, `Eval`, `DecodeImage`
-- **Unicode Handling** (cross-cutting concern)
-  - `Split` with UTF-8 byte splitting
-  - `Reverse` with surrogate pairs
-  - `TestSplitSurrogatePairs`
+- **String Manipulation**: Handles core string operations (Split, Reverse, EncodeBase64)
+  - Aggregate Roots: `StringEntity`
+  - Invariants: 
+    - `Split` must split UTF-8 bytes for multi-byte characters
+    - `Reverse` must handle surrogate pairs and combining marks
+    - `EncodeBase64` must produce valid base64 encoding
 
-## Aggregate Boundaries
-- `Split` aggregates: `s` (string), `sep` (separator)
-- `Reverse` aggregates: `s` (string)
-- `EncodeBase64` aggregates: `data` ([]byte)
+- **Code Generation**: AI-style code snippet generation
+  - Aggregate Roots: `CodeSnippet`
+  - Invariants: 
+    - `GenerateCode` must return valid syntax for input patterns
+    - `Eval` must mock code evaluation without actual execution
 
-## Domain Events
-- `StringSplitEvent` (when `Split` completes)
-- `StringReversedEvent` (when `Reverse` completes)
-- `EncodingCompletedEvent` (when base64/hex encoding completes)
-
-## Invariants
-- `Split` must split UTF-8 bytes, not Unicode code points
-- `Reverse` must preserve surrogate pairs as single code points
-- `Encode
+- **Data Analysis**: Numeric and statistical operations
+  - Aggregate Roots: `DataSeries`
+  - Invariants: 
+    - `Average` must compute floor of mean
