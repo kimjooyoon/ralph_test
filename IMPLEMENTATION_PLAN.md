@@ -6,8 +6,4 @@
 - [ ] Add failing test for `SerializeYAML` with map input
 - [ ] Add failing test for `EncryptAES` with sample input
 - [ ] Add failing test for `GenerateCode` with Python pattern
-- [ ] Add failing test for `Eval` with arithmetic expression
-- [ ] Add failing test for `DecodeImage` with "PNG" input
-- [ ] Add failing test for `Split` with surrogate pairs (U+1D10D)
-- [ ] Add failing test for `Split` with Chinese characters ("中文")
-- [ ]
+- [ ] Add
