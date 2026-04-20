@@ -1,13 +1,11 @@
-- [ ] Add failing test for `Match` function (basic regex-like check)
-- [ ] Implement `Match` function to handle simple regex patterns
-- [ ] Add failing test for `ContainsWildcard` function (wildcard substring search)
-- [ ] Implement `ContainsWildcard` function for * and ? wildcards
-- [ ] Add failing test for `Split` with surrogate pairs (e.g., emoji)
-- [ ] Add failing test for `Reverse` with surrogate pairs (emoji handling)
-- [ ] Add failing test for `Range` function (numeric range generation)
-- [ ] Add failing test for `ParseInt`
-
-## Questions
-- What constitutes a "simple regex pattern" for the `Match` function? Should it support character classes, quantifiers, or only basic matching?
-- How should `ContainsWildcard` handle edge cases like empty strings or patterns with multiple wildcards?
-- Should `Split` with surrogate pairs treat emoji as single code points or byte sequences?
+- [ ] Add failing test for `EncodeBase64` function (base64 encoding)
+- [ ] Implement `EncodeBase664` to handle UTF-8 to base64 conversion
+- [ ] Add failing test for `EncodeHex` function (hexadecimal encoding)
+- [ ] Implement `EncodeHex` to convert bytes to hex string
+- [ ] Add failing test for `Log` function (mock logging)
+- [ ] Implement `Log` to return input string as is
+- [ ] Add failing test for `Timestamp` function (RFC3339 format)
+- [ ] Implement `Timestamp` to generate current time string
+- [ ] Add failing test for `SerializeJSON` function (JSON encoding)
+- [ ] Implement `SerializeJSON` to marshal map to JSON string
+- [ ] Add failing test for
