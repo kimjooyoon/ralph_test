@@ -1,3 +1,5 @@
 # Context Map
 
-## Bounded
+## Bounded Contexts
+1. **String Manipulation**
+   - Aggregate
