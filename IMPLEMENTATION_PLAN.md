@@ -3,6 +3,5 @@
 - [ ] Add failing test for `Split("\U0001D10D", "")` to return ["\U0001D10D"] (surrogate pair handling)
 - [ ] Implement `GenerateCode` function in `domain/` to return mock AI code snippets with basic pattern matching
 - [ ] Add failing test for `EncodeBase64([]byte("hello"))` to return "aGVsbG8=" (complete test case)
-
-## Questions
-- What specific patterns should `GenerateCode` recognize as "AI-style" (
+- [ ] Add failing test for `Reverse("\U0001D10D")` to return "\U0001D10D" (surrogate pair handling)
+- [ ]
