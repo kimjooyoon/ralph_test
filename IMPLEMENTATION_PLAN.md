@@ -2,4 +2,9 @@
 - [ ] Implement `Split` byte-splitting logic for multi-byte characters (UTF-8 bytes, not Unicode code points)
 - [ ] Add failing test for `GenerateCode("for i in range(5): print(i)")` to return AI-style code snippet (pure function, no I/O)
 - [ ] Implement `GenerateCode` function that returns formatted code patterns
-- [ ] Add failing test for `Average([]int
+- [ ] Add failing test for `Average([]int{1,2,3,4,5})` to return floor of mean (3)
+- [ ] Implement `Average` function with numeric averaging logic
+- [ ] Add failing test for `Range(1, 5)` to return inclusive range `[1,2,3,4,5]`
+- [ ] Implement `Range` function for integer range generation
+- [ ] Add failing test for `Match("^[a-z]+$", "abc123")` to return `false`
+- [ ] Implement `Match` function for basic regex-like pattern matching
