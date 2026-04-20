@@ -1,6 +1,8 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**  
-  Handles UTF-8 byte splitting, surrogate pairs, and Unicode edge cases.  
-  **Key Functions**: Split, Reverse, EncodeBase64, DecodeImage
+- **String Manipulation**
+  - Aggregates: `Split`, `Join`, `Reverse`, `Trim`
+  - Domain Events: `CharacterSplit`, `StringReversed`, `SubstringTrimmed`
+  - Invariants:
+    - `Split("中文
