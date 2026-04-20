@@ -1,2 +1,3 @@
 - [ ] Add failing test for `Split("中文", "")` in `domain/split_test.go` (ensure returns ["中", "文"])
-- [ ] Add failing test for `Split("\U0001D10
+- [ ] Add failing test for `Split("\U0001D10D", "")` in `domain/split_test.go` (ensure returns ["\U0001D10D"])
+- [
