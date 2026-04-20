@@ -1,8 +1,6 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**
-  - Aggregates: `Split`, `Join`, `Reverse`, `Trim`
-  - Domain Events: `CharacterSplit`, `StringReversed`, `SubstringTrimmed`
-  - Invariants:
-    - `Split("中文
+- **StringProcessing**: Handles string splitting, reversing, and basic manipulation (Split, Reverse, Trim, Join, etc.)
+- **Encoding**: Manages base64 encoding/decoding (EncodeBase64, DecodeBase64)
+- **NumericUtils**: Provides numeric range generation and parsing (Range
