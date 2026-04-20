@@ -1,2 +1,6 @@
 - [ ] Add failing test for `Split("中文", "")` to return ["中", "文"] (current test passes but needs explicit validation)
-- [ ] Implement `Split` function in `domain/` to handle UTF-8 byte splitting for multi-byte characters (
+- [ ] Implement `Split` function in `domain/` to handle UTF-8 byte splitting for multi-byte characters (e.g., Chinese, emoji)
+- [ ] Add failing test for `Reverse("\U0001D10D")` to return ["\U0001D10D"] (validate surrogate pairs are treated as single code points)
+- [ ] Implement `Reverse` function to handle surrogate pairs and combining marks correctly
+- [ ] Add failing test for `GenerateCode("for i in range(5): print(i)")` to return "for i in range(5): print(i)" (pure function, no I/O)
+- [ ] Add failing test for `Average([]int{1,2,3,4,5
