@@ -1,3 +1,5 @@
 - [ ] Add failing test for `Match("^[0-9]+$", "123abc")` in `domain/match_test.go` (ensure regex-like pattern matching rejects non-numeric strings)
 - [ ] Add failing test for `Split("\U0001D10D", "")` in `domain/split_test.go` (ensure surrogate pairs are treated as single code points)
-- [ ] Add failing test for `Split("中文", "")
+- [ ] Add failing test for `Split("中文", "")` in `domain/split_test.go` (ensure UTF-8 byte splitting for Chinese characters)
+- [ ] Add failing test for `ContainsWildcard("hello", "h*l")` in `domain/contains_wildcard_test.go` (validate * wildcard matching)
+- [ ] Add failing test for `Range
