@@ -1,3 +1,10 @@
 - [x] Add failing test for `EncodeBase64([]byte("hello"))` expecting "aGVsbG8=" (current implementation likely returns empty or incorrect)
 - [x] Implement `EncodeBase64` to produce correct base64 encoding
-- [ ] Add failing test for
+- [ ] Add failing test for `Split("中文", "")` expecting ["中", "文"] (current implementation splits by UTF-8 bytes but needs explicit validation)
+- [ ] Implement `Split` to handle UTF-8 byte splitting for multi-byte characters (Chinese, emoji)
+- [ ] Add failing test for `Split("\U0001D10D", "")` expecting ["\U0001D10D"] (validate surrogate pairs as single code points)
+- [ ] Implement `Split` to handle surrogate pairs and combining marks correctly
+- [ ] Add failing test for `Range(1, 5)` expecting [1,2,3,4,5] (data analysis simplicity)
+- [ ] Implement `Range` to generate inclusive integer ranges
+- [ ] Add failing test for `ParseInt("123")` expecting 123 (basic data manipulation)
+- [ ] Implement `
