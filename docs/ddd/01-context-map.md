@@ -1,5 +1,5 @@
 # Context Map
 
 ## Bounded Contexts
-1. **String Manipulation**
-   - Aggregate
+- **String Manipulation**: Handles splitting, reversing, and encoding of strings with UTF-8 awareness
+- **Numeric Range**: Generates inclusive integer ranges for
