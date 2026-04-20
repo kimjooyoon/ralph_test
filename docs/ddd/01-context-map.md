@@ -1,12 +1,22 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**: Handles core string operations (Split, Join, Trim, Reverse, Replace, etc.)
-- **Unicode Handling**: Specializes in UTF-8 byte/character manipulation (Split, Reverse, Surrogate Pairs)
-- **Pattern Matching**: Implements regex-like logic (Match, ContainsWildcard)
-- **Data Conversion**: Manages numeric and encoding operations (ParseInt, EncodeBase64, EncodeHex)
-- **Pure Functions**: Ensures all helpers are stateless and side-effect-free
+- **String Manipulation Utilities**: Handles core string operations (split, reverse, replace, etc.) with strict UTF-8 compliance.
 
-## Aggregate Boundaries
-- `Split` aggregates: UTF-8 byte splitting vs code point splitting
-- `Reverse` aggregates: Surrogate
+## Aggregates
+- `Split`: Splits strings by UTF-8 bytes (for multi-byte characters like Chinese)
+- `Reverse`: Reverses strings while preserving surrogate pairs and combining marks
+- `Replace`: Substitutes patterns in strings (pure function)
+- `Match`: Basic regex-like pattern matching (pure function)
+
+## Domain Events
+- `StringSplitEvent`: Triggered when UTF-8 byte splitting completes
+- `StringReverseEvent`: Triggered when reversal completes
+
+## Invariants
+- `Split` must treat empty string as empty slice
+- `Reverse` must handle surrogate pairs as single code points
+- All operations must use valid UTF-8 input
+
+## Open Questions
+- How to handle overlapping surrogate pairs in
