@@ -1,8 +1,11 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**
-  - Handles UTF-8 byte splitting, reverse, join, trim, and surrogate pairs
-  - Invariants: 
-    - `Split` with empty separator returns UTF-8 bytes
-    - `Reverse` handles surrogate pairs as single code points
+1. **String Manipulation**
+   - Functions: Split, Reverse, Replace, Trim, Join, Repeat, Echo
+   - Invariants: 
+     - `Split` handles UTF-8 bytes for multi-byte characters (e.g., Chinese, emoji)
+     - `Reverse` correctly processes surrogate pairs and combining marks
+     - All string operations are pure (no I/O, no clocks, no network)
+
+2. **Regex-L
