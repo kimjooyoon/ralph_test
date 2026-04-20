@@ -1,4 +1,2 @@
 - [ ] Add failing test for `Split("中文", "")` to return byte-split Chinese characters (`["中", "文"]`) (current test passes but needs explicit validation)
-- [ ] Implement `Split` byte-splitting logic for multi-byte Unicode (Chinese, emoji) per specs/dsl.md#split-empty-separator
-- [ ] Add failing test for `Reverse("\U0001D10D")` to return same emoji (surrogate pair handling per docs/ralph/12-unicode-edge.md#7)
-- [ ] Create test for `Generate
+- [ ] Implement `Split` byte-splitting logic for multi-byte Unicode (Chinese
