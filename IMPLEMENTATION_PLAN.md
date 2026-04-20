@@ -4,4 +4,4 @@
 - [ ] Add failing test for `Reverse("\U0001D10D")` in `domain/reverse_test.go` (test surrogate pair handling)
 - [ ] Add failing test for `Range(1, 5)` in `domain/range_test.go` (validate inclusive numeric range generation)
 - [ ] Add failing test for `ParseInt("123")` in `domain/parse_int_test.go` (basic string-to-integer conversion)
-- [ ] Add failing test for `Match("^[a-z]+$", "abc123")` in `domain/match_test
+- [ ] Add failing test for `Match("
