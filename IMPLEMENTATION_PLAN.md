@@ -3,8 +3,4 @@
 - [ ] Add failing test for `Average([]int{1,2,3,4,5})` to return floor mean (`3`) 
 - [ ] Implement `Average(nums []int) int` with floor division logic
 - [ ] Add failing test for `Split("中文", "")` to return byte-split Chinese characters (`["中", "文"]`)
-- [ ] Implement `Split(s string, sep string) []string` with UTF-8 byte splitting
-- [ ] Add failing test for `GenerateCode("for i in range(5): print(i)")` to return AI-style code snippet
-- [ ] Implement `GenerateCode(pattern string) string` as pure function
-- [ ] Add failing test for `DecodeImage("PNG")` to return byte slice of PNG header
-- [ ] Implement `DecodeImage(data string)
+- [ ] Implement `Split(s string, sep
