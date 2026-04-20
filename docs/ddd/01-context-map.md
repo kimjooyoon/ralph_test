@@ -1,9 +1,9 @@
-# Context Map — DSL Helpers
+# Context Map
 
-## Bounded Context: DSL Helpers
-- **Primary responsibility**: Provide pure, testable string manipulation functions for domain experiments.
-- **Key aggregates**:
-  - `Split`: Splits strings by UTF-8 bytes (for multi-byte characters like Chinese)
-  - `Reverse`: Handles surrogate pairs and combining marks
-  - `Match`: Regex-like pattern matching with explicit syntax
-  - `Replace
+## Bounded Contexts
+- **String Manipulation**: `Split`, `Join`, `Trim`, `Reverse`, `Match`, `Replace`, `Repeat`, `Echo`
+- **Unicode Handling**: UTF-8 byte splitting, surrogate pairs, combining marks
+- **Pure Functions**: No I/O, no clocks, no network (all tests are unit tests)
+
+## Aggregate Boundaries
+- `Split` operates on
