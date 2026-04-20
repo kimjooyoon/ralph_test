@@ -1,3 +1,5 @@
 - [ ] Add failing test for `Match` function (basic regex-like check)
 - [ ] Implement `Match` function to handle simple regex patterns
--
+- [ ] Add failing test for `ContainsWildcard` function (wildcard substring search)
+- [ ] Implement `ContainsWildcard` function for * and ? wildcards
+- [ ] Add failing test for `Split` with surrogate pairs (e.g., emoji)
