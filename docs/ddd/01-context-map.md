@@ -1,27 +1,20 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**: Contains `Split`, `Join`, `Trim`, `Reverse`, `Replace`, `Repeat`, `Echo` for UTF-8 byte/character operations
-- **Unicode Processing**: Specializes in surrogate pairs, combining marks, and multi-byte character handling
-- **Data Transformation**: Includes numeric helpers (`Range`, `Average`, `ParseInt`), encoding/decoding (`Base64`, `Hex`), and serialization (`JSON`, `YAML`)
-- **AI Code Generation**: Mocks code evaluation and generation via `Eval`, `GenerateCode`, and `DecodeImage`
+- **String Manipulation**: Handles UTF-8 byte splitting, surrogate pairs, combining marks, and basic string operations (Split, Reverse, Join, Trim, etc.)
+- **Data Transformation**: Pure functions for encoding/decoding, serialization, and numeric operations (Base64, Hex, JSON, YAML, etc.)
+- **AI Code Generation**: Mock functions for generating code snippets and evaluating expressions (GenerateCode, Eval)
 
-## Aggregate Boundaries
-- `Split` aggregates: UTF-8 byte splitting with empty separator
-- `Reverse` aggregates: Unicode code point reversal with surrogate pair handling
-- `Join` aggregates: String concatenation with delimiter injection
-- `Trim` aggregates: Leading/trailing character removal
+## Aggregates
+- **String Segment**: Represents a UTF-8 byte sequence split by `Split` (immutable)
+- **Code Snippet**: Represents a generated code string (immutable)
+- **Evaluated Expression**: Represents the result of evaluating a code string (immutable)
 
 ## Domain Events
-- `StringSplitEvent`: Triggered when `Split` completes byte/character separation
-- `UnicodeReversalEvent`: Fired after `Reverse` processes surrogate pairs
-- `CodeGenerationEvent`: Occurs when `GenerateCode` produces AI-style snippets
+- `StringSplitEvent`: Triggered when `Split` completes with UTF-8 byte segments
+- `CodeGeneratedEvent`: Triggered when `GenerateCode` produces a snippet
+- `ExpressionEvaluatedEvent`: Triggered when `Eval` returns a result
 
 ## Invariants
-- `Split(s, "")` must return one element per UTF-8 byte
-- `Reverse` must treat surrogate pairs as single code points
-- `Join` must preserve delimiter integrity between elements
-- `Trim` must remove only matching leading/trailing characters
-
-## Open Questions
-- How
+- `Split` with empty separator must split by UTF-8 bytes (not code points)
+- Surrogate pairs must be treated as single code points in `Split` and `
