@@ -1,8 +1,1 @@
-- [ ] Add failing test for `Range` with numeric bounds (test sketch: `Range(1, 5)` should return `[1,2,3,4,5]`)
-- [ ] Add failing test for `ParseInt` with valid input (test sketch: `ParseInt("123")` should return `123`)
-- [ ] Add failing test for `Match` with regex pattern (test sketch: `Match("^[a-z]+$", "abc123")` should return `false`)
-- [ ] Add failing test for `ContainsWildcard` with pattern matching (test sketch: `ContainsWildcard("hello", "h*l")` should return `true`)
-- [ ] Add failing test for `EncodeBase64` with simple input (test sketch: `EncodeBase64([]byte("hello"))` should return `"aGVsbG8="`)
-- [ ] Add failing test for `EncodeHex` with byte input (test sketch: `EncodeHex([]byte("abc"))` should return `"616263"`)
-- [ ] Add failing test for `Log` with message input (test sketch: `Log("test")` should return `"test"`)
-- [ ] Add failing test for `Timestamp` with current time (test sketch: `Timestamp
+- [ ] Add failing test for `Range` with numeric bounds (test sketch
