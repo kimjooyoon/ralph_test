@@ -1,3 +1,4 @@
 - [ ] Add failing test for `Split("中文", "")` to return byte-split Chinese characters (`["中", "文"]`) (current test passes but needs explicit validation)
 - [ ] Implement `Split(s string, sep string) []string` with UTF-8 byte splitting for multi-byte characters
-- [ ] Add failing test for `GenerateCode("for i in range(5): print(i)")` to return AI-style
+- [ ] Add failing test for `GenerateCode("for i in range(5): print(i)")` to return AI-style code snippet
+- [ ]
