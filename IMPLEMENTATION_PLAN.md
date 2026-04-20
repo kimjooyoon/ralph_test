@@ -1,2 +1,3 @@
-- [x] Implement `Split` for `sep == ""` as UTF-8 **byte** segments per `specs/dsl.md`
-- [x] Cover `Split("", "")` and non-empty `sep` in `domain/split_test.go`
+- [ ] Add failing test for `Split("中文", "")` in `domain/split_test.go` to validate UTF-8 byte splitting for Chinese characters
+- [ ] Add failing test for `Split("\U0001D10D", "")` in `domain/split_test.go` to validate surrogate pair handling
+- [ ] Implement `Reverse` with proper handling of surrogate pairs and combining marks per `specs/dsl.md` and `docs/ralph/12-unicode-edge
