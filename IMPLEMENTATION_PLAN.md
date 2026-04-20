@@ -1,4 +1,1 @@
-- [ ] Add failing test for `Match("^[0-9]+$", "123abc")` in `domain/match_test.go` (test regex-like pattern matching)
-- [ ] Add failing test for `ContainsWildcard("hello", "h*l")` in `domain/contains_wildcard_test.go` (test wildcard substring search)
-- [ ] Add failing test for `Range(1, 5)` in `domain/range_test.go` (validate numeric range generation)
-- [ ] Add failing test for `EncodeBase64([]byte("hello"))` in
+- [ ] Add failing test for `Match("^[0-9]+$", "123abc")` in `domain/match_test
