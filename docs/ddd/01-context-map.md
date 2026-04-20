@@ -1,15 +1,27 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**: Handles splitting, reversing, joining, trimming, and replacing strings with UTF-8 byte/character awareness.
-- **Unicode Processing**: Specializes in handling multi-byte characters (e.g., Chinese, emoji), surrogate pairs, and combining marks.
-- **Pure Functions**: Ensures all helpers are stateless, side-effect-free, and testable via unit tests.
+- **String Manipulation**: Contains `Split`, `Join`, `Trim`, `Reverse`, `Replace`, `Repeat`, `Echo` for UTF-8 byte/character operations
+- **Unicode Processing**: Specializes in surrogate pairs, combining marks, and multi-byte character handling
+- **Data Transformation**: Includes numeric helpers (`Range`, `Average`, `ParseInt`), encoding/decoding (`Base64`, `Hex`), and serialization (`JSON`, `YAML`)
+- **AI Code Generation**: Mocks code evaluation and generation via `Eval`, `GenerateCode`, and `DecodeImage`
 
 ## Aggregate Boundaries
-- `Split(s, sep)` operates on a string and separator to produce a slice of substrings, respecting UTF-8 byte/character boundaries.
-- `Reverse(s)` transforms a string into its reverse, preserving surrogate pairs and combining marks.
-- `Join(sep, parts)` combines a slice of strings into a single string with a separator, handling edge cases for empty inputs.
+- `Split` aggregates: UTF-8 byte splitting with empty separator
+- `Reverse` aggregates: Unicode code point reversal with surrogate pair handling
+- `Join` aggregates: String concatenation with delimiter injection
+- `Trim` aggregates: Leading/trailing character removal
 
-## Domain Events/Invariants
-- **Split invariant**: For `sep == ""`, returns one string per UTF-8 byte; for non-empty `s`, returns one string per Unicode code point.
-- **
+## Domain Events
+- `StringSplitEvent`: Triggered when `Split` completes byte/character separation
+- `UnicodeReversalEvent`: Fired after `Reverse` processes surrogate pairs
+- `CodeGenerationEvent`: Occurs when `GenerateCode` produces AI-style snippets
+
+## Invariants
+- `Split(s, "")` must return one element per UTF-8 byte
+- `Reverse` must treat surrogate pairs as single code points
+- `Join` must preserve delimiter integrity between elements
+- `Trim` must remove only matching leading/trailing characters
+
+## Open Questions
+- How
