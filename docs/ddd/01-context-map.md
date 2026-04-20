@@ -2,6 +2,8 @@
 
 ## Bounded Contexts
 1. **String Manipulation**
-   - Aggregates: `Split`, `Reverse`, `Trim`, `Join`, `Repeat`, `Replace`
+   - Aggregates: `Split`, `Join`, `Reverse`, `Trim`, `Replace`
    - Invariants: 
-     - `Split` must split UTF-
+     - `Split("中文", "")` returns ["中", "文"] (UTF-8 byte splitting)
+     - `Reverse("\U0001D10D")` treats surrogate pairs as single code points
+     - `Trim("  abc
