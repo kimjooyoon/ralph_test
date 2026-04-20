@@ -1,9 +1,10 @@
-- [ ] Add failing test for `Range` with numeric bounds (test sketch: `Range(1, 5) = [1,2,3,4,5]`, want `[1,2,3,4,5]`)
-- [ ] Implement `Range(start, end int) []int` to return inclusive range (pure function, no I/O)
-- [ ] Add failing test for `Average([]int{1,2,3,4,5})` to return floor mean (want `3`)
-- [ ] Implement `Average(nums []int) int` to calculate floor of mean
-- [ ] Add failing test for `Split("中文", "")` to return byte-split Chinese characters (want `["中", "文"]`)
-- [ ] Implement `Split(s string, sep string) []string` with UTF-8 byte splitting for multi-byte characters
-- [ ] Add failing test for `GenerateCode("for i in range(5): print(i)")` to return AI-style code snippet (want `"for i in range(5): print(i)"`)
+- [ ] Add failing test for `Range(1, 5)` to return `[1,2,3,4,5]` (current test passes but needs explicit validation)
+- [ ] Implement `Range(start, end int) []int` with inclusive numeric range generation
+- [ ] Add failing test for `Average([]int{1,2,3,4,5})` to return floor mean (`3`) 
+- [ ] Implement `Average(nums []int) int` with floor division logic
+- [ ] Add failing test for `Split("中文", "")` to return byte-split Chinese characters (`["中", "文"]`)
+- [ ] Implement `Split(s string, sep string) []string` with UTF-8 byte splitting
+- [ ] Add failing test for `GenerateCode("for i in range(5): print(i)")` to return AI-style code snippet
 - [ ] Implement `GenerateCode(pattern string) string` as pure function
-- [ ] Add failing test for `DecodeImage("PNG")` to return byte slice of PNG header (want `[80, 78, 71, 13, 10
+- [ ] Add failing test for `DecodeImage("PNG")` to return byte slice of PNG header
+- [ ] Implement `DecodeImage(data string)
