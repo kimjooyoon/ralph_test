@@ -1,3 +1,3 @@
-- [ ] Add failing test for `EncodeBase64([]byte("hello"))` expecting "aGVsbG8=" (current implementation likely returns empty or incorrect)
-- [ ] Implement `EncodeBase64` to produce correct base64 encoding
+- [x] Add failing test for `EncodeBase64([]byte("hello"))` expecting "aGVsbG8=" (current implementation likely returns empty or incorrect)
+- [x] Implement `EncodeBase64` to produce correct base64 encoding
 - [ ] Add failing test for
