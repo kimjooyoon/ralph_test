@@ -1,12 +1,22 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**: Handles UTF-8 byte splitting, reversing, encoding, and pattern matching.  
-- **Data Analysis**: Provides numeric range generation, averaging, and parsing.  
-- **AI Code Generation**: Generates AI-style code snippets and evaluates expressions.  
-- **Serialization/Encryption**: Offers JSON/YAML encoding, base64/hex conversion, and mock encryption.  
+- **String Manipulation** (primary context)
+  - Aggregates: String Processing, Unicode Handling
+  - Domain Events: Character Split, Reverse, Encode
+  - Invariants:
+    - `Split("中文", "")` returns ["中", "文"] (UTF-8 byte split)
+    - `Reverse` handles surrogate pairs as single code points
+    - `EncodeBase64` produces valid base64 for non-ASCII input
 
-## Aggregate Boundaries
-- **Split**: Splits strings into UTF-8 bytes (empty separator) or by pattern.  
-- **Reverse**: Reverses strings while preserving surrogate pairs and combining marks.  
-- **GenerateCode**: Produces AI-style code snippets
+- **Code Generation** (secondary context)
+  - Aggregates: AI Pattern Matching, Template Rendering
+  - Domain Events: Code Snippet Generation, Eval Simulation
+  - Invariants:
+    - `GenerateCode("for i in range(5): print(i)")` returns valid Python
+    - `Eval("1+1")` returns "2" (mocked execution)
+
+## Context Boundaries
+- String operations are confined to `domain/` package
+- Unicode handling is bounded to `Split`, `Reverse`, and `EncodeBase64`
+- Code
