@@ -1,13 +1,9 @@
-# Context Map
+# Context Map — DSL Helpers
 
-## Bounded Contexts
-- **String Manipulation**
-  - Aggregates: `Split`, `Join`, `Trim`, `Reverse`, `Replace`, `Repeat`, `Echo`
-  - Domain Events: `StringSplit`, `StringJoin`, `StringTrim`, `StringReverse`, `StringReplace`, `StringRepeat`
-  - Invariants: 
-    - `Split` must split on UTF-8 bytes (not Unicode code points)
-    - `Reverse` must handle surrogate pairs and combining marks
-    - `ContainsWildcard` must support `*` and `?` wildcards
-
-- **Encoding/Decoding**
-  -
+## Bounded Context: DSL Helpers
+- **Primary responsibility**: Provide pure, testable string manipulation functions for domain experiments.
+- **Key aggregates**:
+  - `Split`: Splits strings by UTF-8 bytes (for multi-byte characters like Chinese)
+  - `Reverse`: Handles surrogate pairs and combining marks
+  - `Match`: Regex-like pattern matching with explicit syntax
+  - `Replace
