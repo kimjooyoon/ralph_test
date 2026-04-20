@@ -1,2 +1,1 @@
-- [ ] Add failing test for `Match("^[0-9]+$", "123abc")` in `domain/match_test.go` (ensure regex-like pattern matching rejects non-numeric strings)
-- [ ] Add failing test for `Split("\U
+- [ ] Add failing test
