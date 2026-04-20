@@ -1,6 +1,9 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**: Handles core string operations (split, reverse, trim, join, replace)
-- **Unicode Handling**: Specializes in UTF-8 byte/character manipulation (split, reverse, encoding)
-- **Data Encoding**: Manages binary-to-text encoding/decoding
+- **String Manipulation DSL**: Pure string operations with UTF-8/Unicode awareness
+
+## Aggregates & Invariants
+- **Split**:
+  - `sep == ""` → split by UTF-8 byte (not Unicode code point)
+  - Must handle
