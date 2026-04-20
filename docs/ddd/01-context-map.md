@@ -1,10 +1,14 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Processing** (primary context for `Split`, `Reverse`, `Join`, `Trim`, `Repeat`, `Replace`)
-  - Aggregate: `StringHelpers`
-  - Invariants:
-    - `Split(s string, sep string) []string` must split UTF-8 bytes (not code points) for multi-byte characters
-    - `Reverse(s string) string` must handle surrogate pairs and combining marks as single code points
-    - `Trim(s string, cutset string) string` must remove all runes in `cutset` from start/end
-    - `Repeat(s string, count int) string` must return `s` repeated `count
+- **String Processing**: Handles string manipulation (split, reverse, trim, join, etc.)
+- **Encoding/Decoding**: Manages base64, hex, and other encoding formats
+- **Numeric Operations**: Provides range generation, parsing, and mathematical functions
+- **Pattern Matching**: Implements regex-like matching and wildcard search
+- **Data Serialization**: Handles JSON and YAML serialization
+- **Logging/Debugging**: Provides mock logging and timestamp generation
+
+## Aggregate Boundaries
+- **String Processing Aggregate**: 
+  - `Split(s, sep)` - Splits strings by UTF-8 bytes (for multi-byte characters)
+  - `Reverse(s)` - Reverses strings while preserving surrogate pairs
