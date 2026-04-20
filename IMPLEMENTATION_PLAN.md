@@ -1,8 +1,4 @@
 - [ ] Add failing test for `Match("^[0-9]+$", "123abc")` in `domain/match_test.go` (test regex-like pattern matching)
 - [ ] Add failing test for `ContainsWildcard("hello", "h*l")` in `domain/contains_wildcard_test.go` (test wildcard substring search)
 - [ ] Add failing test for `Range(1, 5)` in `domain/range_test.go` (validate numeric range generation)
-- [ ] Add failing test for `EncodeBase64([]byte("hello"))` in `domain/encode_base64_test.go` (test base64 encoding)
-- [ ] Add failing test for `Split("中文", "")` in `domain/split_test.go` (validate UTF-8 byte splitting for Chinese characters)
-- [ ] Add failing test for `Split("\U0001D10D", "")` in `domain/split_test.go` (test surrogate pair handling)
-- [ ] Add failing test for `Average([]int{1,2,3,4,5})` in `domain/average_test.go` (test numeric average calculation)
-- [ ] Add failing test for `DecodeImage("PNG")` in `domain/decode_image_test.go` (test image decoding
+- [ ] Add failing test for `EncodeBase64([]byte("hello"))` in
