@@ -1,1 +1,3 @@
-- [ ] Add failing test for `GenerateCode`
+- [ ] Add failing test for `GenerateCode` (test sketch: `GenerateCode("for i in range(5): print(i)")` should return the same input as a baseline)
+- [ ] Add failing test for `Average` (test sketch: `Average([]int{1,2,3,4,5})` should return 3)
+- [ ] Add failing test for `DecodeImage` (test sketch: `DecodeImage("PNG")` should return byte slice [80, 78, 71, 13
