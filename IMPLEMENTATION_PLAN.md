@@ -4,4 +4,5 @@
 - [ ] Implement `Split` to treat surrogate pairs as single code points (Unicode compliant)
 - [ ] Add failing test for `Split("", "")` in `domain/split_test.go` (ensure returns empty slice)
 - [ ] Add failing test for `Split("a", "a")` in `domain/split_test.go` (ensure returns empty slice)
-- [ ] Add failing test for `Split("ab", "a")` in `domain/split_test.go` (ensure returns ["",
+- [ ] Add failing test for `Split("ab", "a")` in `domain/split_test.go` (ensure returns ["", "b"])
+- [ ] Add failing test for `Split("hello", " ")` in
