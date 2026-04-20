@@ -1,8 +1,17 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**: Handles UTF-8 byte splitting, surrogate pairs, and Unicode normalization.  
-  - Functions: `Split`, `Reverse`, `EncodeBase64`, `DecodeImage` (mocked)  
-  - Invariants:  
-    - `Split("中文", "")` returns ["中", "文"] (byte-level split)  
-    - `Reverse("\U0001D10D")` returns "\U0
+1. **String Manipulation**
+   - Aggregate: `Split`
+   - Invariants: 
+     - `Split(s, "")` returns UTF-8 byte splits (e.g., "中文" → ["中", "文"])
+     - `Split` handles surrogate pairs as single code points
+   - Domain Events: 
+     - `StringSplitEvent` (when split operation completes)
+
+2. **Code Generation**
+   - Aggregate: `GenerateCode`
+   - Invariants: 
+     - Returns AI-style code snippets via pattern matching
+     - Pure function with no I/O
+   - Domain Events:
