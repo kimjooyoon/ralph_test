@@ -1,3 +1,7 @@
 - [ ] Add failing test for `Split("中文", "")` in `domain/split_test.go` (ensure returns ["中", "文"])
 - [ ] Add failing test for `Split("\U0001D10D", "")` in `domain/split_test.go` (ensure returns ["\U0001D10D"])
-- [
+- [ ] Add failing test for `Range(1, 5)` in `domain/numeric_test.go` (ensure returns [1,2,3,4,5])
+- [ ] Add failing test for `ParseInt("123")` in `domain/numeric_test.go` (ensure returns 123)
+- [ ] Add failing test for `Match("^[a-z]+$", "abc123")` in `domain/regex_test.go` (ensure returns false)
+- [ ] Add failing test for `ContainsWildcard("hello", "h*l")` in `domain/regex_test.go` (ensure returns true)
+- [ ] Add failing test for `EncodeBase64([]byte("hello"))
