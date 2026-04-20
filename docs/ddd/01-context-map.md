@@ -1,6 +1,7 @@
 # Context Map
 
 ## Bounded Contexts
-
-### 1. String Manipulation
-- **Aggregate**: `Split`
+- **String Manipulation**: Handles UTF-8 byte splitting, reverse, and encoding/decoding.  
+  - `Split` (UTF-8 byte splitting for multi-byte chars)  
+  - `Reverse` (surrogate pairs, combining marks)  
+  - `EncodeBase64` (pure
