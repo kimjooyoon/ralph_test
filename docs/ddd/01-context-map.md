@@ -1,25 +1,15 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**: Contains `Split`, `Join`, `Trim`, `Reverse`, `Replace`, `Repeat`, `Echo` (core string operations)
-- **Unicode Handling**: Specialized for surrogate pairs, combining marks, and multi-byte characters (e.g., Chinese, emoji)
-- **Data Analysis**: Includes `Average`, `Range`, `ParseInt` (numeric helpers)
-- **Encoding/Decoding**: Base64, Hex, JSON, YAML, AES (serialization/security)
-- **Logging/Debugging**: Timestamp generation, mock logging
+- **String Manipulation**: Handles UTF-8 byte splitting, surrogate pairs, and Unicode normalization
+- **Data Transformation**: Includes numeric range generation, encoding/decoding, and serialization
+- **AI Code Generation**: Mocks code evaluation and pattern generation for experimentation
 
 ## Aggregate Boundaries
-- `Split` aggregate: Handles UTF-8 byte splitting, surrogate pairs, and multi-byte characters
-- `Reverse` aggregate: Manages combining marks and surrogate pairs
-- `Replace`/`Repeat` aggregate: Pure functions with no side effects
-- `ParseInt` aggregate: Validates numeric input and handles errors
+- `Split` aggregates: UTF-8 byte splitting (context: String Manipulation)
+- `Reverse` aggregates: Unicode normalization (context: String Manipulation)
+- `Range` aggregates: Numeric sequence generation (context: Data Transformation)
 
-## Domain Events/Invariants
-- `Split` must split UTF-8 bytes for multi-byte characters (e.g., "中文" → ["中", "文"])
-- `Reverse` must preserve combining marks and surrogate pairs
-- `ParseInt` must return error for invalid numeric strings
-- `Average` must floor the mean of a slice of integers
-
-## Open Questions
-- Should `EncodeBase64`/`EncodeHex` belong in a separate bounded context?
-- How to handle invalid UTF-8 input in `Split`? (Currently, tests use valid UTF-8)
-- Should `Eval`/`DecodeImage` be in a separate context for security reasons?
+## Domain Events
+- `UnicodeByteSplit` (when Split is called with empty separator)
+- `SurrogatePairProcessed` (when surrogate pairs are handled in Split
