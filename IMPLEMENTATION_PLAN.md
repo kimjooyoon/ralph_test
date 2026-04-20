@@ -7,3 +7,5 @@
 - [ ] Add failing test for `Timestamp` function (RFC3339 format)
 - [ ] Implement `Timestamp` to generate current time string
 - [ ] Add failing test for `SerializeJSON` function (JSON encoding
+- [ ] Add failing test for `Split` with UTF-8 byte splitting for Chinese characters
+- [ ] Implement `Split` to handle UTF-8
