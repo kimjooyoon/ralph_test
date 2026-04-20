@@ -1,3 +1,3 @@
 - [ ] Add failing test for `EncodeBase64([]byte("hello"))` expecting "aGVsbG8=" (current implementation likely returns empty or incorrect)
 - [ ] Implement `EncodeBase64` to produce correct base64 encoding
-- [ ] Add failing test for `Split("中文", "")` expecting ["中", "文"]
+- [ ] Add failing test for
