@@ -1,22 +1,22 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation Utilities**: Handles core string operations (split, reverse, replace, etc.) with strict UTF-8 compliance.
+- **DSL Helpers** (primary context): Pure string manipulation functions (Split, Reverse, Match, etc.)
+- **Unicode Handling**: Specialized processing for multi-byte characters (Split with empty separator)
+- **Regex-Like Patterns**: Pattern matching with basic regex syntax (Match, ContainsWildcard)
+- **Data Analysis**: Numeric operations (Average, Range)
+- **Encoding/Decoding**: Base64, Hex, JSON/YAML serialization
 
-## Aggregates
-- `Split`: Splits strings by UTF-8 bytes (for multi-byte characters like Chinese)
-- `Reverse`: Reverses strings while preserving surrogate pairs and combining marks
-- `Replace`: Substitutes patterns in strings (pure function)
-- `Match`: Basic regex-like pattern matching (pure function)
+## Aggregate Boundaries
+- `Split` aggregates: UTF-8 byte splitting for multi-byte characters
+- `Reverse` aggregates: Proper handling of surrogate pairs and combining marks
+- `Match` aggregates: Regex-like pattern matching with ^ and $ anchors
+- `Average` aggregates: Mean calculation with floor rounding
 
 ## Domain Events
-- `StringSplitEvent`: Triggered when UTF-8 byte splitting completes
-- `StringReverseEvent`: Triggered when reversal completes
+- `StringSplitEvent`: Triggered when Split completes with UTF-8 byte splitting
+- `PatternMatchEvent`: Triggered when Match finds a regex-like match
+- `UnicodeProcessingEvent`: Triggered when Reverse handles surrogate pairs
 
 ## Invariants
-- `Split` must treat empty string as empty slice
-- `Reverse` must handle surrogate pairs as single code points
-- All operations must use valid UTF-8 input
-
-## Open Questions
-- How to handle overlapping surrogate pairs in
+- `Split
