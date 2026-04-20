@@ -1,10 +1,13 @@
-# Context Map
+# Context Map — String Manipulation Domain
 
-## Bounded Context: String Manipulation
-- **Primary responsibility**: Provide pure, testable string utilities with UTF-8 awareness
-- **Key aggregates**:
-  - `Split` (splits by UTF-8 bytes, not code points)
-  - `Reverse` (handles surrogate pairs and combining marks)
-  - `EncodeBase64` (pure encoding without I/O)
-  - `Match` (regex-like pattern matching)
-  - `ContainsWildcard` (wild
+## Bounded Contexts
+- **String Manipulation**: Core domain for UTF-8 byte/character operations
+- **Unicode Handling**: Specialized context for surrogate pairs, combining marks
+
+## Aggregates
+- **String Splitter**: Splits strings by UTF-8 bytes (when separator is empty)
+  - Invariant: Must not split multi-byte characters (e.g., Chinese)
+  - Event: `StringSplitEvent` when split operation completes
+- **Unicode Validator**: Ensures valid UTF-8 sequences
+  - Invariant: All input strings must be valid UTF-8
+  - Event:
