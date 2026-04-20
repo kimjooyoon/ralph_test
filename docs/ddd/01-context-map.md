@@ -1,24 +1,20 @@
 # Context Map
 
 ## Bounded Contexts
-1. **String Manipulation**
-   - Aggregates: StringSplitter, StringReverser, CodeGenerator
-   - Domain Events: `StringSplitComplete`, `CodeGenerated`
-   - Invariants:
-     - `Split(s, "")` must return one string per UTF-8 byte (ASCII: 1 byte/char, Chinese: 3 bytes/char)
-     - `Reverse` must handle surrogate pairs as single code points
-     - `GenerateCode` must produce valid syntax without I/O
+- **String Manipulation** (primary context for string helpers)
+- **Data Encoding** (for base64, hex, etc.)
+- **Numeric Operations** (range, averages)
+- **Pattern Matching** (regex-like)
+- **Serialization** (JSON, YAML)
+- **Logging** (mock logging)
 
-2. **Unicode Handling**
-   - Aggregates: UnicodeValidator, SurrogatePairHandler
-   - Domain Events: `UnicodeValidationFailed`, `SurrogatePairProcessed`
-   - Invariants:
-     - All UTF-8 inputs must be valid sequences
-     - Surrogate pairs must be treated as single code points
-     - Multi-byte characters must not split across bytes
+## Aggregates & Boundaries
+- **String Manipulation Aggregate**
+  - `Split(s, sep)` - Splits strings by UTF-8 bytes (when sep is empty)
+  - `Reverse(s)` - Handles surrogate pairs and combining marks
+  - `Join(sep, parts)` - Combines strings with separator
+  - `Trim(s)` - Removes whitespace (UTF-8 aware)
+  - `Repeat(s, n)` - Reproduces string n times
+  - `Replace(s, old, new)` - Replaces substrings
 
-3. **Data Transformation**
-   - Aggregates: DataEncoder, DataDecoder
-   - Domain Events: `DataEncoded`, `DataDecoded`
-   - Invariants:
-     - Base
+- **Data Encoding Aggregate
