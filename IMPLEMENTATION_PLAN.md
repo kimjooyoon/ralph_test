@@ -1,3 +1,3 @@
-- [ ] Add failing test for `Split("中文", "")` in `domain/split_test.go` to validate UTF-8 byte splitting for Chinese characters
-- [ ] Add failing test for `Split("\U0001D10D", "")` in `domain/split_test.go` to validate surrogate pair handling
-- [ ] Implement `Reverse` with proper handling of surrogate pairs and combining marks per `specs/dsl.md` and `docs/ralph/12-unicode-edge
+- [ ] Add failing test for `Split("中", "")` in `domain/split_test.go` to validate UTF-8 byte splitting for single Chinese characters
+- [ ] Add failing test for `Split("\U0001F600", "")` in `domain/split_test.go` to validate emoji (surrogate pair) handling
+- [ ] Add failing test for `Reverse("\U0001F60
