@@ -1,7 +1,4 @@
 - [ ] Add failing test for Split with Chinese characters (UTF-8 byte splitting)
 - [ ] Add failing test for Split with surrogate pairs (emoji)
 - [ ] Add failing test for Range function (numeric range generation)
-- [ ] Add failing test for ParseInt function (string to integer conversion)
-- [ ] Add failing test for Match function (regex-like pattern matching)
-- [ ] Add failing test for EncodeBase64 function (encoding helper)
-- [ ] Add failing test for GenerateCode function (AI-style code snippet generation)
+- [
