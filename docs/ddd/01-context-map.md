@@ -1,12 +1,17 @@
-# Context Map
+# Context Map — String Manipulation Bounded Context
 
-## Bounded Contexts
-- **String Manipulation**: Handles core string operations (Split, Reverse, Join, Trim, etc.)
-  - Aggregate boundaries:
-    - `Split` operates on string segments at UTF-8 byte level
-    - `Reverse` handles Unicode code points with surrogate pair awareness
-    - `Join` manages string concatenation with separator injection
-  - Domain Events:
-    - `StringSplitEvent` (when Split completes)
-    - `StringReverseEvent` (when Reverse completes)
-    - `StringJoinEvent` (when Join completes
+## Bounded Context
+**String Manipulation** (domain layer)  
+- Handles UTF-8 byte splitting, Unicode normalization, and surrogate pair processing  
+- Pure functions with no I/O or external dependencies  
+
+## Aggregate Boundaries
+1. **Split Aggregate**  
+   - `Split(s string, sep string)`  
+   - Invariant: When `sep == ""`, splits by UTF-8 byte (not Unicode code point)  
+   - Edge case: Empty string returns empty slice  
+
+2. **Reverse Aggregate**  
+   - `Reverse(s string)`  
+   - Invariant: Handles surrogate pairs and combining marks as single code points  
+   -
