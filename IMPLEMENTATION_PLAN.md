@@ -1,8 +1,3 @@
 - [ ] Add failing test for `Split("中文", "")` to return byte-split Chinese characters (`["中", "文"]`) (current test passes but needs explicit validation)
 - [ ] Implement `Split(s string, sep string) []string` with UTF-8 byte splitting for multi-byte characters
-- [ ] Add failing test for `GenerateCode("for i in range(5): print(i)")` to return AI-style code snippet (`"for i in range(5): print(i)"`)
-- [ ] Implement `GenerateCode(pattern string) string` as pure function with pattern matching
-- [ ] Add failing test for `DecodeImage("PNG")` to return byte slice of PNG header (`[80, 78, 71, 13, 10, 26, 10]`)
-- [ ] Implement `DecodeImage(data string) []byte` as pure function for mock image decoding
-- [ ] Add failing test for `Eval("1+1")` to return evaluated result (`"2"`)
-- [ ] Implement `Eval(code string) string` as pure function with mock evaluation
+- [ ] Add failing test for `GenerateCode("for i in range(5): print(i)")` to return AI-style
