@@ -1,7 +1,1 @@
-- [ ] Add failing test for `EncodeBase64` with UTF-8 input (base64 encoding)
-- [ ] Implement `EncodeBase64` to handle UTF-8 to base64 conversion
-- [ ] Add failing test for `EncodeHex` with multi-byte input (hexadecimal encoding)
-- [ ] Implement `EncodeHex` to convert bytes to hex string
-- [ ] Add failing test for `Split` with Chinese characters (UTF-8 byte splitting)
-- [ ] Add failing test for `Split` with surrogate pairs (Unicode edge case)
-- [ ] Implement `Split` to handle UTF
+- [ ] Add failing test for `EncodeBase6
