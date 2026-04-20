@@ -2,4 +2,10 @@
 - [ ] Implement `EncodeBase64` to handle UTF-8 to base64 conversion
 - [ ] Add failing test for `EncodeHex` with multi-byte input (hexadecimal encoding)
 - [ ] Implement `EncodeHex` to convert bytes to hex string
-- [ ] Add failing test for `Split` with Chinese characters (UTF-8 byte
+- [ ] Add failing test for `Split` with Chinese characters (UTF-8 byte splitting)
+- [ ] Add failing test for `Split` with surrogate pairs (Unicode edge case)
+- [ ] Implement `Split` to handle UTF-8 byte splitting for multi-byte characters
+- [ ] Add failing test for `Match` with regex-like pattern matching
+- [ ] Implement `Match` for basic regex-like checks
+- [ ] Add failing test for `ContainsWildcard` with * and ? wildcards
+- [
