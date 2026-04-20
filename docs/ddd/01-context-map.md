@@ -1,11 +1,16 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**: Handles basic string operations (Split, Join, Trim, Reverse)
-- **Unicode Handling**: Specialized for multi-byte characters (Split with UTF-8 bytes, Reverse with surrogate pairs)
-- **Numeric Operations**: Range generation, integer parsing, and arithmetic
-- **Codex AI**: AI-generated code patterns (GenerateCode, Eval, DecodeImage)
-- **Serialization/Encoding**: JSON/YAML encoding, Base64/Hex conversion
+- **String Manipulation**: Handles string splitting, reversing, trimming, joining, and replacement.  
+- **Encoding/Decoding**: Provides base64 and hex encoding/decoding utilities.  
+- **Data Analysis**: Includes numeric range generation and average calculation.  
+- **Logging/Serialization**: Offers mock logging and JSON/YAML serialization.  
+- **Security**: Contains AES encryption mock functionality.  
+- **Unicode Handling**: Specialized for UTF-8 byte splitting, surrogate pairs, and emoji processing.  
 
-## Aggregate Boundaries
-- **
+## Aggregates
+- **String**: Core domain object for all string manipulation operations.  
+- **Data**: Aggregate for encoding/decoding operations.  
+- **NumericRange**: Represents a range of integers for analysis.  
+- **LogEntry**: Represents a log message in the logging context.  
+- **SerializedData**: Represents data
