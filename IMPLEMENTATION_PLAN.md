@@ -3,3 +3,6 @@
 - [ ] Add failing test for `ContainsWildcard` function (wildcard substring search)
 - [ ] Implement `ContainsWildcard` function for * and ? wildcards
 - [ ] Add failing test for `Split` with surrogate pairs (e.g., emoji)
+- [ ] Add failing test for `Reverse` with surrogate pairs (emoji handling)
+- [ ] Add failing test for `Range` function (numeric range generation)
+- [ ] Add failing test for `ParseInt`
