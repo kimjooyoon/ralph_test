@@ -1,10 +1,6 @@
 # Context Map
 
 ## Bounded Contexts
-
-### String Manipulation
-- **Aggregate**: `Split` (UTF-8 byte splitting)
-  - **Invariant**: `Split("中文", "")` returns `["中", "文"]` (byte-level splitting)
-  - **Domain Events**: `SplitCompleted`, `ByteSplitValidation`
-  - **Ubiquitous Language**: 
-    - `Split(separator
+- **String Manipulation** (primary context)
+  - Handles UTF-8 string operations: splitting, reversing, encoding
+  - Key functions: `Split`, `Reverse`, `EncodeBase64`, `ParseInt
