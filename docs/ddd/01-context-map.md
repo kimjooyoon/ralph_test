@@ -1,7 +1,8 @@
 # Context Map
 
 ## Bounded Contexts
-- **StringHelpers**: Core string manipulation functions (Split, Reverse, Join, Trim, Replace, etc.)
-  - Aggregate: `StringOperation` (immutable, pure functions)
-  - Invariants: 
-    - `Split(s string, sep string) []string` must split by UTF-8 bytes for empty separator
+- **String Manipulation**: Handles splitting, reversing, trimming, joining, and replacing strings. 
+  - `Split` splits strings by UTF-8 bytes (for empty separator).
+  - `Reverse` reverses strings while preserving surrogate pairs and combining marks.
+  - `Trim` removes leading/trailing whitespace.
+  - `Join` concatenates strings with a separator.
