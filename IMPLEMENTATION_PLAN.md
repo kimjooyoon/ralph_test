@@ -3,4 +3,7 @@
 - [ ] Implement `Split` to handle UTF-8 byte splitting for multi-byte characters (UTF-8 aware)
 - [ ] Implement `Split` to treat surrogate pairs as single code points (Unicode compliant)
 - [ ] Add failing test for `Split("", "")` in `domain/split_test.go` (ensure returns empty slice)
-- [ ] Verify UTF-8 byte splitting for characters with varying byte lengths (e.g., 2-byte vs
+- [ ] Verify UTF-8 byte splitting for characters with varying byte lengths (e.g., 2-byte vs 3-byte characters)
+- [ ] Add failing test for `Split("a", "a")` in `domain/split_test.go` (ensure returns empty slice)
+- [ ] Add failing test for `Split("ab", "a")` in `domain/split_test.go` (ensure returns ["", "b"])
+- [ ] Add failing test
