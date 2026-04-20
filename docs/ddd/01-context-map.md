@@ -1,4 +1,7 @@
-# Context Map — String Manipulation
+# Context Map
 
 ## Bounded Contexts
-- **String Manipulation**: Handles UTF-8 byte splitting, reversal, encoding, and pattern
+- **String Manipulation** (domain/split.go, domain/reverse.go)
+  - Aggregate Roots: `Split`, `Reverse`
+  - Invariants:
+    - `Split("", "")
