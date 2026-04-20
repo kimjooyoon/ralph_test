@@ -1,2 +1,3 @@
 - [ ] Add failing test for `Match` function (basic regex-like check)
+- [ ] Implement `Match` function to handle simple regex patterns
 -
