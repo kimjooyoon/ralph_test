@@ -1,3 +1,3 @@
-- [ ] Add failing test for `GenerateCode` (test sketch: `GenerateCode("for i in range(5): print(i)")` should return the same input as a baseline)
-- [ ] Add failing test for `Average` (test sketch: `Average([]int{1,2,3,4,5})` should return 3)
-- [ ] Add failing test for `DecodeImage` (test sketch: `DecodeImage("PNG")` should return byte slice [80, 78, 71, 13
+- [ ] Add failing test for `Split` with empty separator (test sketch: `Split("中文", "")` should return `["中", "文"]`)
+- [ ] Add failing test for `Reverse` with surrogate pairs (test sketch: `Reverse("\U0001D10D")` should return `"\U0001D10D"`)
+- [ ] Add failing test for `
