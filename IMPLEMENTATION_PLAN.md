@@ -1,1 +1,3 @@
-- [ ] Add failing test for `Range` with numeric bounds (test sketch
+- [ ] Add failing test for `Range` with numeric bounds (test sketch: `Range(1, 5) = [1,2,3,4,5]`, want `[1,2,3,4,5]`)
+- [ ] Implement `Range(start, end int) []int` to return inclusive range (pure function, no I/O)
+- [
