@@ -1,10 +1,12 @@
 package domain
 
 import (
-	"encoding/base64"
 	"testing"
 )
 
 func TestEncodeBase64(t *testing.T) {
-	tests := []struct {
-		input    []byte
+	result := EncodeBase64([]byte("hello"))
+	if result != "aGVsbG8=" {
+		t.Errorf("Expected \"aGVsbG8=\", got \"%s\"", result)
+	}
+}
