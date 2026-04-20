@@ -1,3 +1,2 @@
-- [ ] Add failing test for `Split("中", "")` in `domain/split_test.go` to validate UTF-8 byte splitting for single Chinese characters
-- [ ] Add failing test for `Split("\U0001F600", "")` in `domain/split_test.go` to validate emoji (surrogate pair) handling
-- [ ] Add failing test for `Reverse("\U0001F60
+- [ ] Add failing test for `Split("中文", "")` in `domain/split_test.go` to validate UTF-8 byte splitting for single Chinese characters
+- [ ] Add failing test for `Split("\U0001F600", "")` in `domain/split_test.go
