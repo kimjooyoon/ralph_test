@@ -1,2 +1,5 @@
 - [ ] Add failing test for `Split("中文", "")` to return byte-split Chinese characters (`["中", "文"]`) (current test passes but needs explicit validation)
-- [ ] Implement
+- [ ] Implement `Split` byte-splitting logic for multi-byte characters (UTF-8 bytes, not Unicode code points)
+- [ ] Add failing test for `GenerateCode("for i in range(5): print(i)")` to return AI-style code snippet (pure function, no I/O)
+- [ ] Implement `GenerateCode` function that returns formatted code patterns
+- [ ] Add failing test for `Average([]int
