@@ -1,2 +1,3 @@
-- [ ] Add failing test for `Split("中文", "")` to return byte-split Chinese characters (`["中", "文"]`) (current test passes but needs explicit validation)
-- [ ] Implement `Split` byte-splitting logic for multi-byte Unicode (Chinese characters, surrogate pairs,
+- [ ] Add failing test for `Split("中文", "")` to return byte-split Chinese characters (`["中", "文"]`) with explicit validation (current test passes but lacks explicit check)
+- [ ] Implement `Split` byte-splitting logic for multi-byte Unicode (Chinese, surrogate pairs) in `domain/split.go`
+- [ ] Add test for surrogate pair splitting: `Split("\U0001D10D", "")` should return `["\U0001D10D"]` (ensure not split into surrogate components)
