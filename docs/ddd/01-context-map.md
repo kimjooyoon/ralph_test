@@ -1,6 +1,11 @@
-# Context Map — String Manipulation Domain
+# Context Map
 
 ## Bounded Contexts
-- **String Manipulation**: Handles core string operations (split, join, reverse, etc.)
-- **Unicode Processing**: Specializes in UTF-8 byte and code point handling
-- **Numeric Utilities**: Focuses on
+- **String Manipulation**: Handles basic string operations (Split, Join, Trim, Reverse)
+- **Unicode Handling**: Specialized for multi-byte characters (Split with UTF-8 bytes, Reverse with surrogate pairs)
+- **Numeric Operations**: Range generation, integer parsing, and arithmetic
+- **Codex AI**: AI-generated code patterns (GenerateCode, Eval, DecodeImage)
+- **Serialization/Encoding**: JSON/YAML encoding, Base64/Hex conversion
+
+## Aggregate Boundaries
+- **
