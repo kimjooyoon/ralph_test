@@ -1,14 +1,13 @@
 # Context Map
 
 ## Bounded Contexts
-1. **String Manipulation (Unicode Handling)**
-   - Aggregate Roots: `Split`, `Reverse`
-   - Invariants: 
-     - `Split("中文", "")` returns ["中", "文"] (UTF-8 byte splitting)
-     - `Reverse` handles surrogate pairs and combining marks
-   - Domain Events: `StringSplitEvent`, `UnicodeReversalEvent`
+- **String Manipulation Helpers** (primary context)
+  - Sub-contexts:
+    - **Unicode Handling** (for UTF-8, surrogate pairs, multi-byte chars)
+    - **Encoding/Decoding** (base64, hex, JSON, YAML)
+    - **Logging/Time** (mock logging, timestamp generation)
+    - **Pattern Matching** (wildcard, regex-like)
+    - **Data Analysis** (averages, ranges)
 
-2. **Data Encoding/Decoding**
-   - Aggregate Roots: `EncodeBase64`, `EncodeHex`
-   - Invariants: 
-     - `EncodeBase64([]byte("hello"))` → "
+## Aggregate Boundaries
+- `Split` (UTF-8 byte splitting
