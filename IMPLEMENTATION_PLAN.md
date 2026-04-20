@@ -1,1 +1,2 @@
-- [ ] Add failing test for `Split("中文", "")` in `domain/split_test.go` to validate UTF-8 byte splitting for single Chinese characters (ensure returns ["中",
+- [ ] Add failing test for `Split("中文", "")` in `domain/split_test.go` to validate UTF-8 byte splitting for single Chinese characters (ensure returns ["中", "文"])
+- [ ] Add failing test for `Split("\U0001D10D", "")` in `domain/split_test.go` to validate surrogate pair handling (ensure returns ["\U0001D10D
