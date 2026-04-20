@@ -1,23 +1,30 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**: Handles UTF-8 splitting, reversing, and pattern matching (includes `Split`, `Reverse`, `Match`)
-- **Numeric Operations**: Range generation, averaging, and parsing (`Range`, `Average`, `ParseInt`)
-- **Encoding/Decoding**: Base64, hex, and image decoding (`EncodeBase64`, `DecodeImage`)
-- **Unicode Handling**: Surrogate pairs, combining marks, and multi-byte character support (`Split`, `Reverse`)
-- **AI-Generated Code**: Mock code generation and evaluation (`GenerateCode`, `Eval`)
+1. **String Manipulation**
+   - Aggregates: `Split`, `Join`, `Trim`, `Reverse`, `Replace`, `Repeat`
+   - Boundaries: 
+     - `Split` handles UTF-8 byte splitting (not Unicode code points)
+     - `Reverse` must process surrogate pairs and combining marks
+     - `Match`/`ContainsWildcard` operate on regex-like pattern matching
+   - Domain Events: 
+     - `StringSplitEvent` (when Split completes)
+     - `PatternMatchedEvent` (when regex-like pattern is validated)
 
-## Aggregate Boundaries
-- `Split` aggregates UTF-8 byte splitting logic
-- `Reverse` aggregates Unicode-aware reversal
-- `Average` aggregates numeric mean calculation
-- `DecodeImage` aggregates image data simulation
+2. **Numeric Operations**
+   - Aggregates: `Range`, `Average`
+   - Boundaries: 
+     - `Range` generates inclusive integer sequences
+     - `Average` computes floor of mean for integer slices
 
-## Domain Events
-- `StringSplitEvent` (triggered by `Split`)
-- `UnicodeReversedEvent` (triggered by `Reverse`)
-- `RangeGeneratedEvent` (triggered by `Range`)
-- `ImageDecodedEvent` (triggered by `DecodeImage`)
+3. **Encoding/Decoding**
+   - Aggregates: `EncodeBase64`, `DecodeImage`
+   - Boundaries: 
+     - `EncodeBase64` produces valid Base64 strings
+     - `DecodeImage` simulates image decoding from byte slices
 
-## Invariants
-- `Split` must split UTF-8
+## Ubiquitous Language
+- **Split**: "Split the string by UTF-8 bytes" (not code points)
+- **Reverse**: "Reverse the string while preserving surrogate pairs"
+- **Match**: "Check if string matches regex-like pattern"
+- **ContainsWildcard**: "Check if string contains wildcard pattern (*?)
