@@ -1,3 +1,2 @@
 - [ ] Add failing test for `Split("中文", "")` to return ["中", "文"] (current test passes but needs explicit validation)
-- [ ] Implement `Split` function in `domain/` to handle UTF-8 byte splitting for multi-byte characters (including Chinese)
-- [
+- [ ] Implement `Split` function in `domain/` to handle UTF-8 byte splitting for multi-byte characters (
