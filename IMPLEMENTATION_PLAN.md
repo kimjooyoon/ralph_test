@@ -1,5 +1,3 @@
-- [ ] Add failing test for Split with empty separator (ensure it fails when splitting Chinese characters into bytes)
-- [ ] Add failing test for GenerateCode (mock AI-style code snippet generation)
-- [ ] Add failing test for Average (floor mean of integer slice)
-## Questions
-- Are surrogate pair tests (e.g., emoji) required for `Split` before implementing?
+- [ ] Add failing test for Range(1, 5) returning [1,2,3,4,5] (numeric range generation)
+- [ ] Add failing test for ParseInt("123") returning 123 (string to integer conversion)
+- [ ] Add failing test for
