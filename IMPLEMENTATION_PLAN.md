@@ -1,1 +1,2 @@
 - [x] Add failing test for `GenerateCode` in `domain/generatecode_test.go` to validate AI-style code snippet generation (e.g., `GenerateCode("for i in
+- [ ] Add failing test for `Split` in `domain/split_test.go` to validate UTF-8 byte splitting for Chinese characters (e.g., `Split("中文", "")` should return `["中
