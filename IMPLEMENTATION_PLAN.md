@@ -8,14 +8,4 @@
 - [ ] Add failing test for `Average([]int{1,2,3,4,5})` to validate mean calculation
 - [ ] Add failing test for `DecodeImage("PNG")` to validate image decoding simulation
 - [ ] Add failing test for `Eval("1+1")` to validate code evaluation
-- [ ] Add failing test for `Match("^[a-z]+$", "abc123")` to validate regex-like matching
-- [ ] Add failing test for `ContainsWildcard("hello", "h*l")` to validate wildcard matching
-- [ ] Add failing test for `EncodeHex([]byte("abc"))` to validate hexadecimal encoding
-- [ ] Add failing test for `Log("test")` to validate logging interface
-
-## Questions
-- What is the expected behavior for `Split` when handling surrogate pairs?
-- How should `Reverse` handle multi-byte characters like emoji?
-- Should `ParseInt` return an error for non-numeric strings, or just 0?
-- What error handling is required for `EncodeBase64` with invalid input?
-- How to handle edge cases in
+- [ ] Add
