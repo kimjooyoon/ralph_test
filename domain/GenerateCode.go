@@ -1,7 +1,5 @@
 package domain
 
-import "fmt"
-
-func GenerateCode(pattern string) string {
-	return pattern
+func GenerateCode(input string) string {
+	return input
 }
