@@ -1,23 +1,16 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**: Handles core string operations (Split, Reverse, Join, Trim, etc.)
-  - Aggregates: StringSegment, CodeSnippet
-  - Invariants: 
-    - `Split(s, sep)` must split UTF-8 bytes for multi-byte characters
-    - `Reverse(s)` must handle surrogate pairs as single code points
-- **Code Generation**: AI-style code snippet creation
-  - Aggregates: CodeTemplate, GeneratedCode
-  - Invariants: 
-    - `GenerateCode(pattern)` must return valid syntax without I/O
-    - `Eval(code)` must mock execution of simple expressions
-- **Unicode Processing**: Specialized handling of Unicode edge cases
-  - Aggregates: UnicodeSegment, SurrogatePair
-  - Invariants: 
-    - `Split(s, "")` must split by UTF-8 bytes (not code points)
-    - `TestSplitSurrogatePairs()` must validate emoji handling
+- **String Manipulation**: Handles UTF-8 byte splitting, Unicode reversal, and surrogate pairs (e.g., `Split`, `Reverse`, `Trim`)
+- **Data Generation**: Produces AI-style code snippets, numeric ranges, and mock evaluations (e.g., `GenerateCode`, `Range`, `Eval`)
+- **Encoding/Decoding**: Base64, hexadecimal, and JSON/YAML serialization (e.g., `EncodeBase64`, `EncodeHex`, `SerializeJSON`)
+- **Logging/Time**: Mock logging and timestamp generation (e.g., `Log`, `Timestamp`)
 
-## Context Boundaries
-- `Split` operates on byte-level UTF-8 sequences (not code points)
-- `Reverse` treats surrogate pairs as single code points
-- `GenerateCode` is a pure function
+## Aggregate Boundaries
+- **String Manipulation Aggregate**: Enforces UTF-8 byte splitting rules for multi-byte characters (e.g., Chinese, emoji)
+- **Data Generation Aggregate**: Ensures AI-style code generation adheres to pure function constraints (no I/O, no side effects)
+- **Encoding Aggregate**: Validates base64/hex encoding rules for valid UTF-8 input
+- **Logging Aggregate**: Treats logging as a pure function for mock debugging scenarios
+
+## Domain Events/Invariants
+- **UTF-8 Splitting Invariant**: `Split(s, "")` must return one string per UTF-8 byte for
