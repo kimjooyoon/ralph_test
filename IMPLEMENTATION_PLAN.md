@@ -1,6 +1,1 @@
-- [ ] Add failing test for `Split("\U0001D10D", "")` to validate UTF-8 byte splitting for surrogate pairs
-- [ ] Implement `Split` to handle surrogate pairs as single code points (per Unicode standards)
-- [ ] Add failing test for `GenerateCode("for i in range(5): print(i)")` with expected AI-style Python code generation
-- [ ] Implement `GenerateCode` to return formatted code snippets based on input patterns
-- [ ] Complete failing test for `Range(1, 5)` to validate numeric range generation
-- [ ] Add failing test for `Reverse("\U0001D10D")` to
+- [ ] Add failing test for `Split("\U0001D10D", "")` to
