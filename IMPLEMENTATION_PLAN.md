@@ -5,9 +5,10 @@
 - [ ] Add failing test for `ParseInt("123")` to validate string-to-integer conversion
 - [ ] Add failing test for `EncodeBase64([]byte("hello"))` to validate base64 encoding
 - [ ] Add failing test for `Reverse("中文")` to validate UTF-8 byte reversal
-
-## Questions
-- How should `Split` handle invalid UTF-8 input? (Should it panic, return empty slice, or handle errors?)
-- What is the expected behavior for `Reverse` when input contains surrogate pairs?
-- Should `GenerateCode` support multiple programming language patterns or focus on a single syntax?
-- How to handle edge cases for `ParseInt` when input contains
+- [ ] Add failing test for `Average([]int{1,2,3,4,5})` to validate mean calculation
+- [ ] Add failing test for `DecodeImage("PNG")` to validate image decoding simulation
+- [ ] Add failing test for `Eval("1+1")` to validate code evaluation
+- [ ] Add failing test for `Match("^[a-z]+$", "abc123")` to validate regex-like matching
+- [ ] Add failing test for `ContainsWildcard("hello", "h*l")` to validate wildcard matching
+- [ ] Add failing test for `EncodeHex([]byte("abc"))` to validate hexadecimal encoding
+- [ ] Add failing test for `Log("test")` to validate logging interface
