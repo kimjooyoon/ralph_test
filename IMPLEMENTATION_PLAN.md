@@ -9,3 +9,6 @@
 - How should `Split` handle invalid UTF-8 input? Should it panic or return errors?
 - Should `Reverse` handle combining marks as separate code points or treat them as part of base characters?
 - What error handling is required for `ParseInt` when given non-numeric strings?
+
+## New Tasks
+- [ ] Add failing test for `Split
