@@ -1,15 +1,12 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Processing** (handles UTF-8, surrogate pairs, byte splitting)
-- **AI Code Generation** (generates code snippets from patterns)
-- **Numeric Operations** (range generation, averaging)
-- **Unicode Handling** (surrogate pairs, combining marks)
-- **Data Encoding** (base64, hex, JSON/YAML)
-- **String Ergonomics** (trim, join, repeat)
+- **DSL Helpers**: Pure string manipulation functions (Split, Reverse, EncodeBase64, etc.)
+- **Unicode Processing**: Specialized handling of UTF-8, surrogate pairs, and multi-byte characters
+- **Numeric Operations**: Range generation, parsing, and basic math functions
+- **Pattern Matching**: Regex-like syntax for string validation and search
+- **Encoding/Decoding**: Base64, hex, and mock image decoding functions
+- **Logging/Serialization**: Mock logging and JSON/YAML serialization helpers
 
-## Aggregates
-- **StringSplitter** (splits strings by UTF-8 bytes/code points)
-- **CodeGenerator** (transforms patterns into code snippets)
-- **NumericRange** (generates inclusive integer ranges)
-- **UnicodeValidator** (ensures valid UTF
+## Aggregate Boundaries
+- **Split**: Splits strings by UTF-8 bytes or code points (
