@@ -4,11 +4,10 @@ import (
 	"testing"
 )
 
-func TestSplit(t *testing.T) {
-	tests := []struct {
-		input    string
-		sep      string
-		expected []string
-	}{
-		{"a:b:c", ":", []string{"a", "b", "c"}},
-		{"a:b:c", ":",
+func TestSplitSurrogatePairs(t *testing.T) {
+	input := "\U0001F600" // Grinning Face emoji
+	result := Split(input, "")
+	if len(result) != 1 || result[0] != input {
+		t.Errorf("Split(%q, \"\") = %v, want %v", input, result, []string{input})
+	}
+}
