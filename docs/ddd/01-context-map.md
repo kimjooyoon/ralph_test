@@ -1,16 +1,14 @@
 # Context Map
 
 ## Bounded Contexts
-- **StringProcessing**: Handles string manipulation (Split, Reverse, Join, Trim, etc.)
-- **UnicodeHandling**: Focuses on UTF-8 byte/character handling (surrogate pairs, multi-byte characters)
-- **CodexAI**: AI-generated code patterns (GenerateCode, Eval, etc.)
-- **NumericUtils**: Numeric operations (Range, Average, ParseInt)
-- **RegexLike**: Pattern matching with wildcards (Match, ContainsWildcard)
-- **EncodingDecoding**: Base64, Hex, JSON/YAML serialization
-- **LoggingUtils**: Mock logging and timestamp generation
 
-## Aggregates
-- **StringSegment**: Represents a split string segment (used in Split)
-- **CodeSnippet**: Represents generated code (used in GenerateCode)
-- **NumericRange**: Represents a numeric range (used in Range)
-- **PatternMatch**: Represents a
+### 1. String Manipulation
+- **Aggregates**: `Split`, `Join`, `Trim`, `Reverse`
+- **Invariants**:
+  - `Split` must split UTF-8 bytes for multi-byte characters (e.g., Chinese, emoji)
+  - `Reverse` must handle surrogate pairs and combining marks correctly
+  - `Trim` must remove leading/trailing whitespace per Unicode definition
+  - `Join` must concatenate strings with separator per UTF-8 rules
+
+### 2. Unicode Handling
+- **Aggreg
