@@ -1,28 +1,12 @@
 # Context Map
 
 ## Bounded Contexts
+- **String Manipulation**: Handles core string operations (`Split`, `Reverse`, `Join`, `Trim`, `Replace`, `Repeat`)
+- **Unicode Handling**: Specialized for UTF-8 byte splitting, surrogate pairs, and combining marks
+- **Encoding/Decoding**: Base64, hex, and other binary-to-text transformations
+- **Data Analysis**: Numeric range generation, averaging, and simple statistics
 
-- **String Manipulation**: Handles UTF-8 byte splitting, surrogate pairs, and Unicode code points.  
-  - Aggregates: `Split`, `Reverse`, `Trim`  
-  - Invariants:  
-    - `Split` must treat surrogate pairs as single code points  
-    - `Reverse` must preserve combining marks  
-    - UTF-8 validation is required for all inputs  
-
-- **Numeric Operations**: Provides range generation, parsing, and basic math.  
-  - Aggregates: `Range`, `ParseInt`, `Average`  
-  - Invariants:  
-    - `Range` must include inclusive bounds  
-    - `ParseInt` must return errors for invalid input  
-    - `Average` must floor the mean  
-
-- **Encoding/Decoding**: Implements base64, hex, and mock encryption.  
-  - Aggregates: `EncodeBase64`, `EncodeHex`, `EncryptAES`  
-  - Invariants:  
-    - Encodings must handle UTF-8 input correctly  
-    - Mock encryption must return fixed outputs  
-
-## Open Questions
-- How to handle ambiguous Unicode code points in `Split`?  
-- Should `Average` handle empty slices?  
-- Should `EncryptAES` accept key lengths?  
+## Aggregates
+- **StringSplitter**: Manages `Split` with UTF-8 byte-level and code point-level splitting
+- **UnicodeReverser**: Handles surrogate pairs and combining marks in `Reverse`
+- **Encoder**: Manages `
