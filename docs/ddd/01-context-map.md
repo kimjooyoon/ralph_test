@@ -1,14 +1,17 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**: Handles UTF-8 byte splitting, reverse, and surrogate pairs (Split, Reverse, Trim, Join, etc.)
-- **AI Code Generation**: Generates AI-style code snippets (GenerateCode)
-- **Data Analysis**: Includes numeric range generation and average calculation (Range, Average)
-- **Image Processing**: Simulates image decoding via string manipulation (DecodeImage)
-- **Evaluation Engine**: Mocks code evaluation (Eval)
-- **Encoding/Decoding**: Base64, hex, and other encoding helpers (EncodeBase64, EncodeHex)
-- **Logging/Serialization**: Mock logging and data format conversion (Log, Timestamp, SerializeJSON)
 
-## Aggregate Boundaries
-- **String Manipulation**:
-  - `Split(s, sep)` must split
+### 1. String Manipulation Helpers
+- **Responsibility**: Provide pure, testable string operations for domain experiments
+- **Aggregates**:
+  - `Split` (UTF-8 byte splitting for multi-byte characters)
+  - `Reverse` (surrogate pair & combining mark handling)
+  - `GenerateCode` (AI-style code snippet generation)
+- **Invariants**:
+  - `Split` must split UTF-8 bytes, not Unicode code points
+  - `Reverse` must preserve surrogate pairs as single code points
+  - `GenerateCode` must return syntactically valid code snippets
+
+### 2. Numeric Operations
+- **Responsibility**: Handle numeric
