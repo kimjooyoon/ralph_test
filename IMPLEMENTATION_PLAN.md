@@ -10,4 +10,6 @@
 - Should `Range` include both endpoints (inclusive) or exclude one?
 
 ## Tasks
-- [ ] Implement `Split` with UTF-8 byte splitting for Chinese characters (test case:
+- [ ] Implement `Split` with UTF-8 byte splitting for Chinese characters (test case: `Split("中文", "")` should return ["中", "文"])
+- [ ] Implement `GenerateCode` to return AI-style code snippets (test case: `GenerateCode("for i in range(5): print(i)")` should return the same input string)
+- [ ] Implement `Average` to calculate floor of mean (test case: `Average([]int{1,2,3
