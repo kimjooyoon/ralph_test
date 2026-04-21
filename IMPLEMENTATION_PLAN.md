@@ -6,4 +6,5 @@
 - [ ] Add failing test for `ParseInt("123")` expecting 123 (string to integer conversion)
 - [ ] Add failing test for `Match("^[a-z]+$", "abc123")` expecting false (regex-like pattern matching)
 - [ ] Add failing test for `ContainsWildcard("hello", "h*l")` expecting true (wildcard substring search)
-- [ ] Add failing
+- [ ] Add failing test for `Split("\U0001D10D", "")` expecting ["\U0001D10D"] (surrogate pair handling)
+- [ ] Add
