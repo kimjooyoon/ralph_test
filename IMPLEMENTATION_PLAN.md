@@ -1,3 +1,3 @@
 - [ ] Add failing test for `Split("\U0001D10D", "")` to `split_test.go` (ensure surrogate pair is treated as single code point)
 - [ ] Implement `Split` with UTF-8 byte splitting for multi-byte characters (Chinese, emoji) in `split.go`
-- [ ] Add failing test for `Reverse("\U0001D10D")` to `reverse_test.go
+-
