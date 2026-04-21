@@ -1,15 +1,28 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**: Handles UTF-8 string operations (split, reverse, encode/decode)
-- **Unicode Processing**: Specializes in surrogate pairs, combining marks, and multi-byte characters
-- **Data Transformation**: Includes encoding/decoding, serialization, and numeric operations
 
-## Aggregate Boundaries
-- **String Splitter**: Splits strings by UTF-8 bytes (for multi-byte characters) or code points
-- **Unicode Validator**: Ensures proper handling of surrogate pairs and combining marks
-- **Encoding Engine**: Manages base64, hex, and other encoding formats
+- **String Manipulation**: Handles UTF-8 byte splitting, surrogate pairs, and Unicode code points.  
+  - Aggregates: `Split`, `Reverse`, `Trim`  
+  - Invariants:  
+    - `Split` must treat surrogate pairs as single code points  
+    - `Reverse` must preserve combining marks  
+    - UTF-8 validation is required for all inputs  
 
-## Domain Events
-- `StringSplitEvent`: Triggered when a string is split by UTF-8 bytes
-- `UnicodeValidationEvent`: Occ
+- **Numeric Operations**: Provides range generation, parsing, and basic math.  
+  - Aggregates: `Range`, `ParseInt`, `Average`  
+  - Invariants:  
+    - `Range` must include inclusive bounds  
+    - `ParseInt` must return errors for invalid input  
+    - `Average` must floor the mean  
+
+- **Encoding/Decoding**: Implements base64, hex, and mock encryption.  
+  - Aggregates: `EncodeBase64`, `EncodeHex`, `EncryptAES`  
+  - Invariants:  
+    - Encodings must handle UTF-8 input correctly  
+    - Mock encryption must return fixed outputs  
+
+## Open Questions
+- How to handle ambiguous Unicode code points in `Split`?  
+- Should `Average` handle empty slices?  
+- Should `EncryptAES` accept key lengths?  
