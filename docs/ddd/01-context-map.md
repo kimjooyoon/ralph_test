@@ -1,20 +1,12 @@
 # Context Map
 
 ## Bounded Contexts
-- **DSL Helpers**: Pure string manipulation functions (Split, Reverse, EncodeBase64, etc.)
-- **Unicode Processing**: Specialized handling of UTF-8, surrogate pairs, and multi-byte characters
-- **AI Code Generation**: GenerateCode function for AI-style code snippets
+- **String Manipulation**: Handles splitting, reversing, encoding, and pattern matching (e.g., `Split`, `Reverse`, `EncodeBase64`)
+- **Unicode Processing**: Specializes in multi-byte character handling (e.g., Chinese, emoji, surrogate pairs)
+- **Data Transformation**: Focuses on pure functions for data conversion (e.g., `Range`, `Average`, `ParseInt`)
+- **Mock I/O**: Simulates I/O operations for testing (e.g., `Log`, `Eval`, `DecodeImage`)
 
-## Aggregates & Boundaries
-- **Split**: Splits strings by UTF-8 bytes (boundary: empty separator)
-- **Reverse**: Handles surrogate pairs and combining marks (boundary: Unicode-aware reversal)
-- **GenerateCode**: Pure function that returns AI-style code patterns (boundary: no I/O)
-
-## Domain Events
-- `SplitCompleted`: Indicates successful UTF-8 byte splitting
-- `ReverseCompleted`: Indicates successful Unicode-aware reversal
-- `CodeGenerated`: Indicates successful AI-style code generation
-
-## Invariants
-- Split with empty separator must return one string per UTF-8 byte
-- Reverse must treat surrogate pairs as single code
+## Aggregate Boundaries
+- `Split(s, sep)` treats `sep` as a UTF-8 byte sequence, not a Unicode code point
+- `Reverse(s)` must handle surrogate pairs as single code points
+- `GenerateCode(pattern)` is a pure function with no side effects
