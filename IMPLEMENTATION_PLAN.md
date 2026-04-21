@@ -1,4 +1,1 @@
-- [ ] Add failing test for `Reverse` in `domain/reverse_test.go` to handle surrogate pairs (ensure `Reverse("\U0001D10D")` returns `\U0001D10D`)
-- [ ] Implement `Reverse` in `domain/reverse.go` to handle UTF-8 decoding properly using `unicode/utf8` package
-- [ ] Add failing test for `Range` in `domain/range_test.go` (ensure `Range(1, 5)` returns `[1,2,3,4,5]`)
-- [ ] Implement `Range` in `domain/range.go` to generate
+- [ ] Add failing test for `GenerateCode` in `domain/generatecode_test.go` to validate AI-style code snippet generation (e.g., `GenerateCode("for i in range(5): print(i)")` should return the
