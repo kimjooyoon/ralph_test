@@ -1,27 +1,20 @@
 # Context Map
 
-## Bounded Context: String Manipulation
-- **Primary responsibility**: UTF-8 byte-level string operations (split, reverse, encode)
-- **Key aggregates**:
-  - `StringSplitter`: Ensures UTF-8 byte splitting for multi-byte characters (e.g., Chinese)
-  - `UnicodeHandler`: Manages surrogate pairs and combining marks
-- **Domain events**:
-  - `StringSplitEvent`: Triggered when a string is split into UTF-8 bytes
-  - `UnicodeValidationEvent`: When invalid UTF-8 sequences are detected
-- **Ubiquitous language**:
-  - "Split by UTF-8 byte" (vs. "split by code point")
-  - "Surrogate pair" (as single code point)
-  - "Valid UTF-8 sequence" (invariant)
+## String Manipulation Context
+- **Bounded Context**: String utilities for UTF-8 byte and code point operations
+- **Aggregate Boundaries**:
+  - `Split` aggregates: string + separator
+  - `Reverse` aggregates: string + direction
+- **Domain Events**:
+  - `SplitCompleted`: when string is split into segments
+  - `ReverseCompleted`: when string is reversed
+- **Invariants**:
+  - `Split(s, "")` must return one string per UTF-8 byte
+  - `Reverse` must preserve surrogate pairs and combining marks
+  - All operations must work with valid UTF-8 input
 
-## Bounded Context: Code Generation
-- **Primary responsibility**: AI-style code snippet generation
-- **Key aggregates**:
-  - `CodeGenerator`: Produces syntactically correct code patterns
-- **Domain events**:
-  - `CodeGeneratedEvent`: When a code snippet is generated
-- **Ubiquitous language**:
-  - "Code pattern"
-  - "AI-style snippet"
-
-## Bounded Context: Numeric Operations
-- **Primary
+## Unicode Handling Context
+- **Bounded Context**: Unicode-aware string operations
+- **Aggregate Boundaries**:
+  - `Split` aggregates: string + separator
+  - `
