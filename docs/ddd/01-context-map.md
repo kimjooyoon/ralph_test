@@ -1,32 +1,21 @@
-# Context Map
+# Context Map — String Manipulation Bounded Context
 
 ## Bounded Contexts
-1. **String Manipulation**
-   - Handles UTF-8 string operations
-   - Responsible for: Split, Reverse, ContainsWildcard, Match
-   - Invariants: 
-     - Split with empty separator splits by UTF-8 bytes
-     - Reverse handles surrogate pairs as single code points
-     - Wildcard matching respects Unicode normalization
+- **String Manipulation** (primary context)
+  - Handles UTF-8 string operations, pure functions, and edge cases
+  - Includes: Split, EncodeHex, Range, ParseInt, Match, ContainsWildcard, Log
 
-2. **Encoding/Decoding**
-   - Manages binary-to-text encoding
-   - Responsible for: EncodeHex, EncodeBase64, DecodeImage
-   - Invariants:
-     - EncodeHex converts UTF-8 strings to hex byte sequences
-     - EncodeBase64 handles arbitrary byte sequences
-     - DecodeImage validates binary data patterns
+## Aggregate Boundaries
+- Each string operation is a standalone aggregate (pure functions with no side effects)
+- Surrogate pairs and Unicode handling are context-specific invariants
 
-3. **Numeric Operations**
-   - Provides number manipulation utilities
-   - Responsible for: Range, ParseInt, Average
-   - Invariants:
-     - Range generates inclusive integer sequences
-     - ParseInt validates numeric string formats
-     - Average computes floor of mean
+## Domain Events/Invariants
+- **UTF-8 Consistency**: All operations must treat input as valid UTF-8
+- **Pure Functions**: No I/O, no clocks, no network (as per specs/dsl.md)
+- **Surrogate Pair Handling**: Split must treat surrogate pairs as single code points
+- **Inclusive Ranges**: Range(start, end) includes both endpoints
+- **Wildcard Matching**: ContainsWildcard supports * and ? patterns
 
-4. **Unicode Handling**
-   - Specializes in Unicode edge cases
-   - Responsible for: Surrogate pair processing, combining marks
-   - Invariants:
-     - Split correctly handles UTF-8 byte
+## Open Questions
+- How to explicitly validate surrogate pair splitting in Split tests?
+-
