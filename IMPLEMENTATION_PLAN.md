@@ -12,3 +12,10 @@
 - [ ] Add failing test for `ContainsWildcard("hello", "h*l")` to validate wildcard matching
 - [ ] Add failing test for `EncodeHex([]byte("abc"))` to validate hexadecimal encoding
 - [ ] Add failing test for `Log("test")` to validate logging interface
+
+## Questions
+- What is the expected behavior for `Split` when handling surrogate pairs?
+- How should `Reverse` handle multi-byte characters like emoji?
+- Should `ParseInt` return an error for non-numeric strings, or just 0?
+- What error handling is required for `EncodeBase64` with invalid input?
+- How to handle edge cases in
