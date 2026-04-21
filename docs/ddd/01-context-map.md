@@ -1,21 +1,21 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**: Handles UTF-8 splitting, reversal, and pattern matching (Split, Reverse, Match)
-- **Encoding/Decoding**: Base64, hex, and image decoding (EncodeBase64, DecodeImage)
-- **Numeric Operations**: Range generation, parsing, and averaging (Range, ParseInt, Average)
-- **Regex-Like Patterns**: Wildcard matching and simple pattern validation (Match, ContainsWildcard)
+1. **String Manipulation**
+   - Aggregate Roots: `Split`, `Reverse`, `Join`
+   - Invariants:
+     - `Split(s, sep)` returns UTF-8 byte splits for `sep == ""` (Chinese characters, surrogate pairs)
+     - `Reverse(s)` preserves surrogate pairs and combining marks
+     - `Join(sep, parts)` maintains UTF-8 byte integrity
 
-## Aggregate Boundaries
-- **String Manipulation Aggregate**: 
-  - Split: UTF-8 byte splitting for multi-byte characters
-  - Reverse: Surrogate pair preservation
-  - Match: Regex-like pattern validation
-- **Encoding Aggregate**:
-  - EncodeBase64: Pure byte-to-string encoding
-  - DecodeImage: Simulated image decoding from byte slices
+2. **Unicode Handling**
+   - Aggregate Roots: `Split`, `Reverse`, `EncodeBase64`
+   - Invariants:
+     - Surrogate pairs treated as single code points
+     - Valid UTF-8 input required for all operations
+     - Proper byte stream handling for multi-byte characters
 
-## Domain Events
-- `StringSplitEvent`: Triggered when UTF-8 splitting completes
-- `EncodingComplete`: Fired after successful base64 encoding
-- `RangeGenerated`: Notified when numeric ranges are created
+3. **Data Conversion**
+   - Aggregate Roots: `ParseInt`, `Range`, `Average`
+   - Invariants:
+     - `ParseInt(s)` validates
