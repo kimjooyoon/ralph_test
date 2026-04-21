@@ -12,3 +12,7 @@
 - [ ] Implement domain.ContainsWildcard for * and ? pattern matching
 - [ ] Add failing test for Log("test") → "test"
 - [ ] Implement domain.Log to return input
+
+## Questions
+- How should `domain.Split` handle surrogate pairs in UTF-8 input? Should it treat them as single code points or split them into individual bytes?
+- What is the expected behavior for `domain.EncodeHex` when input contains non-ASCII characters? Should it encode the UTF-8 bytes as hex values?
