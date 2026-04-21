@@ -1,7 +1,2 @@
 - [x] Add failing test for `GenerateCode("for i in range(5): print(i)")` → 
-- [ ] Add failing test for `Split("中文", "")` to validate UTF-8 byte splitting (current test passes but needs explicit validation)
-- [ ] Add failing test for `Split("\U0001D10D", "")` to validate surrogate pair handling
-- [ ] Add failing test for `Range(1, 5)` to validate inclusive numeric range generation
-- [ ] Add failing test for `Reverse("\U0001D10D")` to validate surrogate pair reversal
-## Questions
-- What is the expected behavior for `Split` when
+- [ ] Add failing test for `
