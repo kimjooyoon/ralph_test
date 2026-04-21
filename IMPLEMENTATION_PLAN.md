@@ -1,3 +1,3 @@
 - [ ] Add failing test for `Split("中文", "")` to validate UTF-8 byte splitting for Chinese characters
 - [ ] Implement `Split` to return UTF-8 byte splits for non-empty strings with empty separator
--
+- [ ] Add failing test for `GenerateCode("for i in range(5): print(i)")
