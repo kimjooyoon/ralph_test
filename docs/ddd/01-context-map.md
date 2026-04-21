@@ -1,18 +1,13 @@
-# Context Map
+# Context Map — String Processing Domain
 
 ## Bounded Contexts
-- **String Manipulation**: Handles UTF-8 byte splitting, Unicode reversal, and surrogate pair handling
-- **Data Encoding**: Base64, hexadecimal, and JSON/YAML serialization
-- **Numeric Operations**: Range generation and integer parsing
+- **StringProcessing**: Handles string manipulation (Split, Reverse, Trim, Join)
+- **Encoding**: Manages binary-to-text encoding (Base64, Hex)
+- **NumericProcessing**: Deals with number operations (Range, Average)
+- **PatternMatching**: Implements regex-like matching (Match, ContainsWildcard)
+- **DataSerialization**: Handles JSON/YAML serialization
+- **MockExecution**: Simulates code evaluation/execution (Eval, GenerateCode)
 
 ## Aggregate Boundaries
-- `Split` operates on UTF-8 byte sequences, treating each byte as a separate element when separator is empty
-- `Reverse` treats surrogate pairs as single code points, preserving Unicode normalization
-- `EncodeBase64` operates on byte arrays, producing ASCII strings
-
-## Domain Events
-- `StringSplitEvent`: Triggered when UTF-8 bytes are split
-- `UnicodeReverseEvent`: Triggered when Unicode characters are reversed
-- `EncodeCompleteEvent`: Triggered when encoding operations complete
-
-## In
+- `Split(s, sep)` must treat empty separator as UTF-8 byte split
+- `
