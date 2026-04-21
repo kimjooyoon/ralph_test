@@ -1,8 +1,5 @@
 package domain
 
-import (
-	"testing"
-)
+import "testing"
 
-func TestGenerateCode(t *testing.T) {
-	result := GenerateCode("
+func TestGenerateCode(t *
