@@ -5,4 +5,6 @@
 - [ ] Add failing test for `Range(1, 5)` expecting [1,2,3,4,5] (numeric range generation)
 - [ ] Add failing test for `ParseInt("123")` expecting 123 (string to integer conversion)
 - [ ] Add failing test for `Match("^[a-z]+$", "abc123")` expecting false (regex-like pattern matching)
-- [ ] Add failing test for `ContainsWildcard("
+- [ ] Add failing test for `ContainsWildcard("hello", "h*l")` expecting true (wildcard substring search)
+- [ ] Add failing test for `EncodeBase64([]byte("hello"))` expecting "aGVsbG8="
+- [ ] Add failing test for
