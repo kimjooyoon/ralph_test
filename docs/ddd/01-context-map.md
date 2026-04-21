@@ -1,20 +1,28 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**
-  - Aggregate: `StringSplitter`
-  - Invariants: 
-    - `Split("中文", "")` returns UTF-8 byte splits for Chinese characters
-    - Surrogate pairs are treated as single code points
-    - Empty input returns empty slice
+- **String Manipulation**: Handles UTF-8 byte splitting, reversing, and encoding
+- **Data Analysis**: Provides numeric range generation and average calculation
+- **Encoding/Decoding**: Implements base64, hex, and JSON serialization
+- **AI Code Generation**: Produces AI-style code snippets from patterns
 
-- **AI Code Generation**
-  - Aggregate: `CodeGenerator`
-  - Invariants: 
-    - `GenerateCode("for i in range(5): print(i)")` returns AI-style code snippets
-    - Special characters are escaped in output
-    - Pure function with no I/O
+## Aggregate Boundaries
+- `Split` operates on UTF-8 byte sequences (not Unicode code points)
+- `Reverse` handles surrogate pairs and combining marks as single code points
+- `EncodeBase64` converts byte slices to base64 strings
+- `GenerateCode` produces code snippets from pattern strings
 
-- **Numeric Operations**
-  - Aggregate: `NumericProcessor`
-  - In
+## Domain Events
+- `Split` completes with UTF-8 byte splits
+- `Reverse` completes with properly normalized Unicode
+- `EncodeBase64` completes with valid base64 encoding
+- `GenerateCode` completes with AI-style code snippet
+
+## Invariants
+- `Split("", "")` returns empty slice
+- `Split(s, "")` for non-empty `s` returns byte splits
+- `Reverse` preserves surrogate pairs as single code points
+- `EncodeBase64` handles all valid UTF-8 input
+<<END_FILE>> 
+
+<<<
