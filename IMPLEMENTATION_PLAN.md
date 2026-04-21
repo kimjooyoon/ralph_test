@@ -6,5 +6,4 @@
 - [ ] Add failing test for `ParseInt("123")` expecting 123 (string to integer conversion)
 - [ ] Add failing test for `Match("^[a-z]+$", "abc123")` expecting false (regex-like pattern matching)
 - [ ] Add failing test for `ContainsWildcard("hello", "h*l")` expecting true (wildcard substring search)
-- [ ] Add failing test for `EncodeBase64([]byte("hello"))` expecting "aGVsbG8="
-- [ ] Add failing test for
+- [ ] Add failing
