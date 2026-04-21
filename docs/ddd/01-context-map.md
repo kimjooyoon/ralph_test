@@ -1,17 +1,19 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**
-  - Aggregate Roots: `Split`, `Reverse`, `Trim`, `Join`, `Repeat`, `Replace`
-  - Invariants:
-    - `Split("中文", "")` → ["中", "文"] (UTF-8 byte splitting)
-    - `Reverse("中文")` → "文中" (surrogate pairs handled)
-    - `Trim("  abc  ")` → "abc" (whitespace removal)
-    - `Join(["a", "b"], "-")` → "a-b"
-    - `Repeat("a", 3)` → "aaa"
-    - `Replace("abc", "a", "x")` → "xbc"
+- **String Manipulation**: Handles UTF-8 byte splitting, reversing, and pattern matching (Split, Reverse, Match)
+- **Unicode Handling**: Specializes in surrogate pairs, combining marks, and multi-byte character processing (Split, Reverse)
+- **Numeric Operations**: Focuses on range generation and string-to-integer conversion (Range, ParseInt)
+- **AI Code Generation**: Produces AI-style code snippets from patterns (GenerateCode)
 
-- **AI Code Generation**
-  - Aggregate Roots: `GenerateCode`
-  - Invariants:
-    - `GenerateCode("for i in range(5): print(i)")` → same input (pure function
+## Aggregate Boundaries
+- **String Manipulation Aggregate**: 
+  - `Split(s, sep)` - UTF-8 byte splitting for multi-byte characters
+  - `Reverse(s)` - Surrogate pair-aware reversal
+  - `Match(pattern, s)` - Regex-like pattern matching
+- **Numeric Aggregate**:
+  - `Range(start, end)` - Inclusive numeric range generation
+  - `ParseInt(s)` - String-to-integer conversion with validation
+
+## Domain Events
+- `StringSplitEvent` - Triggered when UTF-8 byte splitting
