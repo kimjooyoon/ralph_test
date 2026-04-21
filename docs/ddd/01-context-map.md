@@ -1,13 +1,10 @@
-# Context Map — String Manipulation
+# Context Map
 
-## Bounded Context: String Manipulation
-- **Primary responsibility**: UTF-8 byte-level string operations with Unicode awareness
-- **Key aggregates**:
-  - `StringSplitter`: Handles byte-wise splitting with UTF-8 decoding
-  - `UnicodeDecoder`: Manages surrogate pairs and combining marks
-- **Domain events**:
-  - `ByteSplitComplete`: When a string is split into UTF-8 bytes
-  - `UnicodeDecoded`: When a multi-byte sequence is properly decoded
-- **Ubiquitous language**:
-  - "Split by byte" (vs. "split by code point")
-  -
+## Bounded Contexts
+- **String Manipulation**: Handles UTF-8 decoding, splitting, reversing, and encoding (Split, Reverse, EncodeBase64)
+- **Numeric Operations**: Range generation, parsing, and averaging (Range, ParseInt, Average)
+- **Pattern Matching**: Regex-like wildcards and substring checks (Match, ContainsWildcard)
+- **Data Encoding**: Base64, hexadecimal, and serialization formats (EncodeBase64, EncodeHex, SerializeJSON)
+
+## Aggregates
+- **String Manipulation Aggregate**: Ensures UTF-8 safety for Split (byte-level)
