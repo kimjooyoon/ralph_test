@@ -1,6 +1,4 @@
-- [ ] Add failing test for `Split` in `domain/split_test.go` to validate UTF-8 byte splitting for surrogate pairs (ensure `Split("\U0001D10D", "")` returns `["\U0001D10D"]`)
-- [ ] Implement `Split` in `domain/split.go` to handle UTF-8 byte splitting for multi-byte characters including surrogate pairs and combining marks
-- [ ] Add failing test for `Split` with Chinese characters (ensure `Split("中文", "")` returns `["中", "文"]`)
-- [ ] Add failing test for `Split` with combining marks (ensure `Split("👨‍👩‍👧‍👦", "")` returns `["👨‍👩‍👧‍👦"]`)
-- [ ] Update `domain/split.go` to handle UTF-8 decoding properly using `unicode/utf8` package
-## Questions
+- [ ] Add failing test for `Reverse` in `domain/reverse_test.go` to handle surrogate pairs (ensure `Reverse("\U0001D10D")` returns `\U0001D10D`)
+- [ ] Implement `Reverse` in `domain/reverse.go` to handle UTF-8 decoding properly using `unicode/utf8` package
+- [ ] Add failing test for `Range` in `domain/range_test.go` (ensure `Range(1, 5)` returns `[1,2,3,4,5]`)
+- [ ] Implement `Range` in `domain/range.go` to generate
