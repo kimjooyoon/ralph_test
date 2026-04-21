@@ -3,4 +3,12 @@
 - [ ] Add failing test for EncodeHex with non-ASCII input (e.g., "中文" → "6C27656E")
 - [ ] Implement domain.EncodeHex to handle UTF-8 input correctly
 - [ ] Add failing test for Range(1, 5) → [1,2,3,4,5]
-- [ ]
+- [ ] Add failing test for Match("^[a-z]+$", "abc123") → false
+- [ ] Implement domain.Match for basic regex-like pattern matching
+- [ ] Add failing test for ContainsWildcard("hello", "h*l") → true
+- [ ] Implement domain.ContainsWildcard with * and ? wildcards
+- [ ] Add failing test for ParseInt("123") → 123
+- [ ] Implement domain.ParseInt with error handling for invalid inputs
+- [ ] Add failing test for Log("test") → "test"
+- [ ] Implement domain.Log as pure function returning input
+-
