@@ -1,23 +1,27 @@
-# Context Map — dsl-maker
+# Context Map
 
 ## Bounded Contexts
+- **String Manipulation** (domain/split.go, domain/reverse.go, domain/trim.go)
+  - Aggregate: StringSegment
+  - Invariants: 
+    - `Split(s, sep)` must split UTF-8 bytes for multi-byte characters (Chinese, emoji)
+    - `Reverse(s)` must handle surrogate pairs and combining marks as single code points
+    - `Trim(s)` must preserve valid UTF-8 sequences
 
-- **String Manipulation**: Handles UTF-8, Unicode, and byte-level operations (Split, Reverse, Trim, Join, Replace, Repeat)
-- **Code Generation**: AI-style code snippet creation (GenerateCode)
-- **Numeric Helpers**: Range generation, parsing, and basic math (Range, Average)
-- **Encoding/Decoding**: Base64, Hex, and other data transformations (EncodeBase64, EncodeHex)
-- **Pattern Matching**: Regex-like wildcards and substring checks (Match, ContainsWildcard)
-- **Serialization**: JSON and YAML formatting (SerializeJSON, SerializeYAML)
-- **Logging/Debugging**: Mock logging and timestamp generation (Log, Timestamp)
+- **Numeric Processing** (domain/parseint.go, domain/average.go, domain/range.go)
+  - Aggregate: NumericRange
+  - Invariants: 
+    - `ParseInt(s)` must validate UTF-8 numeric strings
+    - `Average(nums)` must floor mean of integers
+    - `Range(start, end)` must generate inclusive integer sequences
 
-## Aggregate Boundaries
+- **Pattern Matching** (domain/match.go, domain/containswildcard.go)
+  - Aggregate: PatternMatcher
+  - Invariants: 
+    - `Match(pattern, s)` must validate regex-like syntax
+    - `ContainsWildcard(s, pattern)` must support * and ? wildcards
 
-- **String Manipulation Aggregate**: Enforces UTF-8 byte/character splitting, surrogate pair handling, and Unicode normalization
-- **Code Generation Aggregate**: Ensures AI-style code snippets are pure functions with no I/O
-- **Numeric Aggregate**: Maintains numeric range validity and integer parsing constraints
-- **Encoding Aggregate**: Guarantees valid base64/hex encoding without external dependencies
-
-## Domain Events
-
-- `StringSplitEvent`: Triggered when UTF-8 byte splitting completes
-- `CodeGeneratedEvent`: Fired after AI
+- **Encoding/Decoding** (domain/encodebase64.go, domain/decodeimage.go)
+  - Aggregate: DataEncoder
+  - Invariants: 
+    - `EncodeBase64(data
