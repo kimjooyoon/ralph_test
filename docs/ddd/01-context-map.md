@@ -1,19 +1,6 @@
 # Context Map
 
 ## Bounded Contexts
-- **StringHelpers**: Handles string manipulation (split, reverse, join)
-  - Aggregate: `Split` (splits by UTF-8 bytes)
-  - Aggregate: `Reverse` (handles surrogate pairs)
-- **UnicodeProcessing**: Specializes in Unicode handling
-  - Aggregate: `Reverse` (combining marks)
-  - Aggregate: `Split` (multi-byte characters)
-- **CodeGeneration**: AI-style code snippet creation
-  - Aggregate: `GenerateCode` (pattern → code)
-
-## Aggregate Boundaries
-- `Split` must not expose internal byte slicing logic
-- `Reverse` must isolate surrogate pair handling
-- `GenerateCode` must remain pure (no I/O)
-
-## Domain Events/Invariants
-- **SplitInvariant**: For `sep ==
+- **String Manipulation**: Handles UTF-8 byte splitting, reversing, and pattern matching (bounded by `Split`, `Reverse`, `Match` functions)
+- **Unicode Handling**: Specializes in surrogate pairs, combining marks, and multi-byte character processing (bounded by `Split`, `Reverse` invariants)
+- **Data Encoding**: Focuses on base6
