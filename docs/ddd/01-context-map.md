@@ -1,27 +1,19 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation** (domain/split.go, domain/reverse.go, domain/trim.go)
-  - Aggregate: StringSegment
+- **String Manipulation**: Handles UTF-8 string operations (Split, Reverse, Join, Trim)
+  - Aggregate Roots: `StringSegment`, `UnicodeCodePoint`
   - Invariants: 
-    - `Split(s, sep)` must split UTF-8 bytes for multi-byte characters (Chinese, emoji)
-    - `Reverse(s)` must handle surrogate pairs and combining marks as single code points
-    - `Trim(s)` must preserve valid UTF-8 sequences
-
-- **Numeric Processing** (domain/parseint.go, domain/average.go, domain/range.go)
-  - Aggregate: NumericRange
+    - `Split(s string, sep string) []string` must split by UTF-8 bytes when `sep == ""`
+    - `Reverse(s string) string` must handle surrogate pairs as single code points
+    - `Join(sep string, parts []string) string` must preserve UTF-8 integrity
+- **Data Encoding**: Base64, Hex, JSON, YAML encoding/decoding
+  - Aggregate Roots: `EncodedData`, `BinaryPayload`
   - Invariants: 
-    - `ParseInt(s)` must validate UTF-8 numeric strings
-    - `Average(nums)` must floor mean of integers
-    - `Range(start, end)` must generate inclusive integer sequences
-
-- **Pattern Matching** (domain/match.go, domain/containswildcard.go)
-  - Aggregate: PatternMatcher
+    - `EncodeBase64(data []byte) string` must produce valid Base64
+    - `DecodeImage(data string) []byte` must simulate image decoding
+- **Numeric Operations**: Range generation, parsing, averaging
+  - Aggregate Roots: `NumericRange`, `IntegerValue`
   - Invariants: 
-    - `Match(pattern, s)` must validate regex-like syntax
-    - `ContainsWildcard(s, pattern)` must support * and ? wildcards
-
-- **Encoding/Decoding** (domain/encodebase64.go, domain/decodeimage.go)
-  - Aggregate: DataEncoder
-  - Invariants: 
-    - `EncodeBase64(data
+    - `Range(start, end int) []int` must generate inclusive ranges
+    - `
