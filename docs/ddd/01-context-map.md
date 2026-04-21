@@ -1,21 +1,12 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**: Handles UTF-8 byte splitting, reversing, and surrogate pair processing (Split, Reverse, TestSplitSurrogatePairs)
-- **AI Code Generation**: Generates code snippets via pattern matching (GenerateCode)
-- **Data Analysis**: Computes statistical averages (Average)
-- **Unicode Processing**: Specialized handling of multi-byte characters and edge cases (Split, Reverse, TestSplitSurrogatePairs)
+- **String Manipulation**: Handles UTF-8 byte splitting, surrogate pairs, and Unicode edge cases.  
+- **Code Generation**: Produces AI-style code snippets via pure functions.  
+- **Numeric Operations**: Computes averages and generates ranges.  
+- **Encoding/Decoding**: Base64, hex, and image decoding helpers.  
 
 ## Aggregate Boundaries
-- **String Manipulation Aggregate**: 
-  - `Split(s string, sep string) []string` 
-  - `Reverse(s string) string` 
-  - `TestSplitSurrogatePairs()` (ensures surrogate pairs are treated as single code points)
-- **Code Generation Aggregate**: 
-  - `GenerateCode(pattern string) string` 
-- **Data Analysis Aggregate**: 
-  - `Average(nums []int) int`
-
-## Domain Events
-- **String Split Event**: Triggered when UTF-8 byte splitting occurs
--
+- **Split**: Splits strings by UTF-8 bytes (not code points).  
+- **Reverse**: Handles surrogate pairs and combining marks as single units.  
+- **GenerateCode**: Pure function with
