@@ -1,11 +1,14 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**: Handles splitting, reversing, encoding, and pattern matching (Split, Reverse, EncodeBase64, Match, ContainsWildcard)
-- **Data Encoding**: Focuses on binary-to-text encoding (EncodeBase64, EncodeHex)
-- **Numeric Operations**: Provides range generation and parsing (Range, ParseInt)
-- **AI Code Generation**: Generates AI-style code snippets (GenerateCode)
-- **Unicode Handling**: Specializes in UTF-8 byte splitting and surrogate pair management (Split, TestSplitSurrogatePairs)
+- **String Manipulation**: Handles UTF-8 byte splitting, surrogate pairs, and Unicode edge cases (Split, Reverse, Trim, Join, etc.)
+- **Data Encoding**: Base64, hexadecimal, and binary encoding/decoding (EncodeBase64, EncodeHex)
+- **Numeric Operations**: Range generation, integer parsing, and averaging (Range, ParseInt, Average)
+- **Pattern Matching**: Regex-like wildcards and substring searches (Match, ContainsWildcard)
+- **Mock I/O**: Logging, timestamping, and mock evaluation (Log, Timestamp, Eval)
+- **AI Code Generation**: AI-style code snippet creation (GenerateCode)
 
 ## Aggregate Boundaries
-- **StringAggregate**: Encapsulates string operations (Split, Reverse,
+- **String Manipulation Aggregate**: Ensures UTF-8 byte splitting respects multi-byte characters (e.g., Chinese, emoji)
+- **Encoding Aggregate**: Guarantees base64/hex encoding/decoding adheres to RFC standards
+- **Numeric Aggregate**: Maintains numerical invariants (e.g
