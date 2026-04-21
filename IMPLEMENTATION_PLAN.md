@@ -1,9 +1,3 @@
-- [ ] Add failing test for `GenerateCode` in `domain/GenerateCode_test.go` to validate AI-style code snippet generation
-- [ ] Implement `GenerateCode` in `domain/GenerateCode.go` to return AI-style code snippets
-- [ ] Add failing test for `Average` in `domain/average_test.go` to validate mean calculation
-- [ ] Implement `Average` in `domain/average.go` to return floor of mean
-- [ ] Add failing test for `DecodeImage` in `domain/decode_image_test.go` to validate image decoding simulation
-- [ ] Implement `DecodeImage` in `domain/decode_image.go` to return byte slice of input
-- [ ] Add failing test for `Eval` in `domain/eval_test.go` to validate code evaluation
-- [ ] Implement `Eval` in `domain/eval.go` to return evaluated result as string
-- [ ] Add failing test for `Range` in `domain/range_test.go` to validate numeric range generation
+- [ ] Add failing test for `Split` in `domain/split_test.go` to validate UTF-8 byte splitting for Chinese characters (ensure `Split("中文", "")` returns `["中", "文"]`)
+- [ ] Implement `Split` in `domain/split.go` to handle UTF-8 byte splitting for multi-byte characters
+- [ ] Add failing test for `Reverse` in `domain/reverse_test.go`
