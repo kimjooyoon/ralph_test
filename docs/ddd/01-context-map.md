@@ -1,12 +1,9 @@
 # Context Map
 
 ## Bounded Contexts
+- **String Manipulation Helpers**: Handles UTF-8 string operations (split, reverse, encode/decode)
+- **Unicode Processing**: Specializes in surrogate pairs, combining marks, and multi-byte characters
+- **Data Transformation**: Includes numeric range generation, encoding, and pattern matching
 
-### 1. String Manipulation
-- **Responsibility**: Core string operations (split, reverse, trim, etc.)
-- **Aggregates**:
-  - `Split` (UTF-8 byte splitting, surrogate pair handling)
-  - `Reverse` (surrogate pair & combining mark awareness)
-  - `Trim` (whitespace removal with Unicode-aware logic)
-- **Invariants**:
-  - `Split("", s)` returns byte-per-UTF-8 (not
+## Aggregates
+- **String
