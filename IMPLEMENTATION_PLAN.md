@@ -6,6 +6,6 @@
 - [ ] Implement `Average` as pure function returning floor of mean
 - [ ] Add failing test for `TestSplitSurrogatePairs` to validate surrogate pair handling in `Split`
 - [ ] Implement `Split` to treat surrogate pairs as single code points
-## Questions
-- What exact behavior is expected for `GenerateCode` when patterns contain special characters?
-- How should `Average` handle empty input or non-integer values?
+- [ ] Add failing test for `Range(1, 5)` to validate numeric range generation
+- [ ] Implement `Range` as pure function returning inclusive integer ranges
+- [
