@@ -1,21 +1,14 @@
-# Context Map — String Manipulation Bounded Context
+# Context Map
 
 ## Bounded Contexts
-- **String Manipulation** (primary context)
-  - Handles UTF-8 string operations, pure functions, and edge cases
-  - Includes: Split, EncodeHex, Range, ParseInt, Match, ContainsWildcard, Log
+- **String Processing** (primary context for `Split`, `Join`, `Reverse`, `Trim`, `ContainsWildcard`)
+- **Encoding/Decoding** (for `EncodeBase64`, `EncodeHex`, `DecodeImage`)
+- **Numeric Operations** (for `Range`, `ParseInt`, `Average`)
+- **Regex-Like Matching** (for `Match`, `ContainsWildcard`)
+- **Logging/Debugging** (for `Log`, `Timestamp`)
 
 ## Aggregate Boundaries
-- Each string operation is a standalone aggregate (pure functions with no side effects)
-- Surrogate pairs and Unicode handling are context-specific invariants
-
-## Domain Events/Invariants
-- **UTF-8 Consistency**: All operations must treat input as valid UTF-8
-- **Pure Functions**: No I/O, no clocks, no network (as per specs/dsl.md)
-- **Surrogate Pair Handling**: Split must treat surrogate pairs as single code points
-- **Inclusive Ranges**: Range(start, end) includes both endpoints
-- **Wildcard Matching**: ContainsWildcard supports * and ? patterns
-
-## Open Questions
-- How to explicitly validate surrogate pair splitting in Split tests?
--
+- `Split` operates on **UTF-8 byte sequences** (not code points) in the String Processing context
+- `EncodeHex` handles **UTF-8 input as byte sequences** in the Encoding context
+- `Range` generates **inclusive integer sequences** in Numeric Operations
+- `Match` and `ContainsWildcard` work with **pattern matching rules** in Regex-Like Matching
