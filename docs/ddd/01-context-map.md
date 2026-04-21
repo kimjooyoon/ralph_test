@@ -1,7 +1,11 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**: Handles splitting, reversing, encoding, and basic pattern matching (Split, Reverse, EncodeBase64, Match, ContainsWildcard)
-- **Numeric Operations**: Range generation, averaging, and integer parsing (Range, Average, ParseInt)
-- **AI Code Generation**: Generates AI-style code snippets (GenerateCode)
-- **Image Processing**: Simulates image decoding (DecodeImage
+- **String Manipulation** (primary context)
+  - Handles UTF-8 string operations: splitting, reversing, encoding, etc.
+  - Aggregates:
+    - `Split` (splits strings by UTF-8 bytes or separators)
+    - `Reverse` (reverses strings with Unicode-aware handling)
+    - `EncodeBase64` (encodes bytes to Base64)
+    - `Range` (generates numeric ranges)
+    - `Match` (pattern matching with
