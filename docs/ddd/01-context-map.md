@@ -1,16 +1,14 @@
 # Context Map
 
 ## Bounded Contexts
+- **String Manipulation**: Handles basic string operations (split, reverse, join, trim)
+- **Unicode Handling**: Specializes in multi-byte character processing (Chinese, emoji, surrogate pairs)
+- **Encoding/Decoding**: Manages binary-to-text encoding (Base64, Hex)
+- **Codex AI**: Implements AI-style code generation patterns
+- **Numeric Operations**: Provides range generation and numeric checks
 
-1. **String Manipulation**
-   - Functions: Split, Reverse, Join, Trim, Repeat, Replace
-   - Invariants: 
-     - `Split` must split UTF-8 bytes for multi-byte characters (e.g., Chinese, emoji)
-     - `Reverse` must handle surrogate pairs and combining marks
-     - `Join` must preserve UTF-8 byte boundaries
-     - `Trim` must remove whitespace from UTF-8 strings
-     - `Repeat` must handle numeric ranges and string repetition
-     - `Replace` must support pattern-based string substitution
-
-2. **Unicode Handling**
-   - Functions: Split (with byte
+## Aggregate Boundaries
+- **String Manipulation**:
+  - `Split(s, sep)` - Splits strings by UTF-8 bytes (for multi-byte characters)
+  - `Reverse(s)` - Reverses string while preserving surrogate pairs
+  - `Join(sep, parts)` - Concaten
