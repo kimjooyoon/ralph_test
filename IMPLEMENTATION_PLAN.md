@@ -1,2 +1,4 @@
 - [x] Add failing test for `GenerateCode("for i in range(5): print(i)")` → 
-- [ ] Add failing test for `
+- [ ] Add failing test for `Split("中文", "")` expecting ["中", "文"] (UTF-8 byte splitting for Chinese characters)
+- [ ] Add failing test for `Average([]int{1,2,3,4,5})` expecting 3 (floor division)
+- [ ] Add failing test for `DecodeImage("PNG")` expecting [80, 78, 71, 13, 10, 2
