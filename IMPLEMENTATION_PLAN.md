@@ -4,3 +4,6 @@
 - [ ] Add failing test for `Range(1, 5)` to validate numeric range generation
 - [ ] Add failing test for `ParseInt("123")` to validate string-to-integer conversion
 - [ ] Add failing test for `EncodeBase64([]byte("hello"))` to validate base64
+- [ ] Add failing test for `Match("^[a-z]+$", "abc123")` to validate regex-like pattern matching
+- [ ] Add failing test for `ContainsWildcard("hello", "h*l")` to validate wildcard substring search
+- [ ] Add failing test for `EncodeHex([]byte("abc"))` to
