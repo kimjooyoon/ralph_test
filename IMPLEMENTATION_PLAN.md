@@ -1,5 +1,3 @@
 - [ ] Add failing test for `Split("中文", "")` to return `["中", "文"]` (complete the test case from docs/ralph/10-hot-signals.md)
 - [ ] Implement UTF-8 byte splitting in `Split` function in `domain/` for multi-byte characters
-- [ ] Add failing test for `Reverse("\U0001D10D")` to return `["\U0001D10D"]` (from docs/ralph/12-unicode-edge.md)
-- [ ] Implement surrogate pair handling in `Reverse` function in `domain/`
-- [ ] Add failing test for `Range(1, 5)` to return `[1,2,3,4,5]` (from docs/ralph
+- [ ] Add failing test for `Reverse
