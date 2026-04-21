@@ -1,19 +1,20 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**: Handles UTF-8 byte splitting, reversing, and pattern matching (Split, Reverse, Match)
-- **Unicode Handling**: Specializes in surrogate pairs, combining marks, and multi-byte character processing (Split, Reverse)
-- **Numeric Operations**: Focuses on range generation and string-to-integer conversion (Range, ParseInt)
-- **AI Code Generation**: Produces AI-style code snippets from patterns (GenerateCode)
+- **DSL Helpers**: Pure string manipulation functions (Split, Reverse, EncodeBase64, etc.)
+- **Unicode Processing**: Specialized handling of UTF-8, surrogate pairs, and multi-byte characters
+- **AI Code Generation**: GenerateCode function for AI-style code snippets
 
-## Aggregate Boundaries
-- **String Manipulation Aggregate**: 
-  - `Split(s, sep)` - UTF-8 byte splitting for multi-byte characters
-  - `Reverse(s)` - Surrogate pair-aware reversal
-  - `Match(pattern, s)` - Regex-like pattern matching
-- **Numeric Aggregate**:
-  - `Range(start, end)` - Inclusive numeric range generation
-  - `ParseInt(s)` - String-to-integer conversion with validation
+## Aggregates & Boundaries
+- **Split**: Splits strings by UTF-8 bytes (boundary: empty separator)
+- **Reverse**: Handles surrogate pairs and combining marks (boundary: Unicode-aware reversal)
+- **GenerateCode**: Pure function that returns AI-style code patterns (boundary: no I/O)
 
 ## Domain Events
-- `StringSplitEvent` - Triggered when UTF-8 byte splitting
+- `SplitCompleted`: Indicates successful UTF-8 byte splitting
+- `ReverseCompleted`: Indicates successful Unicode-aware reversal
+- `CodeGenerated`: Indicates successful AI-style code generation
+
+## Invariants
+- Split with empty separator must return one string per UTF-8 byte
+- Reverse must treat surrogate pairs as single code
