@@ -1,24 +1,16 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation** (primary context): Handles UTF-8 string operations, including splitting, reversing, encoding, and pattern matching. This context contains all string-related utilities.
+- **String Manipulation**: Handles UTF-8 byte splitting, surrogate pairs, and Unicode normalization. (Includes `Split`, `Reverse`, `EncodeBase64`)
+- **Data Transformation**: Pure functions for encoding/decoding, serialization, and numeric operations. (Includes `EncodeBase64`, `Range`, `ParseInt`)
+- **Pattern Matching**: Regex-like checks and wildcard substring searches. (Includes `Match`, `ContainsWildcard`)
 
-## Aggregate Boundaries
-- **String Splitter**: Splits strings by UTF-8 bytes or code points. Aggregates are immutable and stateless.
-- **Unicode Reverser**: Reverses strings while preserving surrogate pairs and combining marks. Aggregates are immutable and stateless.
-- **Encoding Utilities**: Base64, hex, and other encoding/decoding operations. Aggregates are immutable and stateless.
+## Aggregates
+- **String Segmenter**: Ensures UTF-8 byte splitting for multi-byte characters (e.g., Chinese, emoji). (Invariant: `Split(s, "")` returns one element per UTF-8 byte)
+- **Unicode Validator**: Ensures surrogate pairs and combining marks are treated as single code points. (Invariant: `Reverse("\U0001D10D")` preserves surrogate pairs)
+- **Encoding Context**: Ensures base64 and hex encoding/decoding follows UTF-8 byte boundaries. (Invariant: `EncodeBase64([]byte("hello"))` produces "aGVsbG8=")
 
 ## Domain Events
-- `StringSplitEvent`: Triggered when a string is split by UTF-8 bytes or code points.
-- `UnicodeReverseEvent`: Triggered when a string is reversed with proper Unicode handling.
-- `EncodeEvent`: Triggered when data is encoded into a string format.
-
-## Ubiquitous Language
-- **UTF-8 byte splitting**: Splitting by individual UTF-8 bytes (not code points).
-- **Surrogate pairs**: Pairs of Unicode code points used to represent characters outside the Basic Multilingual Plane.
-- **Combining marks**: Diacritical marks that modify base characters (e.g., accents).
-- **Code points**: Individual Unicode characters, including surrogate pairs.
-
-## Open Questions
-- Should `Split` with empty separator be a separate bounded context or part of the main string manipulation context?
-- How
+- `StringSplitEvent`: Triggered when `Split` completes with UTF-8 byte splitting.
+- `UnicodeReverseEvent`: Triggered when `Reverse` completes with surrogate pair preservation.
+- `EncodeCompleteEvent`: Triggered when encoding
