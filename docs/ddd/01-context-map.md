@@ -1,14 +1,27 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**: Handles UTF-8 byte splitting, surrogate pairs, and Unicode edge cases (Split, Reverse, Trim, Join, etc.)
-- **Data Encoding**: Base64, hexadecimal, and binary encoding/decoding (EncodeBase64, EncodeHex)
-- **Numeric Operations**: Range generation, integer parsing, and averaging (Range, ParseInt, Average)
-- **Pattern Matching**: Regex-like wildcards and substring searches (Match, ContainsWildcard)
-- **Mock I/O**: Logging, timestamping, and mock evaluation (Log, Timestamp, Eval)
-- **AI Code Generation**: AI-style code snippet creation (GenerateCode)
+1. **String Manipulation**
+   - Responsible for UTF-8 byte/character splitting, reversing, and basic string transformations
+   - Aggregates: `String` (with `Split`, `Reverse`, `Trim`, `Join`, `Repeat`, `Replace`)
+   - Invariants: 
+     - `Split` must split on UTF-8 bytes for multi-byte characters (e.g., Chinese, emoji)
+     - `Reverse` must handle surrogate pairs and combining marks correctly
+     - All string operations must preserve valid UTF-8 input
 
-## Aggregate Boundaries
-- **String Manipulation Aggregate**: Ensures UTF-8 byte splitting respects multi-byte characters (e.g., Chinese, emoji)
-- **Encoding Aggregate**: Guarantees base64/hex encoding/decoding adheres to RFC standards
-- **Numeric Aggregate**: Maintains numerical invariants (e.g
+2. **Encoding/Decoding**
+   - Handles base64, hex, and other encoding formats
+   - Aggregates: `EncodedData` (with `EncodeBase64`, `EncodeHex`)
+   - Invariants: 
+     - Encoding/decoding must be pure functions with no I/O
+     - Base64 encoding must handle non-ASCII input correctly
+
+3. **AI Code Generation**
+   - Generates AI-style code snippets from patterns
+   - Aggregates: `CodeSnippet` (with `GenerateCode`)
+   - Invariants: 
+     - `GenerateCode` must return syntactically valid code
+     - Must be a pure function with no I/O
+
+## Context Boundaries
+- `Split` boundary: UTF-8 byte vs Unicode
