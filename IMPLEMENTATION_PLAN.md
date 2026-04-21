@@ -3,5 +3,4 @@
 - [ ] Add failing test for `Split("\U0001D10D", "")` to validate surrogate pair handling
 - [ ] Add failing test for `Range(1, 5)` to validate inclusive numeric range generation
 - [ ] Add failing test for `ParseInt("123")` to validate string-to-integer conversion
-- [ ] Add failing test for `Match("^[a-z]+$", "abc123")` to validate regex-like pattern matching
-- [ ] Add failing test
+- [ ] Add failing test for `Match("^[a-z]+$", "abc123")` to validate regex
