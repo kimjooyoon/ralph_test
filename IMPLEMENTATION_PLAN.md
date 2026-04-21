@@ -2,4 +2,5 @@
 - [ ] Implement `Split` to handle surrogate pairs as single code points (per Unicode standards)
 - [ ] Add failing test for `GenerateCode("for i in range(5): print(i)")` with expected AI-style Python code generation
 - [ ] Implement `GenerateCode` to return formatted code snippets based on input patterns
-- [ ] Add failing test for `Range(
+- [ ] Complete failing test for `Range(1, 5)` to validate numeric range generation
+- [ ] Add failing test for `Reverse("\U0001D10D")` to
