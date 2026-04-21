@@ -3,4 +3,9 @@
 - [ ] Add failing test for `GenerateCode` AI-style code snippet generator (specs/dsl.md#codex)
 - [ ] Implement `GenerateCode` function to return AI-style code snippets (domain/GenerateCode.go)
 - [ ] Add failing test for `Reverse` with surrogate pair handling (docs/ralph/12-unicode-edge.md#7)
-- [ ] Implement `Reverse` to handle surrogate pairs and
+- [ ] Implement `Reverse` to handle surrogate pairs and combining marks (domain/reverse.go)
+- [ ] Add failing test for `Range` numeric range generator (docs/ralph/13-numeric.md#8)
+- [ ] Implement `Range` to return inclusive integer ranges (domain/Range.go)
+- [ ] Add failing test for `ParseInt` string-to-integer conversion (docs/ralph/13-numeric.md#9)
+- [ ] Implement `ParseInt` with error handling for invalid inputs (domain/ParseInt.go)
+- [ ] Add failing test for `Match` regex-like pattern
