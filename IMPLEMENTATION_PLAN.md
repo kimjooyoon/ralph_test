@@ -1,6 +1,6 @@
-- [ ] Add failing test for `Split` with empty separator in `domain/split_test.go` to validate UTF-8 byte splitting for Chinese characters
-- [ ] Implement `Split` in `domain/split.go` to handle empty separator by splitting on UTF-8 bytes
-- [ ] Add failing test for `Reverse` with surrogate pairs in `domain/reverse_test.go` to validate Unicode handling
-- [ ] Implement `Reverse` in `domain/reverse.go` to correctly handle surrogate pairs and combining marks
+- [ ] Add failing test for `Split` with surrogate pairs in `domain/split_test.go` to validate UTF-8 byte splitting for emoji/Unicode
+- [ ] Implement `Split` in `domain/split.go` to handle surrogate pairs by splitting on UTF-8 bytes
+- [ ] Add failing test for `Reverse` with combining marks in `domain/reverse_test.go` to validate Unicode handling
+- [ ] Implement `Reverse` in `domain/reverse.go` to correctly handle combining marks and legacy Unicode sequences
 - [ ] Add failing test for `EncodeBase64` in `domain/encode_base64_test.go` to validate base64 encoding of UTF-8 text
-- [ ] Implement `EncodeBase
+- [ ] Implement `EncodeBase64` in `domain/encode_base64.go` to handle
