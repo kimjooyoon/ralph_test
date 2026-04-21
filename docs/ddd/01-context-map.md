@@ -1,14 +1,23 @@
-# Context Map
+# Context Map — dsl-maker
 
 ## Bounded Contexts
-- **String Manipulation**: Handles core string operations (split, reverse, join, trim) with UTF-8 byte-level precision for multi-byte characters
-- **Unicode Handling**: Specializes in surrogate pair processing, combining marks, and code point validation
-- **Data Encoding**: Focuses on base64, hex, and other encoding/decoding operations with strict byte handling
-- **Numeric Operations**: Provides range generation and integer parsing with domain-specific invariants
+
+- **String Manipulation**: Handles UTF-8, Unicode, and byte-level operations (Split, Reverse, Trim, Join, Replace, Repeat)
+- **Code Generation**: AI-style code snippet creation (GenerateCode)
+- **Numeric Helpers**: Range generation, parsing, and basic math (Range, Average)
+- **Encoding/Decoding**: Base64, Hex, and other data transformations (EncodeBase64, EncodeHex)
+- **Pattern Matching**: Regex-like wildcards and substring checks (Match, ContainsWildcard)
+- **Serialization**: JSON and YAML formatting (SerializeJSON, SerializeYAML)
+- **Logging/Debugging**: Mock logging and timestamp generation (Log, Timestamp)
 
 ## Aggregate Boundaries
-- **String Split Aggregate**: Enforces UTF-8 byte splitting for empty separators, with invariant that surrogate pairs are treated as single code points
-- **Unicode Validator Aggregate**: Ensures all operations use valid UTF-8 input, with invariant that surrogate pairs are properly normalized
-- **Encoding Transformer Aggregate**: Maintains strict byte-to-byte transformation for encoding operations, with invariant that invalid sequences are rejected
 
-## Domain Events/In
+- **String Manipulation Aggregate**: Enforces UTF-8 byte/character splitting, surrogate pair handling, and Unicode normalization
+- **Code Generation Aggregate**: Ensures AI-style code snippets are pure functions with no I/O
+- **Numeric Aggregate**: Maintains numeric range validity and integer parsing constraints
+- **Encoding Aggregate**: Guarantees valid base64/hex encoding without external dependencies
+
+## Domain Events
+
+- `StringSplitEvent`: Triggered when UTF-8 byte splitting completes
+- `CodeGeneratedEvent`: Fired after AI
