@@ -1,1 +1,1 @@
-- [ ] Add failing test for `GenerateCode("for i in range(5): print(i)")` →
+- [x] Add failing test for `GenerateCode("for i in range(5): print(i)")` →
