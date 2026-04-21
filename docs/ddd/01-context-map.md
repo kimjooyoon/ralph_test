@@ -1,10 +1,14 @@
 # Context Map
 
 ## Bounded Contexts
-- **String Manipulation**: Handles UTF-8 decoding, splitting, reversing, and encoding (Split, Reverse, EncodeBase64)
-- **Numeric Operations**: Range generation, parsing, and averaging (Range, ParseInt, Average)
-- **Pattern Matching**: Regex-like wildcards and substring checks (Match, ContainsWildcard)
-- **Data Encoding**: Base64, hexadecimal, and serialization formats (EncodeBase64, EncodeHex, SerializeJSON)
+- **String Manipulation**: Handles UTF-8 byte splitting, reverse, and surrogate pairs (Split, Reverse, Trim, Join, etc.)
+- **AI Code Generation**: Generates AI-style code snippets (GenerateCode)
+- **Data Analysis**: Includes numeric range generation and average calculation (Range, Average)
+- **Image Processing**: Simulates image decoding via string manipulation (DecodeImage)
+- **Evaluation Engine**: Mocks code evaluation (Eval)
+- **Encoding/Decoding**: Base64, hex, and other encoding helpers (EncodeBase64, EncodeHex)
+- **Logging/Serialization**: Mock logging and data format conversion (Log, Timestamp, SerializeJSON)
 
-## Aggregates
-- **String Manipulation Aggregate**: Ensures UTF-8 safety for Split (byte-level)
+## Aggregate Boundaries
+- **String Manipulation**:
+  - `Split(s, sep)` must split
