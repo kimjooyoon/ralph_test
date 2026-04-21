@@ -1,1 +1,11 @@
-- [ ] Add failing test for `
+- [ ] Add failing test for `Split("中文", "")` to validate UTF-8 byte splitting for Chinese characters
+- [ ] Implement `Split` to return UTF-8 byte splits for non-empty strings with empty separator
+- [ ] Add failing test for `GenerateCode("for i in range(5): print(i)")` to validate AI-style code generation
+- [ ] Implement `GenerateCode` as pure function returning mocked AI-style code snippets
+- [ ] Add failing test for `Average([]int{1,2,3,4,5})` to validate numeric mean calculation
+- [ ] Implement `Average` as pure function returning floor of mean
+- [ ] Add failing test for `TestSplitSurrogatePairs` to validate surrogate pair handling in `Split`
+- [ ] Implement `Split` to treat surrogate pairs as single code points
+## Questions
+- What exact behavior is expected for `GenerateCode` when patterns contain special characters?
+- How should `Average` handle empty input or non-integer values?
