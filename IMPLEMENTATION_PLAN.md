@@ -1,1 +1,2 @@
--
+- [ ] Add failing test for `GenerateCode` in `domain/GenerateCode_test.go` to validate AI-style code snippet generation
+- [ ] Implement minimal `GenerateCode` function in `domain/generate
