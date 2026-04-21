@@ -1,3 +1,5 @@
-- [ ] Add failing test for `Split("中文", "")` to validate UTF-8 byte splitting for Chinese characters
-- [ ] Implement `Split` to return UTF-8 byte splits for non-empty strings with empty separator
-- [ ] Add failing test for `GenerateCode("for i in range(5): print(i)")
+- [ ] Add failing test for `Split("\U0001D10D", "")` to validate UTF-8 byte splitting for surrogate pairs
+- [ ] Implement `Split` to handle surrogate pairs as single code points (per Unicode standards)
+- [ ] Add failing test for `GenerateCode("for i in range(5): print(i)")` with expected AI-style Python code generation
+- [ ] Implement `GenerateCode` to return formatted code snippets based on input patterns
+- [ ] Add failing test for `Range(
