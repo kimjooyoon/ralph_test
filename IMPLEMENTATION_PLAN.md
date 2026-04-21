@@ -1,1 +1,10 @@
-- [ ] Add failing test for `Split` with surrogate pair handling (specs/dsl.md
+- [ ] Add failing test for `Split` with surrogate pair handling (specs/dsl.md)
+- [ ] Add failing test for `GenerateCode` (docs/ralph/11-codex.md)
+- [ ] Add failing test for `Average` (docs/ralph/11-codex.md)
+- [ ] Add failing test for `DecodeImage` (docs/ralph/11-codex.md)
+- [ ] Add failing test for `Eval` (docs/ralph/11-codex.md)
+- [ ] Add failing test for `Range` (docs/ralph/13-numeric.md)
+- [ ] Add failing test for `ParseInt` (docs/ralph/13-numeric.md)
+- [ ] Add failing test for `Match` (docs/ralph/14-regex.md)
+- [ ] Add failing test for `ContainsWildcard` (docs/ralph/14-regex.md)
+- [ ] Add failing test for `Encode
