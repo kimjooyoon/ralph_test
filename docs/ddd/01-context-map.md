@@ -1,20 +1,22 @@
 # Context Map
 
-## String Manipulation Context
-- **Bounded Context**: String utilities for UTF-8 byte and code point operations
-- **Aggregate Boundaries**:
-  - `Split` aggregates: string + separator
-  - `Reverse` aggregates: string + direction
-- **Domain Events**:
-  - `SplitCompleted`: when string is split into segments
-  - `ReverseCompleted`: when string is reversed
-- **Invariants**:
-  - `Split(s, "")` must return one string per UTF-8 byte
-  - `Reverse` must preserve surrogate pairs and combining marks
-  - All operations must work with valid UTF-8 input
+## Bounded Context: String Manipulation
+- **Primary responsibility**: UTF-8 byte-level string operations
+- **Key aggregates**:
+  - `String` (immutable value object)
+- **Domain events**:
+  - `SplitEvent` (when string is split by separator)
+- **Ubiquitous language**:
+  - "Split by empty string" → returns UTF-8 byte array
+  - "Multi-byte character" → requires byte-level handling
+  - "Code point" → distinct from byte-level operations
 
-## Unicode Handling Context
-- **Bounded Context**: Unicode-aware string operations
-- **Aggregate Boundaries**:
-  - `Split` aggregates: string + separator
-  - `
+## Bounded Context: Data Encoding
+- **Primary responsibility**: Base64/Hex encoding/decoding
+- **Key aggregates**:
+  - `EncodedData` (immutable value object)
+- **Domain events**:
+  - `EncodeEvent` (when data is encoded)
+- **Ubiquitous language**:
+  - "Base64 encoding" → strict 6-bit grouping
+  - "Surrogate pair" → requires
