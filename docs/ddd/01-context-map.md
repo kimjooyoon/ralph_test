@@ -1,14 +1,11 @@
 # Context Map
 
 ## Bounded Contexts
-- **DSL Helpers**: Provides string manipulation, encoding, and data processing functions (Split, Reverse, EncodeBase64, etc.)
+- **String Handling**: UTF-8 byte splitting, surrogate pair reversal, and Unicode validation (Split, Reverse, Trim)
+- **Code Generation**: AI-style code snippet creation (GenerateCode)
+- **Numeric Operations**: Range generation, integer parsing, and average calculation (Range, ParseInt, Average)
+- **Encoding/Decoding**: Base64, hex, and image decoding (EncodeBase64, DecodeImage)
+- **Pattern Matching**: Regex-like wildcard matching (Match, ContainsWildcard)
 
-## Aggregates & Boundaries
-- **String Manipulation**: 
-  - `Split(s, sep)` splits strings by UTF-8 bytes (when sep is empty)
-  - `Reverse(s)` reverses UTF-8 byte sequences, handling surrogate pairs
-- **Encoding**: 
-  - `EncodeBase64(data)` converts byte slices to base64 strings
-  - `EncodeHex(data)` converts bytes to hexadecimal strings
-- **Numeric Helpers**: 
-  - `
+## Aggregate Boundaries
+- **String Handling Aggregate**:
