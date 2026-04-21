@@ -1,3 +1,6 @@
 - [ ] Add failing test for Range(1, 5) returning [1,2,3,4,5] (numeric range generation)
 - [ ] Add failing test for ParseInt("123") returning 123 (string to integer conversion)
-- [ ] Add failing test for
+- [ ] Add failing test for Split("中文", "") returning ["中", "文"] (UTF-8 byte splitting for Chinese characters)
+- [ ] Add failing test for Reverse("\U0001D10D") returning ["\U0001D10D"] (surrogate pair handling)
+- [ ] Add failing test for EncodeBase64([]byte("中文")) returning "5Lit5paH" (non-ASCII base64 encoding)
+- [ ] Add failing test for GenerateCode("for i in
