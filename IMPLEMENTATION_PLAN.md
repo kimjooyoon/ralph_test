@@ -1,9 +1,10 @@
-- [ ] Add failing test for Split with UTF-8 byte splitting of Chinese characters (expect ["中", "文"] for "中文")
-- [ ] Implement domain.Split to handle UTF-8 byte splitting for multi-byte characters
-- [ ] Add test for Split with surrogate pairs (e.g., emoji) as single code points
-- [ ] Create test for GenerateCode function with AI-style code snippet pattern matching
+- [ ] Add failing test for Reverse with surrogate pairs (e.g., emoji) as single code points
+- [ ] Implement domain.Reverse to handle UTF-8 byte sequences for surrogate pairs
+- [ ] Add test for EncodeBase64 with non-ASCII input (e.g., "中文" → "5L2g5L2g")
+- [ ] Implement domain.EncodeBase64 to handle UTF-8 input correctly
+- [ ] Add failing test for Match with wildcard pattern matching (* and ?)
+- [ ] Implement domain.Match to support basic regex-like wildcard matching
 
 ## Questions
-- Should UTF-8 byte splitting handle all Unicode code points correctly, including rare ones?
-- Are there specific surrogate pair test cases needed beyond the emoji example?
-- How to validate AI-generated code patterns in GenerateCode without external dependencies?
+- How to handle surrogate pairs in UTF-8 byte sequences for Reverse?
+- Should EncodeBase64
