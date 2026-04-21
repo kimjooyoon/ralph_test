@@ -8,4 +8,4 @@
 - [ ] Add failing test for `Average([]int{1,2,3,4,5})` to validate mean calculation
 - [ ] Add failing test for `DecodeImage("PNG")` to validate image decoding simulation
 - [ ] Add failing test for `Eval("1+1")` to validate code evaluation
-- [ ] Add
+- [ ] Add failing test for `Match("^[a-z]+$", "abc123")` to validate regex-like
