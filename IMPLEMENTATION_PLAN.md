@@ -1,1 +1,1 @@
-- [ ] Add failing test for `GenerateCode` in `domain/generatecode_test.go` to validate AI-style code snippet generation (e.g., `GenerateCode("for i in range(5): print(i)")` should return the
+- [x] Add failing test for `GenerateCode` in `domain/generatecode_test.go` to validate AI-style code snippet generation (e.g., `GenerateCode("for i in

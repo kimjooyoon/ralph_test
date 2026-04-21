@@ -1,5 +1,5 @@
 package domain
 
-func GenerateCode(input string) string {
-	return input
+func GenerateCode(pattern string) string {
+	return pattern
 }
