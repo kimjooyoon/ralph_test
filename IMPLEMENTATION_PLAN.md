@@ -1,14 +1,6 @@
-- [ ] Add failing test for `GenerateCode` in `domain/GenerateCode_test.go` to validate AI-style code snippet generation
-- [ ] Implement `GenerateCode` in `domain/GenerateCode.go` to return mock AI-style code snippets
-- [ ] Add failing test for `Average` in `domain/average_test.go` to validate mean calculation
-- [ ] Implement `Average` in `domain/average.go` to return floor of mean
-- [ ] Add failing test for `DecodeImage` in `domain/decode_image_test.go` to validate image decoding simulation
-- [ ] Implement `DecodeImage` in `domain/decode_image.go` to return mock byte slice
-- [ ] Add failing test for `Eval` in `domain/eval_test.go` to validate code evaluation
-- [ ] Implement `Eval` in `domain/eval.go` to return mock evaluation results
-- [ ] Add failing test for `Range` in `domain/range_test.go` to validate numeric range generation
-- [ ] Implement `Range` in `domain/range.go` to return inclusive integer slices
-- [ ] Add failing test for `ParseInt` in `domain/parse_int_test.go` to validate string-to-integer conversion
-- [ ] Implement `ParseInt` in `domain/parse_int.go` to handle valid/invalid inputs
-- [ ] Add failing test for `Match` in `domain/match_test.go` to validate regex-like pattern matching
-- [ ] Implement `Match` in `domain/match.go
+- [ ] Add failing test for `Split` with empty separator in `domain/split_test.go` to validate UTF-8 byte splitting for Chinese characters
+- [ ] Implement `Split` in `domain/split.go` to handle empty separator by splitting on UTF-8 bytes
+- [ ] Add failing test for `Reverse` with surrogate pairs in `domain/reverse_test.go` to validate Unicode handling
+- [ ] Implement `Reverse` in `domain/reverse.go` to correctly handle surrogate pairs and combining marks
+- [ ] Add failing test for `EncodeBase64` in `domain/encode_base64_test.go` to validate base64 encoding of UTF-8 text
+- [ ] Implement `EncodeBase
