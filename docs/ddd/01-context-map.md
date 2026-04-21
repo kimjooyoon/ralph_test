@@ -1,7 +1,12 @@
-# Context Map
+# Context Map — DSL Helpers
 
 ## Bounded Contexts
-1. **String Manipulation**
-   - Focus: UTF-8 byte splitting, surrogate pair handling, Unicode code point operations
-   - Key terms: UTF-8 byte splitting, surrogate pairs, code points, byte boundaries
-   -
+- **String Manipulation**: Handles UTF-8 splitting, reversing, and encoding (Split, Reverse, EncodeBase64)
+- **Numeric Operations**: Range generation, parsing, and averaging (Range, ParseInt, Average)
+- **Pattern Matching**: Regex-like wildcards and substring checks (Match, ContainsWildcard)
+- **Data Encoding**: Base64, hex, and serialization formats (EncodeBase64, EncodeHex, SerializeJSON)
+- **Unicode Handling**: Surrogate pairs, combining marks, and multi-byte character support (Split, Reverse)
+
+## Aggregate Boundaries
+- **String Manipulation Aggregate**: 
+  - `Split(s, sep)` splits strings by UTF-8 bytes or code points
