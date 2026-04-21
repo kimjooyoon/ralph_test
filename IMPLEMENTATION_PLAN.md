@@ -1,3 +1,3 @@
 - [ ] Add failing test for `Split` in `domain/split_test.go` to validate UTF-8 byte splitting for Chinese characters (ensure `Split("中文", "")` returns `["中", "文"]`)
 - [ ] Implement `Split` in `domain/split.go` to handle UTF-8 byte splitting for multi-byte characters
-- [ ] Add failing test for `Reverse` in `domain/reverse_test.go`
+- [ ]
