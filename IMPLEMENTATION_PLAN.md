@@ -1,4 +1,7 @@
 - [ ] Add failing test for `Split` with UTF-8 byte splitting of Chinese characters (specs/dsl.md#chinese-splitting)
 - [ ] Implement `Split` byte splitting logic for multi-byte Unicode (domain/split.go)
 - [ ] Add failing test for `GenerateCode` AI-style code snippet generator (specs/dsl.md#codex)
-- [ ] Implement `
+- [ ] Implement `GenerateCode` function to return AI-style code snippets (domain/GenerateCode.go)
+- [ ] Add failing test for `Reverse` with surrogate pair handling (docs/ralph/12-unicode-edge.md#7)
+- [ ] Implement `Reverse` to handle surrogate pairs and combining marks (domain/reverse.go)
+- [ ] Add failing test for `Range` numeric range generator
