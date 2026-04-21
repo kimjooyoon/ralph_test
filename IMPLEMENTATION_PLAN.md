@@ -1,1 +1,4 @@
-- [
+- [ ] Add failing test for `Split` with UTF-8 byte splitting of Chinese characters (specs/dsl.md#chinese-splitting)
+- [ ] Implement `Split` byte splitting logic for multi-byte Unicode (domain/split.go)
+- [ ] Add failing test for `GenerateCode` AI-style code snippet generator (specs/dsl.md#codex)
+- [ ] Implement `
