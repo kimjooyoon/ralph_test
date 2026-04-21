@@ -1,7 +1,2 @@
 - [ ] Add failing test for `Average([]int{1,2,3,4,5})` to return `3` (complete the test case from specs/dsl.md)
-- [ ] Implement `Average` function in `domain/` to calculate floor of mean for integer slice
-- [ ] Add failing test for `Range(1, 5)` to return `[1,2,3,4,5]` (from docs/ralph/13-numeric.md)
-- [ ] Implement `Range` function to generate inclusive integer ranges
-- [ ] Add failing test for `Split("\U0001D10D", "")` to return `["\U0001D10D"]` (from docs/ralph/12-unicode-edge.md)
-- [ ] Implement `Split` function to treat surrogate pairs as single code points
-- [ ] Add failing test for `GenerateCode("for i in range(5): print(i)")` to return identical input (from docs/ralph/11-codex.md
+- [ ] Implement `Average` function in `domain/`
