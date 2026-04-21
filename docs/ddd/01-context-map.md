@@ -1,9 +1,12 @@
 # Context Map
 
 ## Bounded Contexts
-1. **String Manipulation**
-   - Handles UTF-8 byte splitting, reversing, joining, and trimming
-   - Aggregates: `Split`, `Reverse`, `Join`, `Trim`, `Repeat`, `Replace`
+- **String Handling** (domain/split.go, domain/trim.go, domain/join.go)
+  - Aggregate: `Split` with UTF-8 byte splitting for multi-byte characters
+  - Invariant: `Split("中文", "")` returns ["中", "文"]
+  - Domain Events: Character splitting, byte iteration
 
-2. **Encoding/Decoding**
-   - Base
+- **AI Code Generation** (domain/generatecode.go)
+  - Aggregate: `GenerateCode` for AI-style code snippets
+  - Invariant: `GenerateCode("for i in range(5): print(i)")` returns valid Python code
+  - Domain Events: Code pattern recognition,
