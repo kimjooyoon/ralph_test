@@ -3,9 +3,4 @@
 - [ ] Add failing test for `Split("\U0001D10D", "")` to validate surrogate pair handling
 - [ ] Add failing test for `Range(1, 5)` to validate numeric range generation
 - [ ] Add failing test for `ParseInt("123")` to validate string-to-integer conversion
-- [ ] Add failing test for `EncodeBase64([]byte("hello"))` to validate base64 encoding
-- [ ] Add failing test for `Reverse("中文")` to validate UTF-8 byte reversal
-- [ ] Add failing test for `Average([]int{1,2,3,4,5})` to validate mean calculation
-- [ ] Add failing test for `DecodeImage("PNG")` to validate image decoding simulation
-- [ ] Add failing test for `Eval("1+1")` to validate code evaluation
-- [ ] Add failing test for `Match("^[a-z]+$", "abc123")` to validate regex-like
+- [ ] Add failing test for `EncodeBase64([]byte("hello"))` to validate base64
